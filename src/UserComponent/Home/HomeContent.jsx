@@ -58,8 +58,6 @@ export default function HomeContent() {
     return (
         <div className='POD-home'>
 
-            {/* <img src={home} alt='home' /> */}
-
             <div className='booking-now'>
                 <div className='booking-now-text'>
                     <h1><b>ĐẶT CHỖ NGAY</b></h1>
@@ -74,12 +72,6 @@ export default function HomeContent() {
                         {STOREs && STOREs.filter(store => store.status === 'Đang hoạt động').map(store => (
                             <Col lg={12} xl={6} xxl={5} key={store.id} className='image-col'>
                                 <Card className='image-card'>
-                                    {/* <Link to={`booking/store/${store.id}`}><img src={imageSTOREs.find(image => image.id === store.id)?.image} alt={store.name} /></Link> */}
-                                    {store.status === 'Đang hoạt động' ?
-                                        <Link to={`booking/store/${store.id}`}><img src={store.image} alt={store.name} /></Link>
-                                        :
-                                        <img src={store.image} alt={store.name} />
-                                    }
 
                                     <Card.Body className='card-body'>
                                         <div className='card-name-rating'>
@@ -157,30 +149,18 @@ export default function HomeContent() {
                 <h1><b>VÌ SAO NÊN CHỌN INNOSPACE?</b></h1>
                 <Carousel data-bs-theme="light">
                     <Carousel.Item>
-                        <img
-                            className="d-block w-100"
-                            alt="First slide"
-                        />
                         <Carousel.Caption className='carousel-text'>
                             <h3>KHÔNG GIAN LÀM VIỆC ĐA DẠNG</h3>
                             <p>Đáp ứng nhu cầu đa dạng từ các sinh viên, freelancer đến doanh nghiệp nhỏ, với lựa chọn đa dạng từ phòng làm việc cá nhân đến không gian làm việc nhóm.</p>
                         </Carousel.Caption>
                     </Carousel.Item>
                     <Carousel.Item>
-                        <img
-                            className="d-block w-100"
-                            alt="Second slide"
-                        />
                         <Carousel.Caption className='carousel-text'>
                             <h3>QUẢN LÝ ĐẶT CHỖ THÔNG MINH</h3>
                             <p>Giao diện thân thiện, cho phép bạn dễ dàng tìm kiếm và đặt chỗ theo nhu cầu, thời gian và ngân sách.</p>
                         </Carousel.Caption>
                     </Carousel.Item>
                     <Carousel.Item>
-                        <img
-                            className="d-block w-100"
-                            alt="Third slide"
-                        />
                         <Carousel.Caption className='carousel-text'>
                             <h3>DỊCH VỤ TOÀN DIỆN</h3>
                             <p>Thanh toán trực tuyến và cung cấp các gói dịch vụ linh hoạt kèm các tiện ích.</p>

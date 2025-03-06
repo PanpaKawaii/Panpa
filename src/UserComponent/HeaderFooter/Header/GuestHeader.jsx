@@ -14,38 +14,35 @@ export default function GuestHeader() {
     }, [UserId]);
 
     const [menuOpen, setMenuOpen] = useState(false);
-
     const toggleMenu = () => {
         setMenuOpen(!menuOpen);
     };
-
-    // console.log('GuestHeader re-render');
     
     const menuItems = [
-        { text: 'Trang chủ', path: '/' },
-        { text: 'Giới thiệu', path: '/about' },
-        { text: 'Liên hệ', path: '/contact' },
-        { text: 'Test App', path: '/testapp' },
+        { text: 'Home', path: '/' },
+        { text: 'About', path: '/about' },
+        { text: 'Contact', path: '/contact' },
+        { text: 'App', path: '/testapp' },
         { text: 'Game', path: '/game' },
         { text: 'Japanese', path: '/japanese' },
-        { text: 'Đăng nhập', path: '/signinsignup' },
+        { text: 'Sign In', path: '/signinsignup' },
     ];
 
     return (
-        <div className='guest-header-container'>
+        <div className='guestheader-container'>
             <AppBar position="static" className='menu'>
                 <Toolbar>
                     <Typography variant="h6" style={{ flexGrow: 1 }}>
                         <Link to='/' className='brand-logo'><b>Panpa</b></Link>
                     </Typography>
 
-                    <Link to='/' className='desktop-menu-item'><i className='fa-solid fa-house icon'></i> Home</Link>
-                    <Link to='/about' className='desktop-menu-item'><i className='fa-solid fa-circle-info icon'></i> About</Link>
-                    <Link to='/contact' className='desktop-menu-item'><i className='fa-regular fa-address-card icon'></i> Contact</Link>
-                    <Link to='/testapp' className='desktop-menu-item'><i className='fa-solid fa-laptop icon'></i> App</Link>
-                    <Link to='/game' className='desktop-menu-item'><i className='fa-solid fa-gamepad icon'></i> Game</Link>
-                    <Link to='/japanese' className='desktop-menu-item'><i className='fa-solid fa-torii-gate icon'></i> Japanese</Link>
-                    <Link to='/signinsignup' className='desktop-menu-item'><i className='fas fa-sign-in-alt icon'></i> Đăng nhập</Link>
+                    <Link to='/' className='menu-item'><i className='fa-solid fa-house icon'></i> Home</Link>
+                    <Link to='/about' className='menu-item'><i className='fa-solid fa-circle-info icon'></i> About</Link>
+                    <Link to='/contact' className='menu-item'><i className='fa-regular fa-address-card icon'></i> Contact</Link>
+                    <Link to='/testapp' className='menu-item'><i className='fa-solid fa-laptop icon'></i> App</Link>
+                    <Link to='/game' className='menu-item'><i className='fa-solid fa-gamepad icon'></i> Game</Link>
+                    <Link to='/japanese' className='menu-item'><i className='fa-solid fa-torii-gate icon'></i> Japanese</Link>
+                    <Link to='/signinsignup' className='menu-item'><i className='fas fa-sign-in-alt icon'></i> Sign In</Link>
 
                     <IconButton edge="start" color="inherit" aria-label="menu" onClick={toggleMenu}>
                         <MenuIcon className='menu-icon' />

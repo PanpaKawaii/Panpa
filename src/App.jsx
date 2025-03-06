@@ -18,8 +18,8 @@ function App() {
     <>
       <GuestHeader />
       <Routes>
-
         <Route path='/' element={<HomeContent />} />
+
         <Route path='game' element={<ListGame />} />
         <Route path='game/typepi' element={<TypePi />} />
 

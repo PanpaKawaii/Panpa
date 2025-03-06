@@ -2,12 +2,12 @@ body {
     margin: 0;
 }
 
-.guest-header-container {
+.guestheader-container {
     width: 100%;
     font-family: 'Quicksand', Arial, sans-serif;
     position: sticky;
     top: 0;
-    z-index: 100;
+    z-index: 10;
 
     .menu {
         width: 100%;
@@ -27,12 +27,12 @@ body {
             font-size: 40px;
         }
 
-        .desktop-menu-item {
+        .menu-item {
             font-family: 'Quicksand', Arial, sans-serif;
             display: none;
         }
 
-        .desktop-menu-item:hover {
+        .menu-item:hover {
             font-size: 18px;
             font-weight: bold;
         }
@@ -52,7 +52,7 @@ body {
 
     @media (min-width: 1200px) {
         .menu {
-            .desktop-menu-item {
+            .menu-item {
                 display: block;
             }
 

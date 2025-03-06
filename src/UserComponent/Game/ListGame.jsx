@@ -1,5 +1,4 @@
 import React from 'react';
-import { Card, Col, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import './ListGame.css';
 
@@ -19,14 +18,14 @@ export default function ListGame() {
         { name: 'Minesweeper', src: MinesweeperSRC, link: '/game/minesweeper' },
         { name: 'What Is The Password?', src: WhatIsThePasswordSRC, link: '/game/whatisthepassword' },
         { name: 'Caro', src: CaroSRC, link: '/game/caro' },
-        { name: 'Chess', src: '', link: '/game/chess' },
+        { name: 'Chess', src: null, link: '/game/chess' },
         { name: 'Tetris', src: Tetris, link: '/game/tetris' },
         { name: 'Solve The Maze', src: SolveTheMazeSRC, link: '/game/solvethemaze' },
         { name: 'Generate Maze', src: GenerateMaze, link: '/game/generatemaze' },
         { name: 'Type Pi', src: TypePi, link: '/game/typepi' },
         { name: 'Random Card (VW > 1227px)', src: RandomCard, link: '/game/randomcard' },
         { name: 'To Do List', src: ToDoListSRC, link: '/game/todolist' },
-        { name: 'Test Object', src: '', link: '/game/object' },
+        { name: 'Test Object', src: null, link: '/game/object' },
     ];
 
     return (
@@ -35,20 +34,20 @@ export default function ListGame() {
                 <h1><b>List Game</b></h1>
             </div>
             <div className='content'>
-                <Row className='image-row'>
+                <div className='row'>
                     {ListGame.map((game, index) => (
-                        <Col key={index} xs={6} sm={6} md={4} lg={3} xl={3} xxl={2} className='image-col'>
+                        <div key={index} className='col'>
                             <Link to={`${game.link}`}>
-                                <Card className='image-card'>
-                                    <Card.Body className='card-body'>
+                                <div className='card'>
+                                    <div className='card-body'>
                                         <img src={game.src} alt={game.name} />
-                                        <h4><b>{game.name}</b></h4>
-                                    </Card.Body>
-                                </Card>
+                                        <h2><b>{game.name}</b></h2>
+                                    </div>
+                                </div>
                             </Link>
-                        </Col>
+                        </div>
                     ))}
-                </Row>
+                </div>
             </div>
         </div>
     )
