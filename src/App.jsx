@@ -20,9 +20,9 @@ import RandomCard from './UserComponent/Game/RandomCard.jsx'
 import ToDoList from './UserComponent/Game/ToDoList.jsx'
 import TestObject from './UserComponent/Game/TestObject.jsx'
 
+import ListJapanese from './UserComponent/Japanese/ListJapanese.jsx'
 import JapaneseKanji from './UserComponent/Japanese/JapaneseKanji.jsx'
 import JapaneseVerb from './UserComponent/Japanese/JapaneseVerb.jsx'
-import ListJapanese from './UserComponent/Japanese/ListJapanese.jsx'
 
 function App() {
 

@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { Col, Row, Table, Form, Button } from 'react-bootstrap';
+import { Button, Col, Form, Row, Table } from 'react-bootstrap';
 import { useSearchParams } from 'react-router-dom';
 import './JapaneseKanji.css';
 
-import { Kanji, KanjiExample } from './listJapanese';
+import { Kanji, KanjiExample } from './list_japanese';
 
 export default function JapaneseKanji() {
 
@@ -48,13 +48,13 @@ export default function JapaneseKanji() {
     }
 
     return (
-        <div className='japanese-kanji-container'>
+        <div className='japanesekanji-container'>
             <div className='header'>
-                <h2><b>Japanese Kanji</b></h2>
+                <h2>Japanese Kanji</h2>
             </div>
 
             <Form onSubmit={handleEnterKanji}>
-                <Form.Group controlId='searchkanji' className='form-group'>
+                <Form.Group controlId='searchkanji'>
                     <Form.Control
                         type='text'
                         placeholder='日、ニチ、ひ、nichi、NHẬT、...'

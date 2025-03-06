@@ -126,12 +126,25 @@ export const Kanji = [
     { Id: '昼', SinoVietnamese: 'TRÚ', On: 'チュウ', Kun: 'ひる', Romaji: 'chuu, hiru' },
     { Id: '夜', SinoVietnamese: 'DẠ', On: 'ヤ', Kun: 'よ、よる', Romaji: 'ya, yo, yoru' },
     { Id: '乗', SinoVietnamese: 'THỪA', On: 'ジョウ、ショウ', Kun: 'の', Romaji: 'jou, shou, no' },
+    
+    { Id: '学', SinoVietnamese: 'HỌC', On: 'ガク', Kun: 'まな', Romaji: 'gaku, mana' },
+    { Id: '校', SinoVietnamese: 'HIỆU', On: 'コウ、キョウ', Kun: 'こう、きょう、かせ', Romaji: 'kou, kyou, kase' },////////////////////////////////////////////////////////////////////
+    { Id: '先', SinoVietnamese: 'TIÊN', On: 'セン', Kun: 'さき、ま', Romaji: 'sen, saki, ma' },
+    { Id: '生', SinoVietnamese: 'SINH', On: 'セイ、ショウ', Kun: 'い、う、お、は、き、なま、な、む', Romaji: 'sei, shou, i, u, o, ha, ki, nama, na, mu' },
+    { Id: '勉', SinoVietnamese: 'MIỄN', On: 'ベン', Kun: 'つと', Romaji: 'ben, tsuto' },
+    { Id: '強', SinoVietnamese: 'CƯỠNG', On: 'キョウ、ゴウ', Kun: 'つよ', Romaji: 'kyou, gou, tsuyo' },
+    { Id: '文', SinoVietnamese: 'VĂN', On: 'ブン、モン', Kun: 'ふみ、あや', Romaji: 'bun, mon, fumi, aya' },
+    { Id: '化', SinoVietnamese: 'HÓA', On: 'カ、ケ', Kun: 'ば、ふ、け', Romaji: 'ka, ke, ba, fu' },
+    { Id: '音', SinoVietnamese: 'ÂM', On: 'オン、イン、ノン', Kun: 'おと、ね', Romaji: 'on, in, non, oto, ne' },
+    { Id: '楽', SinoVietnamese: 'LẠC', On: 'ガク、ラク、ゴウ', Kun: 'たの、この', Romaji: 'gaku, raku, gou, tano, kono' },
+    { Id: '留', SinoVietnamese: 'LƯU', On: 'リュウ、ル', Kun: 'と、とど、るうぶる', Romaji: 'ryuu, ru, to, todo, ruuburu' },
+    { Id: '旅', SinoVietnamese: 'LỮ', On: 'リョ', Kun: 'たび', Romaji: 'ryo, tabi' },
+    { Id: '友', SinoVietnamese: 'HỮU', On: 'ユウ', Kun: 'とも', Romaji: 'yuu, tomo' },
+    { Id: '達', SinoVietnamese: 'ĐẠT', On: 'タツ、ダ', Kun: 'たち', Romaji: 'tatsu, da, tachi' },
 
     { Id: '～', SinoVietnamese: 'NoKanji', On: 'NoKanji', Kun: 'NoKanji', Romaji: 'NoKanji' },
 
     { Id: '晩', SinoVietnamese: 'VÃN', On: 'バン', Kun: 'ばん', Romaji: 'NoKanji' },
-    { Id: '勉', SinoVietnamese: 'MIỄN', On: 'ベン', Kun: 'べん', Romaji: 'NoKanji' },
-    { Id: '強', SinoVietnamese: 'CƯỠNG', On: 'キョウ', Kun: 'つよ', Romaji: 'NoKanji' },
     { Id: '家', SinoVietnamese: 'GIA', On: 'カ、ケ', Kun: 'いえ', Romaji: 'NoKanji' },
     { Id: '犬', SinoVietnamese: 'KHUYỂN', On: 'ケン', Kun: 'いぬ', Romaji: 'NoKanji' },
     { Id: '猫', SinoVietnamese: 'MIÊU', On: 'ビョウ', Kun: 'ねこ', Romaji: 'NoKanji' },

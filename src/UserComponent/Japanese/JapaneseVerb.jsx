@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { Col, Row, Form, Button } from 'react-bootstrap';
+import { Button, Col, Form, Row } from 'react-bootstrap';
 import { useSearchParams } from 'react-router-dom';
 import './JapaneseVerb.css';
 
-import { Verb } from './listJapanese';
+import { Verb } from './list_japanese';
 
 export default function JapaneseVerb() {
 
@@ -36,13 +36,13 @@ export default function JapaneseVerb() {
     }
 
     return (
-        <div className='japanese-verb-container'>
+        <div className='japaneseverb-container'>
             <div className='header'>
-                <h2><b>Japanese Verb</b></h2>
+                <h2>Japanese Verb</h2>
             </div>
 
             <Form onSubmit={handleEnterVerb}>
-                <Form.Group controlId='searchverb' className='form-group searchverb'>
+                <Form.Group controlId='searchverb' className='searchverb'>
                     <Form.Control
                         type='text'
                         placeholder='いきます、III、Đi、...'
@@ -51,7 +51,7 @@ export default function JapaneseVerb() {
                     />
                 </Form.Group>
 
-                <Form.Group controlId='groupverb' className='form-group groupverb'>
+                <Form.Group controlId='groupverb' className='groupverb'>
                     <Form.Control
                         as='select'
                         value={group}

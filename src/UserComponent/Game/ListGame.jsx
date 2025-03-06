@@ -4,13 +4,13 @@ import { Link } from 'react-router-dom';
 import './ListGame.css';
 
 import CaroSRC from '../../assets/imageGAMEs/Caro.png';
-import GenerateMaze from '../../assets/imageGAMEs/GenerateMaze.png';
+import GenerateMazeSRC from '../../assets/imageGAMEs/GenerateMaze.png';
 import MinesweeperSRC from '../../assets/imageGAMEs/Minesweeper.png';
-import RandomCard from '../../assets/imageGAMEs/RandomCard.png';
+import RandomCardSRC from '../../assets/imageGAMEs/RandomCard.png';
 import SolveTheMazeSRC from '../../assets/imageGAMEs/SolveTheMaze.png';
-import Tetris from '../../assets/imageGAMEs/Tetris.png';
+import TetrisSRC from '../../assets/imageGAMEs/Tetris.png';
 import ToDoListSRC from '../../assets/imageGAMEs/ToDoList.png';
-import TypePi from '../../assets/imageGAMEs/TypePi.png';
+import TypePiSRC from '../../assets/imageGAMEs/TypePi.png';
 import WhatIsThePasswordSRC from '../../assets/imageGAMEs/WhatIsThePassword.png';
 
 export default function ListGame() {
@@ -20,11 +20,11 @@ export default function ListGame() {
         { name: 'What Is The Password?', src: WhatIsThePasswordSRC, link: '/game/whatisthepassword' },
         { name: 'Caro', src: CaroSRC, link: '/game/caro' },
         { name: 'Chess', src: null, link: '/game/chess' },
-        { name: 'Tetris', src: Tetris, link: '/game/tetris' },
+        { name: 'Tetris', src: TetrisSRC, link: '/game/tetris' },
         { name: 'Solve The Maze', src: SolveTheMazeSRC, link: '/game/solvethemaze' },
-        { name: 'Generate Maze', src: GenerateMaze, link: '/game/generatemaze' },
-        { name: 'Type Pi', src: TypePi, link: '/game/typepi' },
-        { name: 'Random Card (VW > 1227px)', src: RandomCard, link: '/game/randomcard' },
+        { name: 'Generate Maze', src: GenerateMazeSRC, link: '/game/generatemaze' },
+        { name: 'Type Pi', src: TypePiSRC, link: '/game/typepi' },
+        { name: 'Random Card (VW > 1227px)', src: RandomCardSRC, link: '/game/randomcard' },
         { name: 'To Do List', src: ToDoListSRC, link: '/game/todolist' },
         { name: 'Test Object', src: null, link: '/game/object' },
     ];

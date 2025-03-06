@@ -1,11 +1,7 @@
-body {
-    margin: 0;
-}
-
-.japanese-verb-container {
+.japaneseverb-container {
     width: 100%;
-    min-height: 80vh;
-    margin: 30px 0 100px;
+    min-height: 100vh;
+    margin: 40px 0;
     text-align: center;
     font-family: 'Quicksand', Arial, sans-serif;
 
@@ -18,6 +14,7 @@ body {
             margin: 0 0 20px;
             color: #fd73a7;
             font-size: 54px;
+            font-weight: bold;
         }
     }
 
