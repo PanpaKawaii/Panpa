@@ -1,0 +1,109 @@
+body {
+    margin: 0;
+}
+
+.randomcard-container {
+    width: 100%;
+    min-height: 80vh;
+    margin: 30px 0 100px;
+    text-align: center;
+    font-family: 'Quicksand', Arial, sans-serif;
+
+    .header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        h1 {
+            margin: 0 0 20px;
+            color: #dc3545;
+            font-size: 54px;
+        }
+
+    }
+
+    .content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+        perspective: 5000px;
+
+        #poker-cards {
+            margin: 0 0 0 -2200px;
+            background: url(../../assets/imageGAMEs/PokerCard.png) center;
+            background-size: cover;
+        }
+
+        .poker-card {
+            width: 210px;
+            height: 300px;
+            background: transparent;
+            border: 4px solid #dc3545;
+            border-radius: 10px;
+            box-sizing: border-box;
+            transition: all 0.5s ease;
+            transform-style: preserve-3d;
+            position: absolute;
+
+            .text-card {
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+
+                p {
+                    display: none;
+                    font-weight: bold;
+                    font-size: 32px;
+                }
+
+            }
+
+            .face {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                backface-visibility: hidden;
+            }
+
+            .front {
+                background-color: #fff;
+                transform: rotateY(180deg);
+                border-radius: 10px;
+            }
+
+            .back {
+                background: url(../../assets/imageGAMEs/PokerCard.png) center;
+                background-size: cover;
+                border-radius: 10px;
+            }
+        }
+
+        #active-button {
+            width: 160px;
+            display: flex;
+            flex-direction: column;
+            transition: all 0.5s ease;
+
+
+            .btn {
+                width: 100%;
+                margin: 0 0 4px;
+                background-color: #dc3545;
+                font-weight: bold;
+                border: none;
+            }
+
+            .btn-reset {
+                background-color: #ff7280;
+            }
+
+            .btn-deactivate {
+                background-color: #ffd4d8;
+            }
+        }
+
+    }
+}

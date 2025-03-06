@@ -1,0 +1,233 @@
+body {
+    margin: 0;
+}
+
+.chess-container {
+    width: 100%;
+    min-height: 80vh;
+    margin: 30px 0 100px;
+    text-align: center;
+    font-family: 'Quicksand', Arial, sans-serif;
+
+    .header {
+        h1 {
+            margin: 0 0 20px;
+            color: #777777;
+            font-size: 54px;
+        }
+    }
+
+    .detail {
+        padding: 0 10px;
+        display: flex;
+        justify-content: center;
+        align-items: start;
+        gap: 10px;
+
+        .support {
+            display: flex;
+            justify-content: center;
+
+            .btn {
+                margin: 0 5px;
+                background-color: #fb8b24;
+                font-weight: bold;
+                border: none;
+            }
+        }
+
+        .form-group {
+            margin: 10px 0;
+
+            .form-control:focus {
+                box-shadow: 0 0 0 0.25rem rgba(251, 139, 36, 0.25);
+                box-shadow: none;
+                border-color: #cccccc;
+            }
+
+            .form-control {
+                border-color: #cccccc;
+            }
+
+            .gamemode-option {
+                font-weight: bold;
+            }
+        }
+
+        .result {
+            margin: 0 0 0 10px;
+            padding: 5px 4px;
+            border-radius: 8px;
+
+            h2 {
+                margin: 0;
+            }
+        }
+    }
+
+    .content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        table {
+            position: relative;
+            display: block;
+            justify-self: center;
+            width: calc(var(--table-width) * 75)px;
+            border: 8px solid #777;
+            border-radius: 10px;
+
+            tr {
+                margin: 0;
+                padding: 0;
+                height: 75px;
+                border: none;
+
+                .lightcell {
+                    background-color: #ccc;
+                }
+
+                .darkcell {
+                    background-color: #999;
+                }
+
+                .moveablecell {
+                    background-color: #ff0000;
+                }
+
+                .pickedcell {
+                    background-color: #ff8000;
+                }
+
+                td {
+                    margin: 0;
+                    padding: 0;
+                    width: 75px;
+                    border: none;
+
+                    i {
+                        font-size: 40px;
+                    }
+
+                    .black-side {
+                        color: #000;
+                        font-weight: bold;
+                    }
+
+                    .white-side {
+                        color: #fff;
+                        font-weight: bold;
+                    }
+                }
+            }
+
+            .need-to-be-hidden {
+                tr {
+                    height: 0;
+                }
+            }
+
+            .promotion {
+                position: absolute;
+                top: 0;
+                display: flex;
+                align-items: center;
+                width: 100%;
+                height: 100%;
+                background-color: transparent;
+
+                i {
+                    font-size: 100px;
+                    width: 20%;
+                }
+
+                .group-icon {
+                    width: 100%;
+                    padding: 30px 0;
+                    background-color: #808080;
+                    box-shadow: 0px 0px 20px #00000080;
+                }
+
+                .black {
+                    .black-side {
+                        color: #000;
+                        background-color: #808080;
+                        font-weight: bold;
+                        cursor: pointer;
+                    }
+                }
+
+                .white {
+                    .white-side {
+                        color: #fff;
+                        background-color: #808080;
+                        font-weight: bold;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        .content {
+            table {
+                width: calc(var(--table-width) * 60)px;
+
+                tr {
+                    height: 60px;
+
+                    td {
+                        width: 60px;
+
+                        i {
+                            font-size: 32px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @media screen and (max-width: 576px) {
+        .content {
+            table {
+                width: calc(var(--table-width) * 45)px;
+
+                tr {
+                    height: 45px;
+
+                    td {
+                        width: 45px;
+
+                        i {
+                            font-size: 24px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @media screen and (max-width: 440px) {
+        .content {
+            table {
+                width: calc(var(--table-width) * 35)px;
+
+                tr {
+                    height: 35px;
+
+                    td {
+                        width: 35px;
+
+                        i {
+                            font-size: 20px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

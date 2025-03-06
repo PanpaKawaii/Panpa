@@ -1,0 +1,148 @@
+body {
+    margin: 0;
+}
+
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+.todolist-container {
+    width: 100%;
+    min-height: 80vh;
+    margin: 30px 0 100px;
+    text-align: center;
+    font-family: 'Quicksand', Arial, sans-serif;
+
+    .header {
+        h1 {
+            margin: 0 0 20px;
+            color: #fb8b24;
+            font-size: 54px;
+        }
+    }
+
+    .content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .add-form {
+            width: 100%;
+            min-width: 160px;
+            max-width: 540px;
+            padding: 0 10px 40px;
+            display: flex;
+            justify-self: center;
+            align-items: center;
+
+            .form-control:focus {
+                box-shadow: 0 0 0 0.25rem rgba(251, 139, 36, 0.25);
+                border-color: #fdbc7f;
+            }
+
+            .form-group {
+                width: 100%;
+            }
+
+            .btn {
+                margin: 0 0 0 10px;
+                background-color: #fb8b24;
+                border: 2px solid #fb8b24;
+                font-weight: bold;
+            }
+
+            .btn:hover {
+                border: 2px solid #d97720;
+            }
+
+            .btn:active {
+                color: #ffffff;
+                background-color: #d97720;
+                border: 2px solid #d97720;
+            }
+        }
+
+        table {
+            display: block;
+            justify-self: center;
+            padding: 0 10px;
+
+            .content-cell {
+                width: 500px;
+            }
+
+            tr {
+
+                td {
+
+                    .edit-form {
+                        width: 100%;
+                        display: flex;
+                        justify-self: center;
+                        align-items: center;
+
+                        .formcheckbox {
+                            margin: 0 14px 0 6px;
+                            transform: scale(1.6);
+
+                            input {
+                                border-color: #fdbc7f;
+                                cursor: pointer;
+                            }
+
+                            input:focus {
+                                box-shadow: 0 0 0 0.25rem rgba(251, 139, 36, 0.25);
+                            }
+
+                            .form-check-input:checked {
+                                background-color: #fb8b24;
+                                border-color: #fb8b24;
+                            }
+                        }
+
+                        .forminput {
+                            width: 100%;
+                        }
+
+                        .form-control:focus {
+                            box-shadow: 0 0 0 0.25rem rgba(251, 139, 36, 0.25);
+                            border-color: #fdbc7f;
+                        }
+                    }
+
+                    .active-button {
+                        height: 40px;
+                        display: flex;
+                        align-items: center;
+
+                        .btn {
+                            width: 100px;
+                            font-weight: bold;
+                            color: #dc3545;
+                            background-color: transparent;
+                            border: 2px solid #dc3545;
+                        }
+
+                        .btn:hover {
+                            color: #ffffff;
+                            background-color: #dc3545;
+                        }
+
+                        .btn:active {
+                            color: #ffffff;
+                            background-color: #c02d3c;
+                            border: 2px solid #c02d3c;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
