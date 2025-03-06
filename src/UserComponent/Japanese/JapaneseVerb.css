@@ -1,0 +1,127 @@
+body {
+    margin: 0;
+}
+
+.japanese-verb-container {
+    width: 100%;
+    min-height: 80vh;
+    margin: 30px 0 100px;
+    text-align: center;
+    font-family: 'Quicksand', Arial, sans-serif;
+
+    .japanese-font {
+        font-family: 'Klee One', Arial, sans-serif;
+    }
+
+    .header {
+        h2 {
+            margin: 0 0 20px;
+            color: #fd73a7;
+            font-size: 54px;
+        }
+    }
+
+    form {
+        width: 100%;
+        padding: 40px 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 10px;
+
+        .form-control:focus {
+            box-shadow: 0 0 0 0.25rem rgba(249, 157, 188, 0.314);
+            border-color: #f99dbc;
+        }
+
+        .searchverb {
+            width: 100%;
+            max-width: 300px;
+        }
+
+        .groupverb {
+            width: 120px;
+        }
+
+        #groupverb {
+            text-align: center;
+        }
+
+        .active-button {
+            .btn {
+                background-color: #f99dbc;
+                font-weight: bold;
+                border: none;
+            }
+
+            .btn:active {
+                background-color: #fd73a7;
+            }
+        }
+    }
+
+    .japanese-content {
+        width: 100%;
+        height: fit-content;
+        display: flex;
+        justify-content: center;
+
+        .japanese-row {
+            width: 100%;
+            max-width: 1500px;
+
+            .japanese-col {
+                display: flex;
+                justify-content: center;
+                align-items: start;
+
+                .grid-card {
+                    width: 250px;
+                    height: fit-content;
+                    margin: 0 0 20px;
+                    background-color: #ffeeee;
+                    border: 2px solid #fe036a;
+                    border-radius: 20px;
+                    overflow: hidden;
+                    align-items: center;
+                    text-align: center;
+                    transition: all 0.3s ease;
+                    box-shadow: 0px 0px 5px #f99dbc50;
+
+                    .card-body {
+                        padding: 8px 0;
+                        width: 100%;
+                        height: fit-content;
+
+                        h3 {
+                            margin: 0 0 8px;
+                            font-weight: bold;
+                        }
+
+                        p {
+                            margin: 0;
+                        }
+                    }
+                }
+
+                .grid-card:hover {
+                    transform: translateY(-10px);
+                    box-shadow: 0px 5px 10px #f99dbc80;
+                }
+            }
+        }
+    }
+
+    @media screen and (max-width: 576px) {
+        .japanese-content {
+            .japanese-row {
+                .japanese-col {
+                    .grid-card {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}
