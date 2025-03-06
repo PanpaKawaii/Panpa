@@ -24,8 +24,6 @@ export default function GuestHeader() {
     const menuItems = [
         { text: 'Trang chủ', path: '/' },
         { text: 'Giới thiệu', path: '/about' },
-        { text: 'Cửa hàng', path: '/booking/store' },
-        { text: 'Đặt chỗ', path: '/booking/pod' },
         { text: 'Liên hệ', path: '/contact' },
         { text: 'Test App', path: '/testapp' },
         { text: 'Game', path: '/game' },
@@ -38,7 +36,7 @@ export default function GuestHeader() {
             <AppBar position="static" className='menu'>
                 <Toolbar>
                     <Typography variant="h6" style={{ flexGrow: 1 }}>
-                        <Link to='/' className='brand-logo'><b>InnoSpace</b></Link>
+                        <Link to='/' className='brand-logo'><b>Panpa</b></Link>
                     </Typography>
 
                     <Link to='/' className='desktop-menu-item'><i className='fa-solid fa-house icon'></i> Home</Link>
