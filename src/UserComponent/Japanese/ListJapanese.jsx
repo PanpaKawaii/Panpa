@@ -26,7 +26,7 @@ export default function ListJapanese() {
                                 <Card>
                                     <Card.Body>
                                         <img src={japanese.src} alt={japanese.name} />
-                                        <h4>{japanese.name}</h4>
+                                        <p>{japanese.name}</p>
                                     </Card.Body>
                                 </Card>
                             </Link>

@@ -16,26 +16,30 @@ export default function TypePi() {
     return (
         <div className='typepi-container'>
             <div className='header'>
-                <h1><b>Type Pi</b></h1>
-                <h2><b>Length:
+                <h1>Type Pi</h1>
+                <h2>Length:
                     {
                         Pi.substring(0, YourPi.length).includes(YourPi) ?
                             <span> {PiLength}</span>
                             :
                             <span> 0</span>
                     }
-                </b></h2>
+                </h2>
 
-                <h2><b><span style={{ color: Pi.substring(0, YourPi.length).includes(YourPi) ? '#28a745' : '#dc3545', wordWrap: 'break-all' }}>
+                <h2><span style={{ color: Pi.substring(0, YourPi.length).includes(YourPi) ? '#28a745' : '#dc3545', wordWrap: 'break-all' }}>
                     {YourPi.split('').map((char, index) => (
                         <span key={index}>{char}{(index % 20 === 19) ? <br /> : ''}</span>
                     ))}
-                </span></b></h2>
+                </span></h2>
             </div>
 
             <Form onSubmit={handleEnterPi}>
-                <Form.Group controlId='yourpi' className='form-group'>
-                    <Form.Control as='textarea' value={YourPi} placeholder='Write your Pi' onChange={(e) => setYourPi(e.target.value)} />
+                <Form.Group controlId='yourpi'>
+                    <Form.Control
+                        as='textarea'
+                        value={YourPi}
+                        placeholder='Write your Pi'
+                        onChange={(e) => setYourPi(e.target.value)} />
                 </Form.Group>
             </Form>
         </div>

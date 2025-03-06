@@ -42,7 +42,7 @@ export default function ListGame() {
                                 <Card>
                                     <Card.Body>
                                         <img src={game.src} alt={game.name} />
-                                        <h4>{game.name}</h4>
+                                        <p>{game.name}</p>
                                     </Card.Body>
                                 </Card>
                             </Link>
