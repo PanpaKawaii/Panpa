@@ -54,6 +54,7 @@ export default function HomeContent() {
         console.log('filteredResults', filteredResults);
     };
 
+    if (!STOREs) return <div className='POD-home'>Chưa có gì hết đâu mấy bạn...</div>
 
     return (
         <div className='POD-home'>

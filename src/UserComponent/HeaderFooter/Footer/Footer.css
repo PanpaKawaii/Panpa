@@ -1,5 +1,5 @@
 .footer-container {
-    background-color: #feecd9;
+    background-color: #ccc;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -28,7 +28,7 @@
     }
 
     .section-2 {
-        background-color: #fdbc7f;
+        background-color: #aaa;
         display: flex;
         justify-content: center;
         width: 100%;
