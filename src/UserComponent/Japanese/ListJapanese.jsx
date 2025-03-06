@@ -16,17 +16,17 @@ export default function ListJapanese() {
     return (
         <div className='listjapanese-container'>
             <div className='header'>
-                <h1><b>List Japanese</b></h1>
+                <h1>List Japanese</h1>
             </div>
             <div className='content'>
-                <Row className='image-row'>
+                <Row className='row'>
                     {ListJapanese.map((japanese, index) => (
-                        <Col key={index} xs={6} sm={6} md={4} lg={3} xl={3} xxl={2} className='image-col'>
+                        <Col key={index} xs={6} sm={6} md={4} lg={3} xl={3} xxl={2} className='col'>
                             <Link to={`${japanese.link}`}>
-                                <Card className='image-card'>
-                                    <Card.Body className='card-body'>
+                                <Card>
+                                    <Card.Body>
                                         <img src={japanese.src} alt={japanese.name} />
-                                        <h4><b>{japanese.name}</b></h4>
+                                        <h4>{japanese.name}</h4>
                                     </Card.Body>
                                 </Card>
                             </Link>

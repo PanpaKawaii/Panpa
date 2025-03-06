@@ -1,21 +1,16 @@
-body {
-    margin: 0;
-}
-
 .listjapanese-container {
     width: 100%;
-    min-height: 80vh;
-    margin: 30px 0 100px;
+    min-height: 100vh;
+    margin: 40px 0;
     text-align: center;
     font-family: 'Quicksand', Arial, sans-serif;
 
     .header {
-        margin: 0 0 60px;
-
         h1 {
-            margin: 0 0 20px;
+            margin: 0 0 60px;
             color: #fe036a;
             font-size: 72px;
+            font-weight: bold;
         }
     }
 
@@ -25,11 +20,11 @@ body {
         display: flex;
         justify-content: center;
 
-        .image-row {
+        .row {
             width: 100%;
             max-width: 1500px;
 
-            .image-col {
+            .col {
                 display: flex;
                 justify-content: center;
                 align-items: start;
@@ -38,10 +33,10 @@ body {
                     color: black;
                     text-decoration: none;
 
-                    .image-card {
+                    .card {
                         width: 200px;
                         margin: 0 0 20px;
-                        background-color: #ffffff;
+                        background-color: #fff;
                         border: none;
                         border-radius: 20px;
                         overflow: hidden;
@@ -55,7 +50,7 @@ body {
                             img {
                                 width: 200px;
                                 height: 200px;
-                                border: 2px solid #f99dbc;
+                                border: 2px solid #ddd;
                                 border-radius: 20px;
                                 object-fit: cover;
                                 object-position: center;
@@ -64,11 +59,12 @@ body {
 
                             h4 {
                                 margin: 8px 0;
+                                font-weight: bold;
                             }
                         }
                     }
 
-                    .image-card:hover {
+                    .card:hover {
                         transform: translateY(-10px);
                     }
                 }
@@ -86,10 +82,10 @@ body {
 
     @media screen and (max-width: 576px) {
         .content {
-            .image-row {
-                .image-col {
+            .row {
+                .col {
                     a {
-                        .image-card {
+                        .card {
                             width: 180px;
                             .card-body {
                                 img {

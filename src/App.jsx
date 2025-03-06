@@ -1,11 +1,12 @@
 import { Route, Routes } from 'react-router-dom'
+import 'bootstrap/dist/css/bootstrap.min.css'
 import './App.css'
 
 import GuestHeader from './UserComponent/HeaderFooter/Header/GuestHeader.jsx'
 import Footer from './UserComponent/HeaderFooter/Footer/Footer.jsx'
 
-import ListGame from './UserComponent/Game/ListGame'
-import TypePi from './UserComponent/Game/TypePi'
+import ListGame from './UserComponent/Game/ListGame.jsx'
+import TypePi from './UserComponent/Game/TypePi.jsx'
 
 import ListJapanese from './UserComponent/Japanese/ListJapanese.jsx'
 import JapaneseKanji from './UserComponent/Japanese/JapaneseKanji.jsx'
