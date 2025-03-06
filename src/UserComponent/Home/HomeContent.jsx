@@ -1,9 +1,7 @@
-import React from 'react'
-import { useState, useEffect } from 'react';
+import React, { useState } from 'react';
+import { Button, Card, Carousel, Col, Form, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import { Form, Button, Row, Col, Card, Spinner, Carousel } from 'react-bootstrap';
-import './HomeContent.css'
-
+import './HomeContent.css';
 
 export default function HomeContent() {
 
@@ -15,22 +13,12 @@ export default function HomeContent() {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
-    // Những lựa chọn trên thanh tìm kiếm
-    const [selectedStore, setSelectedStore] = useState('');
-    const [selectedPod, setSelectedPod] = useState('');
-    const [selectedType, setSelectedType] = useState('');
     const [selectedUtility, setSelectedUtility] = useState('');
 
     // Lấy Utility được chọn
     const filteredUtilities = UTILITIes ? UTILITIes.filter(utility =>
         utility.id.toString() === selectedUtility.toString() || !selectedUtility.toString()
     ) : [];
-
-    // Lấy Pods của Utility được chọn
-    const Pods = (filteredUtilities && filteredUtilities.length > 0) ? filteredUtilities[0].pods : [];
-
-    // Create a new array uniquePodName with unique pod names
-    const [uniquePodName, setUniquePodName] = useState([]);
 
     // Lấy đánh giá của STORE dựa trên đánh giá của các Booking
     const getStoreBookingRating = (storeId) => {
@@ -41,28 +29,20 @@ export default function HomeContent() {
         return (rating / filteredBooking.length).toFixed(1);
     };
 
-    //Lấy Pods trùng khớp với những lựa chọn trên thanh tìm kiếm
-    const filteredResults = Pods ? Pods.filter(pod =>
-        (pod.storeId == selectedStore || !selectedStore) &&
-        (pod.name === selectedPod || !selectedPod) &&
-        (pod.typeId.toString() === selectedType.toString() || !selectedType.toString())
-    ) : [];
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        console.log({ selectedStore, selectedPod, selectedType, selectedUtility });
-        console.log('filteredResults', filteredResults);
-    };
-
-    if (!STOREs) return <div className='POD-home'>Chưa có gì hết đâu mấy bạn...</div>
+    if (!STOREs)
+        return (
+            <div className='POD-home'>
+                <p>Hiện tại trang Home chưa có gì hết</p>
+                <p>Mọi người qua trang Game và Japanese giúp tui nha</p>
+            </div>
+        )
 
     return (
         <div className='POD-home'>
 
             <div className='booking-now'>
                 <div className='booking-now-text'>
-                    <h1><b>ĐẶT CHỖ NGAY</b></h1>
-                    <h1><b>TẠI NƠI CỦA BẠN</b></h1>
+                    <h1><b>PANPA</b></h1>
                 </div>
             </div>
 
