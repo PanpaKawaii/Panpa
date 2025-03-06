@@ -588,7 +588,7 @@ export default function Chess() {
     return (
         <div className='chess-container'>
             <div className='header'>
-                <h1><b>CHESS</b></h1>
+                <h1>CHESS</h1>
                 {/* <h2 style={{ color: 'red', border: '5px solid red' }}><b>Nhớ đổi lượt chơi trước khi up github</b></h2> */}
             </div>
 

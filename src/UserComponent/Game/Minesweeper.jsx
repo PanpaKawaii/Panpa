@@ -229,7 +229,7 @@ export default function Minesweeper() {
     return (
         <div className='minesweeper-container'>
             <div className='header'>
-                <h1><b>Minesweeper</b></h1>
+                <h1>Minesweeper</h1>
             </div>
 
             <div className='content'>

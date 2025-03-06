@@ -403,7 +403,7 @@ export default function Tetris() {
     return (
         <div className='tetris-container'>
             <div className='header'>
-                <h1><b>Tetris {Time}</b></h1>
+                <h1>Tetris {Time}</h1>
             </div>
 
             <div className='content'>

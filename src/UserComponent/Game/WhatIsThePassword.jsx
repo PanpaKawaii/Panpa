@@ -189,8 +189,8 @@ export default function WhatIsThePassword() {
     return (
         <div className='whatisthepassword-container'>
             <div className='header'>
-                <h2><b>WHAT IS THE</b></h2>
-                <h1><b>PASSWORD?</b></h1>
+                <h2>WHAT IS THE</h2>
+                <h1>PASSWORD?</h1>
                 {/* <h1><b>Password: {Password}</b></h1> */}
             </div>
 

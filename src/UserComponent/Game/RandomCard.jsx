@@ -86,7 +86,7 @@ export default function RandomCard() {
     return (
         <div className='randomcard-container'>
             <div className='header'>
-                <h1><b>RANDOM CARD</b></h1>
+                <h1>RANDOM CARD</h1>
             </div>
 
             <div className='content'>

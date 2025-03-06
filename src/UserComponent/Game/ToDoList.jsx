@@ -95,7 +95,7 @@ export default function ToDoList() {
     return (
         <div className='todolist-container'>
             <div className='header'>
-                <h1><b>To Do List</b></h1>
+                <h1>To Do List</h1>
             </div>
 
             <div className='content'>

@@ -172,7 +172,7 @@ export default function GenerateMaze() {
     return (
         <div className='generatemaze-container'>
             <div className='header'>
-                <h1><b>Generate Maze</b></h1>
+                <h1>Generate Maze</h1>
             </div>
 
             <div className='content'>
