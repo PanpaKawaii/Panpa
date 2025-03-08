@@ -15,12 +15,17 @@
             color: #64afff;
             font-size: 54px;
             font-weight: bold;
+
+            span {
+                font-size: 120px;
+                font-weight: bold;
+                font-family: 'Forte';
+            }
         }
 
-        span {
+        p {
             width: 100%;
             max-width: 400px;
-            margin: 0 0 8px;
             font-weight: bold;
             font-size: 32px;
         }
