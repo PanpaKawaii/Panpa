@@ -135,6 +135,9 @@ export default function Chess() {
                 redcell.classList.add('moveablecell');
                 newAvailablePath = [...newAvailablePath, [row, col + 2]];
             }
+            console.log('Before', newAvailablePath);
+            newAvailablePath = eliminateUnavailablePath(newAvailablePath);
+            console.log('After', newAvailablePath);
             setAvailablePath(p => newAvailablePath);
         } else if (cell === 2 || cell === -2) {//////////////////////////////////////////////////////////////////////////////////////////////////// Queen
             console.log('2: Queen');
@@ -446,6 +449,132 @@ export default function Chess() {
 
         let pickcell = document.getElementById(`cell-${row}-${col}`);
         pickcell.classList.add('pickedcell');
+    }
+
+
+    const eliminateUnavailablePath = (AvailablePath) => {
+        let NeedToEleminating = [];
+        AvailablePath.forEach(path => {
+            if (checkIsHavingEnemies(path[0], path[1])) {
+                NeedToEleminating = [...NeedToEleminating, [path[0], path[1]]];
+                let redcell = document.getElementById(`cell-${path[0]}-${path[1]}`);
+                redcell.classList.remove('moveablecell');
+            }
+        });
+        let DoneAvailablePath = AvailablePath.filter(path => !NeedToEleminating.some(needPath => needPath[0] === path[0] && needPath[1] === path[1]));
+        return DoneAvailablePath;
+    }
+
+    const checkIsHavingEnemies = (row, col) => {
+        if (PlayTable[row - Player][col - Player] === Player * (-6)) {
+            return true;
+        } else if (PlayTable[row - Player][col + Player] === Player * (-6)) {
+            return true;
+        }
+        for (let i = 1; i < 8; i++) {// Up-right diagonal
+            const newRow = row - i;
+            const newCol = col + i;
+            if (newRow >= 0 && newRow <= 7 && newCol >= 0 && newCol <= 7) {
+                if (PlayTable[newRow][newCol] === Player * (-2) || PlayTable[newRow][newCol] === Player * (-3)) {
+                    // let redcell = document.getElementById(`cell-${row - i}-${col + i}`);
+                    // redcell.classList.add('moveablecell');
+                    // newAvailablePath = [...newAvailablePath, [row - i, col + i]];
+                    return true;
+                } else if (PlayTable[newRow][newCol] !== Player * (-2) && PlayTable[newRow][newCol] !== Player * (-3) && PlayTable[newRow][newCol] !== 0) {
+                    break;
+                }
+            } else break;
+        }
+        for (let i = 1; i < 8; i++) {// Up-left diagonal
+            const newRow = row - i;
+            const newCol = col - i;
+            if (newRow >= 0 && newRow <= 7 && newCol >= 0 && newCol <= 7) {
+                if (PlayTable[newRow][newCol] === Player * (-2) || PlayTable[newRow][newCol] === Player * (-3)) {
+                    return true;
+                } else if (PlayTable[newRow][newCol] !== Player * (-2) && PlayTable[newRow][newCol] !== Player * (-3) && PlayTable[newRow][newCol] !== 0) {
+                    break;
+                }
+            } else break;
+        }
+        for (let i = 1; i < 8; i++) {// Down-right diagonal
+            const newRow = row + i;
+            const newCol = col + i;
+            if (newRow >= 0 && newRow <= 7 && newCol >= 0 && newCol <= 7) {
+                if (PlayTable[newRow][newCol] === Player * (-2) || PlayTable[newRow][newCol] === Player * (-3)) {
+                    return true;
+                } else if (PlayTable[newRow][newCol] !== Player * (-2) && PlayTable[newRow][newCol] !== Player * (-3) && PlayTable[newRow][newCol] !== 0) {
+                    break;
+                }
+            } else break;
+        }
+        for (let i = 1; i < 8; i++) {// Down-left diagonal
+            const newRow = row + i;
+            const newCol = col - i;
+            if (newRow >= 0 && newRow <= 7 && newCol >= 0 && newCol <= 7) {
+                if (PlayTable[newRow][newCol] === Player * (-2) || PlayTable[newRow][newCol] === Player * (-3)) {
+                    return true;
+                } else if (PlayTable[newRow][newCol] !== Player * (-2) && PlayTable[newRow][newCol] !== Player * (-3) && PlayTable[newRow][newCol] !== 0) {
+                    break;
+                }
+            } else break;
+        }
+
+        for (let i = 1; i < 8; i++) {// Up line
+            const newRow = row - i;
+            const newCol = col;
+            if (newRow >= 0 && newRow <= 7 && newCol >= 0 && newCol <= 7) {
+                if (PlayTable[newRow][newCol] === Player * (-2) || PlayTable[newRow][newCol] === Player * (-5)) {
+                    return true;
+                } else if (PlayTable[newRow][newCol] !== Player * (-2) && PlayTable[newRow][newCol] !== Player * (-5) && PlayTable[newRow][newCol] !== 0) {
+                    break;
+                }
+            } else break;
+        }
+        for (let i = 1; i < 8; i++) {// Down line
+            const newRow = row + i;
+            const newCol = col;
+            if (newRow >= 0 && newRow <= 7 && newCol >= 0 && newCol <= 7) {
+                if (PlayTable[newRow][newCol] === Player * (-2) || PlayTable[newRow][newCol] === Player * (-5)) {
+                    return true;
+                } else if (PlayTable[newRow][newCol] !== Player * (-2) && PlayTable[newRow][newCol] !== Player * (-5) && PlayTable[newRow][newCol] !== 0) {
+                    break;
+                }
+            } else break;
+        }
+        for (let i = 1; i < 8; i++) {// Left line
+            const newRow = row;
+            const newCol = col - 1;
+            if (newRow >= 0 && newRow <= 7 && newCol >= 0 && newCol <= 7) {
+                if (PlayTable[newRow][newCol] === Player * (-2) || PlayTable[newRow][newCol] === Player * (-5)) {
+                    return true;
+                } else if (PlayTable[newRow][newCol] !== Player * (-2) && PlayTable[newRow][newCol] !== Player * (-5) && PlayTable[newRow][newCol] !== 0) {
+                    break;
+                }
+            } else break;
+        }
+        for (let i = 1; i < 8; i++) {// Right line
+            const newRow = row;
+            const newCol = col + 1;
+            if (newRow >= 0 && newRow <= 7 && newCol >= 0 && newCol <= 7) {
+                if (PlayTable[newRow][newCol] === Player * (-2) || PlayTable[newRow][newCol] === Player * (-5)) {
+                    return true;
+                } else if (PlayTable[newRow][newCol] !== Player * (-2) && PlayTable[newRow][newCol] !== Player * (-5) && PlayTable[newRow][newCol] !== 0) {
+                    break;
+                }
+            } else break;
+        }
+
+        const KnightPath = [[1, 2], [1, -2], [-1, 2], [-1, -2], [2, 1], [2, -1], [-2, 1], [-2, -1]]
+        KnightPath.forEach(path => {
+            const newRow = row + path[0];
+            const newCol = col + path[1];
+            if (newRow >= 0 && newRow <= 7 && newCol >= 0 && newCol <= 7) {
+                if (PlayTable[newRow][newCol] === Player * (-4)) {
+                    return true;
+                }
+            }
+        });
+        return false;
     }
 
     {/*
