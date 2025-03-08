@@ -23,11 +23,13 @@ import TestObject from './UserComponent/Game/TestObject.jsx'
 import ListJapanese from './UserComponent/Japanese/ListJapanese.jsx'
 import JapaneseKanji from './UserComponent/Japanese/JapaneseKanji.jsx'
 import JapaneseVerb from './UserComponent/Japanese/JapaneseVerb.jsx'
+import ScrollToTop from './ScrollToTopComponent/ScrollToTop.js'
 
 function App() {
 
   return (
     <>
+      <ScrollToTop />
       <GuestHeader />
       <Routes>
         <Route path='/' element={<HomeContent />} />

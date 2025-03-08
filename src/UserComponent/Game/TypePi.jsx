@@ -16,21 +16,21 @@ export default function TypePi() {
     return (
         <div className='typepi-container'>
             <div className='header'>
-                <h1>Type Pi</h1>
-                <h2>Length:
+                <h1>Type Pi π</h1>
+                <span>Length:
                     {
                         Pi.substring(0, YourPi.length).includes(YourPi) ?
                             <span> {PiLength}</span>
                             :
                             <span> 0</span>
                     }
-                </h2>
+                </span>
 
-                <h2><span style={{ color: Pi.substring(0, YourPi.length).includes(YourPi) ? '#28a745' : '#dc3545', wordWrap: 'break-all' }}>
+                <div style={{ color: Pi.substring(0, YourPi.length).includes(YourPi) ? '#28a745' : '#dc3545' }}>
                     {YourPi.split('').map((char, index) => (
                         <span key={index}>{char}{(index % 20 === 19) ? <br /> : ''}</span>
                     ))}
-                </span></h2>
+                </div>
             </div>
 
             <Form onSubmit={handleEnterPi}>
@@ -39,7 +39,10 @@ export default function TypePi() {
                         as='textarea'
                         value={YourPi}
                         placeholder='Write your Pi'
-                        onChange={(e) => setYourPi(e.target.value)} />
+                        onChange={(e) => {
+                            const validInput = e.target.value.replace(/[^0-9,]/g, '');
+                            setYourPi(validInput);
+                        }} />
                 </Form.Group>
             </Form>
         </div>
