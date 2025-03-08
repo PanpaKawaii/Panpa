@@ -42,11 +42,22 @@ export default function Chess() {
         [0, 0, 0, 0, 0, 0, 0, 0],
     ]
 
+    const TestCastle = [
+        [-5, 0, 0, 0, -1, 0, 0, -5],
+        [0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, -1, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 1, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0],
+        [5, 0, 0, 0, 1, 0, 0, 5],
+    ]
+
     const [Player, setPlayer] = useState(1);
     const [Pick, setPick] = useState([0, 0, 0]);
     const [AvailablePath, setAvailablePath] = useState([]);
     const [Move, setMove] = useState(false);
-    const [Castling, setCastling] = useState([true, true]);
+    const [Castling, setCastling] = useState([true, true, true, true]);
     const [EnPassant, setEnPassant] = useState([0, 0, 0]);
     const [Promotion, setPromotion] = useState([0, 0, 0, false]);
 
@@ -59,7 +70,7 @@ export default function Chess() {
         setPick([0, 0, 0]);
         setAvailablePath([]);
         setMove(false);
-        setCastling([true, true]);
+        setCastling([true, true, true, true]);
         setEnPassant([0, 0, 0]);
         setPromotion([0, 0, 0, false]);//==================================================================================================Change to false
 
@@ -104,17 +115,25 @@ export default function Chess() {
                     }
                 }
             };
-            if ((cell === -1 && Castling[0] === true) || (cell === 1 && Castling[1] === true)) {
-                if (PlayTable[row][col + 1] === 0 && PlayTable[row][col + 2] === 0) {
-                    let redcell = document.getElementById(`cell-${row}-${col + 2}`);
-                    redcell.classList.add('moveablecell');
-                    newAvailablePath = [...newAvailablePath, [row, col + 2]];
-                }
-                if (PlayTable[row][col - 1] === 0 && PlayTable[row][col - 2] === 0) {
-                    let redcell = document.getElementById(`cell-${row}-${col - 2}`);
-                    redcell.classList.add('moveablecell');
-                    newAvailablePath = [...newAvailablePath, [row, col - 2]];
-                }
+            if (cell === -1 && PlayTable[row][col - 1] === 0 && PlayTable[row][col - 2] === 0 && Castling[0] === true) {//Nhập thành King đen cánh trái
+                let redcell = document.getElementById(`cell-${row}-${col - 2}`);
+                redcell.classList.add('moveablecell');
+                newAvailablePath = [...newAvailablePath, [row, col - 2]];
+            }
+            if (cell === -1 && PlayTable[row][col + 1] === 0 && PlayTable[row][col + 2] === 0 && Castling[1] === true) {//Nhập thành King đen cánh phải
+                let redcell = document.getElementById(`cell-${row}-${col + 2}`);
+                redcell.classList.add('moveablecell');
+                newAvailablePath = [...newAvailablePath, [row, col + 2]];
+            }
+            if (cell === 1 && PlayTable[row][col - 1] === 0 && PlayTable[row][col - 2] === 0 && Castling[2] === true) {//Nhập thành King trắng cánh trái
+                let redcell = document.getElementById(`cell-${row}-${col - 2}`);
+                redcell.classList.add('moveablecell');
+                newAvailablePath = [...newAvailablePath, [row, col - 2]];
+            }
+            if (cell === 1 && PlayTable[row][col + 1] === 0 && PlayTable[row][col + 2] === 0 && Castling[3] === true) {//Nhập thành King trắng cánh phải
+                let redcell = document.getElementById(`cell-${row}-${col + 2}`);
+                redcell.classList.add('moveablecell');
+                newAvailablePath = [...newAvailablePath, [row, col + 2]];
             }
             setAvailablePath(p => newAvailablePath);
         } else if (cell === 2 || cell === -2) {//////////////////////////////////////////////////////////////////////////////////////////////////// Queen
@@ -439,8 +458,8 @@ export default function Chess() {
 
 
 
-    const handleMove = (row, col) => {
-        console.log('handleMove');
+    const handleMoveTo = (row, col) => {
+        console.log('handleMoveTo');
 
         for (let row = 0; row < 8; row++) {
             for (let col = 0; col < 8; col++) {
@@ -456,12 +475,12 @@ export default function Chess() {
             newPlayTable[row][col] = Pick[0];
             newPlayTable[Pick[1]][Pick[2]] = 0;
             // Nếu vừa thực hiện nước đi của King
-            if (
-                (// Nếu King đen hoặc trắng còn cơ hội nhập thành
-                    (Pick[0] === -1 && Castling[0] === true) ||
-                    (Pick[0] === 1 && Castling[1] === true)
-                ) &&// Và thực hiện nước đi nhập thành
-                (Pick[2] + 2 === col || Pick[2] - 2 === col)
+            if (// Nếu King đen hoặc trắng còn cơ hội nhập thành và thực hiện nước đi nhập thành
+                (Pick[0] === -1 && Castling[0] === true && Pick[2] - 2 === col) ||
+                (Pick[0] === -1 && Castling[1] === true && Pick[2] + 2 === col) ||
+                (Pick[0] === 1 && Castling[2] === true && Pick[2] - 2 === col) ||
+                (Pick[0] === 1 && Castling[3] === true && Pick[2] + 2 === col)
+
             ) {
                 newPlayTable[row][(col + Pick[2]) / 2] = Pick[0] * 5;// Xuất hiện Rook ở giữa 2 ô của King
                 newPlayTable[row][col > Pick[2] ? 7 : 0] = 0;// Nếu nhập thành bên phải thì Rook phải đi qua, nhập thành bên trái thì Rook trái đi qua
@@ -469,7 +488,14 @@ export default function Chess() {
             // Bất cứ khi nào King di chuyển đều sẽ mất cơ hội nhập thành
             let newCastling = [...Castling];
             newCastling[Pick[0] === -1 && 0] = false;
-            newCastling[Pick[0] === 1 && 1] = false;
+            newCastling[Pick[0] === -1 && 1] = false;
+            newCastling[Pick[0] === 1 && 2] = false;
+            newCastling[Pick[0] === 1 && 3] = false;
+            // Bất cứ khi nào Rook di chuyển đều sẽ mất cơ hội nhập thành cánh Rook đó
+            newCastling[Pick[0] === -5 && Pick[1] === 0 && Pick[2] === 0 && 0] = false;
+            newCastling[Pick[0] === -5 && Pick[1] === 0 && Pick[2] === 7 && 1] = false;
+            newCastling[Pick[0] === 5 && Pick[1] === 7 && Pick[2] === 0 && 2] = false;
+            newCastling[Pick[0] === 5 && Pick[1] === 7 && Pick[2] === 7 && 3] = false;
             setCastling(newCastling);
 
             // Pawn thực hiện nước đi
@@ -621,12 +647,13 @@ export default function Chess() {
                             <option className='gamemode-option' value='TicTacToe'>Tic Tac Toe</option>
                         </Form.Control>
                     </Form.Group>
-                    <p>Pick: {Pick[0]} - PickRow: {Pick[1]} - PickCell: {Pick[2]}</p>
-                    <p>Move: {Move ? 'True' : 'False'}</p>
+                    <div>Pick: {Pick[0]} - PickRow: {Pick[1]} - PickCell: {Pick[2]}</div>
+                    <div>Move: {Move ? 'True' : 'False'}</div>
                     {/* <p>AvailablePath: {JSON.stringify(AvailablePath)}</p> */}
-                    <p>CastlingBlack: {Castling[0] ? 'True' : 'False'} - CastlingWhite: {Castling[1] ? 'True' : 'False'}</p>
-                    <p>EnPassant: {EnPassant[0]} - EnPassantRow: {EnPassant[1]} - EnPassantCell: {EnPassant[2]}</p>
-                    <p>Promotion: {Promotion[3] ? 'True' : 'False'} - PromotionPick: {Promotion[0]}</p>
+                    <div>Castle Black: {Castling[0] ? 'True' : 'False'} and {Castling[1] ? 'True' : 'False'}</div>
+                    <div>Castle White: {Castling[2] ? 'True' : 'False'} and {Castling[3] ? 'True' : 'False'}</div>
+                    <div>EnPassant: {EnPassant[0]} - EnPassantRow: {EnPassant[1]} - EnPassantCell: {EnPassant[2]}</div>
+                    <div>Promotion: {Promotion[3] ? 'True' : 'False'} - PromotionPick: {Promotion[0]}</div>
                 </div>
 
                 <div className='result'
@@ -667,7 +694,7 @@ export default function Chess() {
                                         style={{
                                             cursor: cell * Player > 0 && 'pointer',
                                         }}
-                                        onClick={() => { Move === false ? handlePickAndShowPath(cell, index_row, index_col) : handleMove(index_row, index_col) }}
+                                        onClick={() => { Move === false ? handlePickAndShowPath(cell, index_row, index_col) : handleMoveTo(index_row, index_col) }}
                                     >
                                         {cell === -1 && <i className='fa-regular fa-chess-king black-side'></i>}
                                         {cell === -2 && <i className='fa-regular fa-chess-queen black-side'></i>}
