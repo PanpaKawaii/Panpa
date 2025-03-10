@@ -20,7 +20,7 @@ export default function Chess() {
         [5, 4, 3, 2, 1, 3, 4, 5]
     ]
 
-    const RandomPlayTable = [
+    const TestRandomPlayTable = [
         [-5, -4, -3, -2, -1, 6, -4, -5],
         [-6, -6, -6, -6, -6, -6, -6, -6],
         [0, -6, -6, 3, 0, 0, 0, 0],
@@ -31,7 +31,7 @@ export default function Chess() {
         [5, 4, 3, 2, 1, 3, 4, 5]
     ]
 
-    const NothingBoard = [
+    const TestNothingBoard = [
         [0, 0, 0, 0, 0, 0, 0, 0],
         [0, 0, 0, 0, 0, 0, 0, 0],
         [0, 0, 0, 0, 0, 0, 0, 0],
@@ -39,10 +39,10 @@ export default function Chess() {
         [0, 0, 0, 0, 0, 0, 0, 0],
         [0, 0, 0, 0, 0, 0, 0, 0],
         [0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0]
     ]
 
-    const TestCastle = [
+    const TestCastling = [
         [-5, 0, 0, 0, -1, 0, 0, -5],
         [0, 0, 0, 0, 0, 0, 0, 0],
         [0, 0, 0, 0, -1, 0, 0, 0],
@@ -50,7 +50,18 @@ export default function Chess() {
         [0, 0, 0, 0, 0, 0, 0, 0],
         [0, 0, 0, 0, 1, 0, 0, 0],
         [0, 0, 0, 0, 0, 0, 0, 0],
-        [5, 0, 0, 0, 1, 0, 0, 5],
+        [5, 0, 0, 0, 1, 0, 0, 5]
+    ]
+
+    const TestOnlyKingVsAll = [
+        [0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, -1, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0],
+        [1, 2, 3, 4, 5, 6, 0, 0]
     ]
 
     const [Player, setPlayer] = useState(1);
@@ -64,7 +75,7 @@ export default function Chess() {
     const [Refresh, setRefresh] = useState(0);
 
     useEffect(() => {
-        setPlayTable(InitialPlayTable);
+        setPlayTable(TestOnlyKingVsAll);
 
         setPlayer(1);
         setPick([0, 0, 0]);
@@ -461,14 +472,17 @@ export default function Chess() {
                 redcell.classList.remove('moveablecell');
             }
         });
+        console.log('NeedToEleminating', NeedToEleminating);
         let DoneAvailablePath = AvailablePath.filter(path => !NeedToEleminating.some(needPath => needPath[0] === path[0] && needPath[1] === path[1]));
         return DoneAvailablePath;
     }
 
     const checkIsHavingEnemies = (row, col) => {
         if (PlayTable[row - Player][col - Player] === Player * (-6)) {
+            console.log('Pawn 1', row, col);
             return true;
         } else if (PlayTable[row - Player][col + Player] === Player * (-6)) {
+            console.log('Pawn 2', row, col);
             return true;
         }
         for (let i = 1; i < 8; i++) {// Up-right diagonal
@@ -476,9 +490,7 @@ export default function Chess() {
             const newCol = col + i;
             if (newRow >= 0 && newRow <= 7 && newCol >= 0 && newCol <= 7) {
                 if (PlayTable[newRow][newCol] === Player * (-2) || PlayTable[newRow][newCol] === Player * (-3)) {
-                    // let redcell = document.getElementById(`cell-${row - i}-${col + i}`);
-                    // redcell.classList.add('moveablecell');
-                    // newAvailablePath = [...newAvailablePath, [row - i, col + i]];
+                    console.log('Up-right', row, col);
                     return true;
                 } else if (PlayTable[newRow][newCol] !== Player * (-2) && PlayTable[newRow][newCol] !== Player * (-3) && PlayTable[newRow][newCol] !== 0) {
                     break;
@@ -490,6 +502,7 @@ export default function Chess() {
             const newCol = col - i;
             if (newRow >= 0 && newRow <= 7 && newCol >= 0 && newCol <= 7) {
                 if (PlayTable[newRow][newCol] === Player * (-2) || PlayTable[newRow][newCol] === Player * (-3)) {
+                    console.log('Up-left', row, col);
                     return true;
                 } else if (PlayTable[newRow][newCol] !== Player * (-2) && PlayTable[newRow][newCol] !== Player * (-3) && PlayTable[newRow][newCol] !== 0) {
                     break;
@@ -501,6 +514,7 @@ export default function Chess() {
             const newCol = col + i;
             if (newRow >= 0 && newRow <= 7 && newCol >= 0 && newCol <= 7) {
                 if (PlayTable[newRow][newCol] === Player * (-2) || PlayTable[newRow][newCol] === Player * (-3)) {
+                    console.log('Down-right', row, col);
                     return true;
                 } else if (PlayTable[newRow][newCol] !== Player * (-2) && PlayTable[newRow][newCol] !== Player * (-3) && PlayTable[newRow][newCol] !== 0) {
                     break;
@@ -512,6 +526,7 @@ export default function Chess() {
             const newCol = col - i;
             if (newRow >= 0 && newRow <= 7 && newCol >= 0 && newCol <= 7) {
                 if (PlayTable[newRow][newCol] === Player * (-2) || PlayTable[newRow][newCol] === Player * (-3)) {
+                    console.log('Down-left', row, col);
                     return true;
                 } else if (PlayTable[newRow][newCol] !== Player * (-2) && PlayTable[newRow][newCol] !== Player * (-3) && PlayTable[newRow][newCol] !== 0) {
                     break;
@@ -524,6 +539,7 @@ export default function Chess() {
             const newCol = col;
             if (newRow >= 0 && newRow <= 7 && newCol >= 0 && newCol <= 7) {
                 if (PlayTable[newRow][newCol] === Player * (-2) || PlayTable[newRow][newCol] === Player * (-5)) {
+                    console.log('Up line', row, col);
                     return true;
                 } else if (PlayTable[newRow][newCol] !== Player * (-2) && PlayTable[newRow][newCol] !== Player * (-5) && PlayTable[newRow][newCol] !== 0) {
                     break;
@@ -535,6 +551,7 @@ export default function Chess() {
             const newCol = col;
             if (newRow >= 0 && newRow <= 7 && newCol >= 0 && newCol <= 7) {
                 if (PlayTable[newRow][newCol] === Player * (-2) || PlayTable[newRow][newCol] === Player * (-5)) {
+                    console.log('Down line', row, col);
                     return true;
                 } else if (PlayTable[newRow][newCol] !== Player * (-2) && PlayTable[newRow][newCol] !== Player * (-5) && PlayTable[newRow][newCol] !== 0) {
                     break;
@@ -546,6 +563,7 @@ export default function Chess() {
             const newCol = col - 1;
             if (newRow >= 0 && newRow <= 7 && newCol >= 0 && newCol <= 7) {
                 if (PlayTable[newRow][newCol] === Player * (-2) || PlayTable[newRow][newCol] === Player * (-5)) {
+                    console.log('Left line', row, col);
                     return true;
                 } else if (PlayTable[newRow][newCol] !== Player * (-2) && PlayTable[newRow][newCol] !== Player * (-5) && PlayTable[newRow][newCol] !== 0) {
                     break;
@@ -557,6 +575,7 @@ export default function Chess() {
             const newCol = col + 1;
             if (newRow >= 0 && newRow <= 7 && newCol >= 0 && newCol <= 7) {
                 if (PlayTable[newRow][newCol] === Player * (-2) || PlayTable[newRow][newCol] === Player * (-5)) {
+                    console.log('Right line', row, col);
                     return true;
                 } else if (PlayTable[newRow][newCol] !== Player * (-2) && PlayTable[newRow][newCol] !== Player * (-5) && PlayTable[newRow][newCol] !== 0) {
                     break;
@@ -570,6 +589,7 @@ export default function Chess() {
             const newCol = col + path[1];
             if (newRow >= 0 && newRow <= 7 && newCol >= 0 && newCol <= 7) {
                 if (PlayTable[newRow][newCol] === Player * (-4)) {
+                    console.log('Have Knight', row, col);
                     return true;
                 }
             }

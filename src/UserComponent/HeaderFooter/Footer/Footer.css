@@ -1,5 +1,6 @@
 .footer-container {
-    background-color: #ccc;
+    /* background-color: #ccc; */
+    background-image: linear-gradient(90deg, #ff8080, #ffc080, #ffff80, #80ff80, #8080ff, #c080ff, #ff80ff);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -28,7 +29,8 @@
     }
 
     .section-2 {
-        background-color: #aaa;
+        /* background-color: #aaa; */
+        background-image: linear-gradient(90deg, #ff4040, #ffa040, #ffff40, #40ff40, #4040ff, #a040ff, #ff40ff);
         display: flex;
         justify-content: center;
         width: 100%;

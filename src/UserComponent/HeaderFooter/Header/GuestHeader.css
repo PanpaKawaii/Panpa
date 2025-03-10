@@ -7,7 +7,8 @@
 
     .menu {
         width: 100%;
-        background-color: #ccc;
+        /* background-color: #ccc; */
+        background-image: linear-gradient(90deg, #ff8080, #ffc080, #ffff80, #80ff80, #8080ff, #c080ff, #ff80ff);
         box-shadow: 0 0 7px 0 rgba(0, 0, 0, 0.4);
 
         a {
