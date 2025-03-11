@@ -61,7 +61,7 @@ export default function Chess() {
         [0, 0, 0, 0, 0, 0, 0, 0],
         [0, 0, 0, 0, 0, 0, 0, 0],
         [0, 0, 0, 0, 0, 0, 0, 0],
-        [1, 2, 3, 4, 5, 6, 0, 0]
+        [1, 2, 3, 4, 6, 5, 0, 0]
     ]
 
     const [Player, setPlayer] = useState(1);
@@ -76,7 +76,7 @@ export default function Chess() {
     const [Refresh, setRefresh] = useState(0);
 
     useEffect(() => {
-        setPlayTable(InitialPlayTable);
+        setPlayTable(TestOnlyKingVsAll);
 
         setPlayer(1);
         setPick([0, 0, 0]);
@@ -128,7 +128,7 @@ export default function Chess() {
                     }
                 }
             };
-            if (cell === -1 && PlayTable[row][col - 1] === 0 && PlayTable[row][col - 2] === 0 && Castling[0] === true) {//Nhập thành King đen cánh trái
+            if (cell === -1 && PlayTable[row][col - 1] === 0 && PlayTable[row][col - 2] === 0 && PlayTable[row][col - 3] === 0 && Castling[0] === true) {//Nhập thành King đen cánh trái
                 let redcell = document.getElementById(`cell-${row}-${col - 2}`);
                 redcell.classList.add('moveablecell');
                 newAvailablePath = [...newAvailablePath, [row, col - 2]];
@@ -138,7 +138,7 @@ export default function Chess() {
                 redcell.classList.add('moveablecell');
                 newAvailablePath = [...newAvailablePath, [row, col + 2]];
             }
-            if (cell === 1 && PlayTable[row][col - 1] === 0 && PlayTable[row][col - 2] === 0 && Castling[2] === true) {//Nhập thành King trắng cánh trái
+            if (cell === 1 && PlayTable[row][col - 1] === 0 && PlayTable[row][col - 2] === 0 && PlayTable[row][col - 3] === 0 && Castling[2] === true) {//Nhập thành King trắng cánh trái
                 let redcell = document.getElementById(`cell-${row}-${col - 2}`);
                 redcell.classList.add('moveablecell');
                 newAvailablePath = [...newAvailablePath, [row, col - 2]];
@@ -329,7 +329,7 @@ export default function Chess() {
         } else if (cell === 4 || cell === -4) {//////////////////////////////////////////////////////////////////////////////////////////////////// Knight
             console.log('4: Knight');
             const KnightPath = [[1, 2], [1, -2], [-1, 2], [-1, -2], [2, 1], [2, -1], [-2, 1], [-2, -1]]
-            KnightPath.forEach(path => {
+            for (const path of KnightPath) {
                 const newRow = row + path[0];
                 const newCol = col + path[1];
                 if (newRow >= 0 && newRow < 8 && newCol >= 0 && newCol < 8) {
@@ -339,7 +339,7 @@ export default function Chess() {
                         newAvailablePath = [...newAvailablePath, [newRow, newCol]];
                     }
                 }
-            });
+            }
             setAvailablePath(p => newAvailablePath);
         } else if (cell === 5 || cell === -5) {//////////////////////////////////////////////////////////////////////////////////////////////////// Rook
             console.log('5: Rook');
@@ -467,13 +467,13 @@ export default function Chess() {
 
     const eliminateUnavailablePath = (AvailablePath) => {
         let NeedToEleminating = [];
-        AvailablePath.forEach(path => {
+        for (const path of AvailablePath) {
             if (checkIsHavingEnemies(path[0], path[1])) {
                 NeedToEleminating = [...NeedToEleminating, [path[0], path[1]]];
                 let redcell = document.getElementById(`cell-${path[0]}-${path[1]}`);
                 redcell.classList.remove('moveablecell');
             }
-        });
+        }
         console.log('NeedToEleminating', NeedToEleminating);
         let DoneAvailablePath = AvailablePath.filter(path => !NeedToEleminating.some(needPath => needPath[0] === path[0] && needPath[1] === path[1]));
         return DoneAvailablePath;
@@ -481,14 +481,19 @@ export default function Chess() {
 
     const checkIsHavingEnemies = (row, col) => {
         // console.log('checkIsHavingEnemies');
-        if (PlayTable[row - Player][col - Player] === Player * (-6)) {
-            console.log('Pawn 1', row, col);
-            return true;
-        } else if (PlayTable[row - Player][col + Player] === Player * (-6)) {
-            console.log('Pawn 2', row, col);
-            return true;
+        if (row - Player >= 0 && row - Player <= 7 && col - Player >= 0 && col - Player <= 7) {
+            if (PlayTable[row - Player][col - Player] === Player * (-6)) {
+                console.log('Pawn 1', row, col);
+                return true;
+            }
         }
-        // console.log('Start Up-right', row, col);
+        if (row - Player >= 0 && row - Player <= 7 && col + Player >= 0 && col + Player <= 7) {
+            if (PlayTable[row - Player][col + Player] === Player * (-6)) {
+                console.log('Pawn 2', row, col);
+                return true;
+            }
+        }
+        console.log('Start Up-right', row, col);
         for (let i = 1; i < 8; i++) {// Up-right diagonal
             const newRow = row - i;
             const newCol = col + i;
@@ -501,7 +506,7 @@ export default function Chess() {
                 }
             } else break;
         }
-        // console.log('Start Up-left', row, col);
+        console.log('Start Up-left', row, col);
         for (let i = 1; i < 8; i++) {// Up-left diagonal
             const newRow = row - i;
             const newCol = col - i;
@@ -594,7 +599,7 @@ export default function Chess() {
             } else break;
         }
 
-        // console.log('Start Knight', row, col);
+        console.log('Start Knight', row, col);
         const KnightPath = [[1, 2], [1, -2], [-1, 2], [-1, -2], [2, 1], [2, -1], [-2, 1], [-2, -1]]
         for (const path of KnightPath) {
             const newRow = row + path[0];
@@ -604,7 +609,7 @@ export default function Chess() {
                     console.log('Have Knight', row, col);
                     return true;
                 }
-            } else break;
+            }
         }
         return false;
     }
