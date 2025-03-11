@@ -71,11 +71,12 @@ export default function Chess() {
     const [Castling, setCastling] = useState([true, true, true, true]);
     const [EnPassant, setEnPassant] = useState([0, 0, 0]);
     const [Promotion, setPromotion] = useState([0, 0, 0, false]);
+    const [Rotate, setRotate] = useState(false);
 
     const [Refresh, setRefresh] = useState(0);
 
     useEffect(() => {
-        setPlayTable(TestOnlyKingVsAll);
+        setPlayTable(InitialPlayTable);
 
         setPlayer(1);
         setPick([0, 0, 0]);
@@ -84,6 +85,7 @@ export default function Chess() {
         setCastling([true, true, true, true]);
         setEnPassant([0, 0, 0]);
         setPromotion([0, 0, 0, false]);//==================================================================================================Change to false
+        setRotate(false);
 
         for (let row = 0; row < 8; row++) {
             for (let col = 0; col < 8; col++) {
@@ -785,6 +787,11 @@ export default function Chess() {
                         </Button>
                         <Button className='btn' onClick={() => setRefresh(Refresh + 1)}>RESTART</Button>
                         <Button className='btn' onClick={() => setPlayer(PLAYER => -PLAYER)}>SET PLAYER {Player}</Button>
+                        <Button className='btn' style={{ backgroundColor: Rotate ? '#ccc' : '#999' }} onClick={() => setRotate(p => !p)} >
+                            <i className='fa-solid fa-chess-king black-side' style={{ transform: Rotate && 'rotateZ(180deg)', color: 'black' }}></i>
+                            <span> ROTATE </span>
+                            <i className='fa-solid fa-chess-king white-side' style={{ color: 'white' }}></i>
+                        </Button>
                     </div>
                     <Form.Group controlId='gamemode' className='form-group'>
                         <Form.Control
@@ -855,12 +862,12 @@ export default function Chess() {
                                         }}
                                         onClick={() => { Move === false ? handlePickAndShowPath(cell, index_row, index_col) : handleMoveTo(index_row, index_col) }}
                                     >
-                                        {cell === -1 && <i className='fa-regular fa-chess-king black-side'></i>}
-                                        {cell === -2 && <i className='fa-regular fa-chess-queen black-side'></i>}
-                                        {cell === -3 && <i className='fa-regular fa-chess-bishop black-side'></i>}
-                                        {cell === -4 && <i className='fa-regular fa-chess-knight black-side'></i>}
-                                        {cell === -5 && <i className='fa-regular fa-chess-rook black-side'></i>}
-                                        {cell === -6 && <i className='fa-regular fa-chess-pawn black-side'></i>}
+                                        {cell === -1 && <i className='fa-regular fa-chess-king black-side' style={{ transform: Rotate && 'rotateZ(180deg)' }}></i>}
+                                        {cell === -2 && <i className='fa-regular fa-chess-queen black-side' style={{ transform: Rotate && 'rotateZ(180deg)' }}></i>}
+                                        {cell === -3 && <i className='fa-regular fa-chess-bishop black-side' style={{ transform: Rotate && 'rotateZ(180deg)' }}></i>}
+                                        {cell === -4 && <i className='fa-regular fa-chess-knight black-side' style={{ transform: Rotate && 'rotateZ(180deg)' }}></i>}
+                                        {cell === -5 && <i className='fa-regular fa-chess-rook black-side' style={{ transform: Rotate && 'rotateZ(180deg)' }}></i>}
+                                        {cell === -6 && <i className='fa-regular fa-chess-pawn black-side' style={{ transform: Rotate && 'rotateZ(180deg)' }}></i>}
 
                                         {cell === 1 && <i className='fa-regular fa-chess-king white-side'></i>}
                                         {cell === 2 && <i className='fa-regular fa-chess-queen white-side'></i>}
@@ -881,10 +888,10 @@ export default function Chess() {
                                     <div className='promotion'>
                                         {Promotion[0] === -6 &&
                                             <div className='group-icon black'>
-                                                <i className='fa-regular fa-chess-queen black-side' onClick={() => handlePromote(-2)}></i>
-                                                <i className='fa-regular fa-chess-bishop black-side' onClick={() => handlePromote(-3)}></i>
-                                                <i className='fa-regular fa-chess-knight black-side' onClick={() => handlePromote(-4)}></i>
-                                                <i className='fa-regular fa-chess-rook black-side' onClick={() => handlePromote(-5)}></i>
+                                                <i className='fa-regular fa-chess-queen black-side' style={{ transform: Rotate && 'rotateZ(180deg)' }} onClick={() => handlePromote(-2)}></i>
+                                                <i className='fa-regular fa-chess-bishop black-side' style={{ transform: Rotate && 'rotateZ(180deg)' }} onClick={() => handlePromote(-3)}></i>
+                                                <i className='fa-regular fa-chess-knight black-side' style={{ transform: Rotate && 'rotateZ(180deg)' }} onClick={() => handlePromote(-4)}></i>
+                                                <i className='fa-regular fa-chess-rook black-side' style={{ transform: Rotate && 'rotateZ(180deg)' }} onClick={() => handlePromote(-5)}></i>
                                             </div>
                                         }
                                         {Promotion[0] === 6 &&
@@ -902,7 +909,7 @@ export default function Chess() {
                     }
                 </Table>
 
-                <Table
+                {/* <Table
                     className='no-wrap align-middle'
                     style={{
                         // '--table-width': 8,
@@ -923,7 +930,7 @@ export default function Chess() {
                             </tr>
                         ))}
                     </tbody>
-                </Table>
+                </Table> */}
             </div>
         </div>
     )
