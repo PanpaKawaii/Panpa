@@ -54,7 +54,7 @@ export default function JapaneseKanji() {
             </div>
 
             <Form onSubmit={handleEnterKanji}>
-                <Form.Group controlId='searchkanji'>
+                <Form.Group controlId='searchkanji' className='form-group'>
                     <Form.Control
                         type='text'
                         placeholder='日、ニチ、ひ、nichi、NHẬT、...'

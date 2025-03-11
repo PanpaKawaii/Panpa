@@ -35,6 +35,16 @@ export default function JapaneseVerb() {
         e.preventDefault();
     }
 
+    const shuffleVerb = () => {
+        const shuffledVerb = [...filteredVerb];
+        for (let i = shuffledVerb.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [shuffledVerb[i], shuffledVerb[j]] = [shuffledVerb[j], shuffledVerb[i]];
+        }
+        return shuffledVerb;
+    }
+    const shuffledVerb = shuffleVerb();
+
     return (
         <div className='japaneseverb-container'>
             <div className='header'>
@@ -45,7 +55,7 @@ export default function JapaneseVerb() {
                 <Form.Group controlId='searchverb' className='searchverb'>
                     <Form.Control
                         type='text'
-                        placeholder='いきます、III、Đi、...'
+                        placeholder='行きます、いきます、III、Đi、...'
                         value={searchQueryVerb}
                         onChange={(e) => setSearchQueryVerb(e.target.value)}
                     />
@@ -69,15 +79,35 @@ export default function JapaneseVerb() {
                 </div>
             </Form>
 
-            <div>
-                {filteredVerb.filter(verb => verb.Hiragana !== 'NoVerb').map((verb, index) => (
-                    <div key={index}>
-                        {verb.Hiragana}
-                        {verb.Kanji}
-                        {verb.Meaning}
-                        {verb.Group}
-                    </div>
-                ))}
+            <div style={{ display: 'flex', justifyContent: 'center', margin: '0 0 40px' }}>
+                <div style={{ backgroundColor: '#28a74580', padding: '0 40px' }}>
+                    {shuffledVerb.filter(verb => verb.Hiragana !== 'NoVerb').map((verb, index) => (
+                        <div key={index}>
+                            {verb.Hiragana}
+                        </div>
+                    ))}
+                </div>
+                <div style={{ backgroundColor: '#ffc10780', padding: '0 40px' }}>
+                    {shuffledVerb.filter(verb => verb.Hiragana !== 'NoVerb').map((verb, index) => (
+                        <div key={index}>
+                            {verb.Kanji}
+                        </div>
+                    ))}
+                </div>
+                <div style={{ backgroundColor: '#dc354580', padding: '0 40px' }}>
+                    {shuffledVerb.filter(verb => verb.Hiragana !== 'NoVerb').map((verb, index) => (
+                        <div key={index}>
+                            {verb.Meaning}
+                        </div>
+                    ))}
+                </div>
+                <div style={{ backgroundColor: '#007bff80', padding: '0 40px' }}>
+                    {shuffledVerb.filter(verb => verb.Hiragana !== 'NoVerb').map((verb, index) => (
+                        <div key={index}>
+                            {verb.Group}
+                        </div>
+                    ))}
+                </div>
             </div>
 
             <div className='japanese-content'>

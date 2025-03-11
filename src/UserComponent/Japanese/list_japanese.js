@@ -638,6 +638,22 @@ export const Verb = [
     { Hiragana: 'ふきます', Kanji: '吹きます', Group: 'I', Meaning: 'Thổi (Gió)', Romaji: 'fukimasu' },
     { Hiragana: 'やみます', Kanji: '止みます', Group: 'I', Meaning: 'Ngừng, tạnh', Romaji: 'yamimasu' },
 
+    { Hiragana: 'うたいます', Kanji: '歌います', Group: 'I', Meaning: 'Hát', Romaji: 'utaimasu' },
+    { Hiragana: 'おどります', Kanji: '踊ります', Group: 'I', Meaning: 'Nhảy múa', Romaji: 'odorimasu' },
+    { Hiragana: 'えらびます', Kanji: '選びます', Group: 'I', Meaning: 'Lựa chọn', Romaji: 'erabimasu' },
+    { Hiragana: 'はらいます', Kanji: '払います', Group: 'I', Meaning: 'Trả tiền', Romaji: 'haraimasu' },
+    { Hiragana: 'うります', Kanji: '売ります', Group: 'I', Meaning: 'Bán', Romaji: 'urimasu' },
+    { Hiragana: 'おくります', Kanji: '送ります', Group: 'I', Meaning: 'Gửi', Romaji: 'okurimasu' },
+    { Hiragana: 'かちます', Kanji: '勝ちます', Group: 'I', Meaning: 'Thắng', Romaji: 'kachimasu' },
+    { Hiragana: 'おします', Kanji: '押します', Group: 'I', Meaning: 'Ấn, đẩy', Romaji: 'oshimasu' },
+    { Hiragana: 'ひきます', Kanji: '引きます', Group: 'I', Meaning: 'Kéo', Romaji: 'hikimasu' },
+    { Hiragana: 'ならいます', Kanji: '習います', Group: 'I', Meaning: 'Học (từ ai đó)', Romaji: 'naraimasu' },
+    { Hiragana: 'なおします', Kanji: '直します', Group: 'I', Meaning: 'Sửa chữa', Romaji: 'naoshimasu' },
+    { Hiragana: 'はこびます', Kanji: '運びます', Group: 'I', Meaning: 'Vận chuyển', Romaji: 'hakobimasu' },
+    { Hiragana: 'しります', Kanji: '知ります', Group: 'I', Meaning: 'Biết', Romaji: 'shirimasu' },
+    { Hiragana: 'へります', Kanji: '減ります', Group: 'I', Meaning: 'Giảm xuống', Romaji: 'herimasu' },
+    { Hiragana: 'きります', Kanji: '切ります', Group: 'I', Meaning: 'Cắt', Romaji: 'kirimasu' },
+
 
     //「え」ます、Một âm tiết
     { Hiragana: 'たべます', Kanji: '食べます', Group: 'II', Meaning: 'Ăn', Romaji: 'tabemasu' },
@@ -665,6 +681,20 @@ export const Verb = [
     { Hiragana: 'つづきます', Kanji: '続きます', Group: 'II', Meaning: 'Tiếp tục', Romaji: 'tsugimasu' },
     { Hiragana: 'しんじます', Kanji: '信じます', Group: 'II', Meaning: 'Tin tưởng', Romaji: 'shinjimasu' },
 
+    { Hiragana: 'ふえます', Kanji: '増えます', Group: 'II', Meaning: 'Tăng lên', Romaji: 'fuemasu' },
+    { Hiragana: 'まけます', Kanji: '負けます', Group: 'II', Meaning: 'Thua', Romaji: 'makemasu' },
+    { Hiragana: 'すてます', Kanji: '捨てます', Group: 'II', Meaning: 'Vứt bỏ', Romaji: 'sutemasu' },
+    { Hiragana: 'はじめます', Kanji: '始めます', Group: 'II', Meaning: 'Bắt đầu', Romaji: 'hajimemasu' },
+    { Hiragana: 'つづけます', Kanji: '続けます', Group: 'II', Meaning: 'Tiếp tục', Romaji: 'tsuzukemasu' },
+    { Hiragana: 'くらべます', Kanji: '比べます', Group: 'II', Meaning: 'So sánh', Romaji: 'kurabemasu' },
+    { Hiragana: 'わすれます', Kanji: '忘れます', Group: 'II', Meaning: 'Quên', Romaji: 'wasuremasu' },
+    { Hiragana: 'おぼえます', Kanji: '覚えます', Group: 'II', Meaning: 'Ghi nhớ', Romaji: 'oboemasu' },
+    { Hiragana: 'きめます', Kanji: '決めます', Group: 'II', Meaning: 'Quyết định', Romaji: 'kimemasu' },
+    { Hiragana: 'ながれます', Kanji: '流れます', Group: 'II', Meaning: 'Chảy (nước, thời gian)', Romaji: 'nagaremasu' },
+    { Hiragana: 'むかえます', Kanji: '迎えます', Group: 'II', Meaning: 'Đón', Romaji: 'mukaemasu' },
+    { Hiragana: 'たおれます', Kanji: '倒れます', Group: 'II', Meaning: 'Đổ, ngã', Romaji: 'taoremasu' },
+    { Hiragana: 'やめます', Kanji: '止めます', Group: 'II', Meaning: 'Dừng, bỏ (hành động)', Romaji: 'yamemasu' },
+
 
     //N＋します => Danh động từ
     { Hiragana: 'きます', Kanji: '来ます', Group: 'III', Meaning: 'Đến', Romaji: 'kimasu' },
@@ -675,6 +705,37 @@ export const Verb = [
     { Hiragana: 'しょくじします', Kanji: '食事します', Group: 'III', Meaning: 'Dùng bữa', Romaji: 'shokujishimasu' },
     { Hiragana: 'コピーします', Kanji: 'コピーします', Group: 'III', Meaning: 'Sao chép', Romaji: 'kopiishimasu' },
 ];
+
+// const Verb = [
+//     { Hiragana: 'うたいます', Kanji: '歌います', Group: 'I', Meaning: 'Hát', Romaji: 'utaimasu' },
+//     { Hiragana: 'おどります', Kanji: '踊ります', Group: 'I', Meaning: 'Nhảy múa', Romaji: 'odorimasu' },
+//     { Hiragana: 'えらびます', Kanji: '選びます', Group: 'I', Meaning: 'Lựa chọn', Romaji: 'erabimasu' },
+//     { Hiragana: 'はらいます', Kanji: '払います', Group: 'I', Meaning: 'Trả tiền', Romaji: 'haraimasu' },
+//     { Hiragana: 'うります', Kanji: '売ります', Group: 'I', Meaning: 'Bán', Romaji: 'urimasu' },
+//     { Hiragana: 'おくります', Kanji: '送ります', Group: 'I', Meaning: 'Gửi', Romaji: 'okurimasu' },
+//     { Hiragana: 'かちます', Kanji: '勝ちます', Group: 'I', Meaning: 'Thắng', Romaji: 'kachimasu' },
+//     { Hiragana: 'おします', Kanji: '押します', Group: 'I', Meaning: 'Ấn, đẩy', Romaji: 'oshimasu' },
+//     { Hiragana: 'ひきます', Kanji: '引きます', Group: 'I', Meaning: 'Kéo', Romaji: 'hikimasu' },
+//     { Hiragana: 'ならいます', Kanji: '習います', Group: 'I', Meaning: 'Học (từ ai đó)', Romaji: 'naraimasu' },
+//     { Hiragana: 'なおします', Kanji: '直します', Group: 'I', Meaning: 'Sửa chữa', Romaji: 'naoshimasu' },
+//     { Hiragana: 'はこびます', Kanji: '運びます', Group: 'I', Meaning: 'Vận chuyển', Romaji: 'hakobimasu' },
+//     { Hiragana: 'しります', Kanji: '知ります', Group: 'I', Meaning: 'Biết', Romaji: 'shirimasu' },
+//     { Hiragana: 'へります', Kanji: '減ります', Group: 'I', Meaning: 'Giảm xuống', Romaji: 'herimasu' },
+//     { Hiragana: 'きります', Kanji: '切ります', Group: 'I', Meaning: 'Cắt', Romaji: 'kirimasu' },
+//     { Hiragana: 'ふえます', Kanji: '増えます', Group: 'II', Meaning: 'Tăng lên', Romaji: 'fuemasu' },
+//     { Hiragana: 'まけます', Kanji: '負けます', Group: 'II', Meaning: 'Thua', Romaji: 'makemasu' },
+//     { Hiragana: 'すてます', Kanji: '捨てます', Group: 'II', Meaning: 'Vứt bỏ', Romaji: 'sutemasu' },
+//     { Hiragana: 'はじめます', Kanji: '始めます', Group: 'II', Meaning: 'Bắt đầu', Romaji: 'hajimemasu' },
+//     { Hiragana: 'つづけます', Kanji: '続けます', Group: 'II', Meaning: 'Tiếp tục', Romaji: 'tsuzukemasu' },
+//     { Hiragana: 'くらべます', Kanji: '比べます', Group: 'II', Meaning: 'So sánh', Romaji: 'kurabemasu' },
+//     { Hiragana: 'わすれます', Kanji: '忘れます', Group: 'II', Meaning: 'Quên', Romaji: 'wasuremasu' },
+//     { Hiragana: 'おぼえます', Kanji: '覚えます', Group: 'II', Meaning: 'Ghi nhớ', Romaji: 'oboemasu' },
+//     { Hiragana: 'きめます', Kanji: '決めます', Group: 'II', Meaning: 'Quyết định', Romaji: 'kimemasu' },
+//     { Hiragana: 'ながれます', Kanji: '流れます', Group: 'II', Meaning: 'Chảy (nước, thời gian)', Romaji: 'nagaremasu' },
+//     { Hiragana: 'むかえます', Kanji: '迎えます', Group: 'II', Meaning: 'Đón', Romaji: 'mukaemasu' },
+//     { Hiragana: 'たおれます', Kanji: '倒れます', Group: 'II', Meaning: 'Đổ, ngã', Romaji: 'taoremasu' },
+//     { Hiragana: 'やめます', Kanji: '止めます', Group: 'II', Meaning: 'Dừng, bỏ (hành động)', Romaji: 'yamemasu' },
+// ];
 
 export const Family = [
     { Word: 'NoFamily', Hiragana: 'そふ', Meaning: 'Ông', Romaji: 'NoFamily' },
