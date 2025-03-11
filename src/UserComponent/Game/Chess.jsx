@@ -35,9 +35,9 @@ export default function Chess() {
         [0, 0, 0, 0, 0, 0, 0, 0],
         [0, 0, 0, 0, 0, 0, 0, 0],
         [0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 6, 1, 0, 0, 0, 0],
+        [0, 0, -5, 0, 0, 0, 0, 0],
         [0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 1, 0, 0],
         [0, 0, 0, 0, 0, 0, 0, 0],
         [0, 0, 0, 0, 0, 0, 0, 0]
     ]
@@ -478,6 +478,7 @@ export default function Chess() {
     }
 
     const checkIsHavingEnemies = (row, col) => {
+        // console.log('checkIsHavingEnemies');
         if (PlayTable[row - Player][col - Player] === Player * (-6)) {
             console.log('Pawn 1', row, col);
             return true;
@@ -485,6 +486,7 @@ export default function Chess() {
             console.log('Pawn 2', row, col);
             return true;
         }
+        // console.log('Start Up-right', row, col);
         for (let i = 1; i < 8; i++) {// Up-right diagonal
             const newRow = row - i;
             const newCol = col + i;
@@ -497,6 +499,7 @@ export default function Chess() {
                 }
             } else break;
         }
+        // console.log('Start Up-left', row, col);
         for (let i = 1; i < 8; i++) {// Up-left diagonal
             const newRow = row - i;
             const newCol = col - i;
@@ -509,6 +512,7 @@ export default function Chess() {
                 }
             } else break;
         }
+        // console.log('Start Down-right', row, col);
         for (let i = 1; i < 8; i++) {// Down-right diagonal
             const newRow = row + i;
             const newCol = col + i;
@@ -521,6 +525,7 @@ export default function Chess() {
                 }
             } else break;
         }
+        // console.log('Start Down-left', row, col);
         for (let i = 1; i < 8; i++) {// Down-left diagonal
             const newRow = row + i;
             const newCol = col - i;
@@ -534,6 +539,7 @@ export default function Chess() {
             } else break;
         }
 
+        // console.log('Start Up', row, col);
         for (let i = 1; i < 8; i++) {// Up line
             const newRow = row - i;
             const newCol = col;
@@ -546,6 +552,7 @@ export default function Chess() {
                 }
             } else break;
         }
+        // console.log('Start Down', row, col);
         for (let i = 1; i < 8; i++) {// Down line
             const newRow = row + i;
             const newCol = col;
@@ -558,9 +565,10 @@ export default function Chess() {
                 }
             } else break;
         }
+        // console.log('Start Left', row, col);
         for (let i = 1; i < 8; i++) {// Left line
             const newRow = row;
-            const newCol = col - 1;
+            const newCol = col - i;
             if (newRow >= 0 && newRow <= 7 && newCol >= 0 && newCol <= 7) {
                 if (PlayTable[newRow][newCol] === Player * (-2) || PlayTable[newRow][newCol] === Player * (-5)) {
                     console.log('Left line', row, col);
@@ -570,9 +578,10 @@ export default function Chess() {
                 }
             } else break;
         }
+        // console.log('Start Right', row, col);
         for (let i = 1; i < 8; i++) {// Right line
             const newRow = row;
-            const newCol = col + 1;
+            const newCol = col + i;
             if (newRow >= 0 && newRow <= 7 && newCol >= 0 && newCol <= 7) {
                 if (PlayTable[newRow][newCol] === Player * (-2) || PlayTable[newRow][newCol] === Player * (-5)) {
                     console.log('Right line', row, col);
@@ -583,8 +592,9 @@ export default function Chess() {
             } else break;
         }
 
+        // console.log('Start Knight', row, col);
         const KnightPath = [[1, 2], [1, -2], [-1, 2], [-1, -2], [2, 1], [2, -1], [-2, 1], [-2, -1]]
-        KnightPath.forEach(path => {
+        for (const path of KnightPath) {
             const newRow = row + path[0];
             const newCol = col + path[1];
             if (newRow >= 0 && newRow <= 7 && newCol >= 0 && newCol <= 7) {
@@ -592,8 +602,8 @@ export default function Chess() {
                     console.log('Have Knight', row, col);
                     return true;
                 }
-            }
-        });
+            } else break;
+        }
         return false;
     }
 
