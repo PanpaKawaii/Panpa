@@ -13,7 +13,7 @@ export default function JapaneseVerb() {
     const [searchQueryVerb, setSearchQueryVerb] = useState(query);
 
     let filteredVerb = Verb.filter((verb) =>
-        // verb.Verb.toLowerCase().includes(searchQueryVerb.toLowerCase())
+        // verb.Hiragana.toLowerCase().includes(searchQueryVerb.toLowerCase())
         Object.values(verb).some(value => value.toLowerCase().includes(searchQueryVerb.toLowerCase()))
     );
 
@@ -69,10 +69,22 @@ export default function JapaneseVerb() {
                 </div>
             </Form>
 
+            <div>
+                {filteredVerb.filter(verb => verb.Hiragana !== 'NoVerb').map((verb, index) => (
+                    <div key={index}>
+                        {verb.Hiragana}
+                        {verb.Kanji}
+                        {verb.Meaning}
+                        {verb.Group}
+                    </div>
+                ))}
+            </div>
+
             <div className='japanese-content'>
                 <Row className='japanese-row'>
-                    {filteredVerb.filter(verb => verb.Verb !== 'NoVerb').map((verb, index) => (
+                    {filteredVerb.filter(verb => verb.Hiragana !== 'NoVerb').map((verb, index) => (
                         <Col key={index} xs={6} sm={6} md={6} lg={4} xl={3} xxl={3} className='japanese-col'>
+                            {/* <Col key={verb.Kanji} xs={6} sm={6} md={6} lg={4} xl={3} xxl={3} className='japanese-col'> */}
                             <div
                                 className='grid-card'
                                 style={{
@@ -88,7 +100,8 @@ export default function JapaneseVerb() {
                                 }}
                             >
                                 <div className='card-body'>
-                                    <h3 className='japanese-font'>{verb.Verb}</h3>
+                                    <h3 className='japanese-font' style={{ backgroundColor: verb.Kanji === 'NoVerb' ? '#dc3545' : '' }}>{verb.Kanji}</h3>
+                                    <h4 className='japanese-font'>{verb.Hiragana}</h4>
                                     <p>Group: {verb.Group}</p>
                                     <p>Meaning: {verb.Meaning}</p>
                                     <p className='japanese-font'>Romaji: {verb.Romaji}</p>

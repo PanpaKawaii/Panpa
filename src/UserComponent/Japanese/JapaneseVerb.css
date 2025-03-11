@@ -91,7 +91,7 @@
                         width: 100%;
                         height: fit-content;
 
-                        h3 {
+                        h3, h4 {
                             margin: 0 0 8px;
                             font-weight: bold;
                         }
