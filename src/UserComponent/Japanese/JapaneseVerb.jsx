@@ -10,6 +10,7 @@ export default function JapaneseVerb() {
     const [searchParams, setSearchParams] = useSearchParams();
     const query = searchParams.get('search') || '';
     const group = searchParams.get('group') || '';
+    const special = searchParams.get('special') || '';
     const [searchQueryVerb, setSearchQueryVerb] = useState(query);
 
     let filteredVerb = Verb.filter((verb) =>
@@ -21,13 +22,17 @@ export default function JapaneseVerb() {
         filteredVerb = filteredVerb.filter((verb) => verb.Group === group);
     }
 
+    if (special) {
+        filteredVerb = filteredVerb.filter((verb) => verb.Special === special);
+    }
+
     useEffect(() => {
-        setSearchParams({ search: searchQueryVerb, group });
-    }, [searchQueryVerb, group, setSearchParams]);
+        setSearchParams({ search: searchQueryVerb, group, special });
+    }, [searchQueryVerb, group, special, setSearchParams]);
 
     const clearInput = () => {
         setSearchQueryVerb('');
-        setSearchParams({ search: '', group: '' });
+        setSearchParams({ search: '', group: '', special: '' });
         document.getElementById('searchverb').focus();
     }
 
@@ -65,7 +70,7 @@ export default function JapaneseVerb() {
                     <Form.Control
                         as='select'
                         value={group}
-                        onChange={(e) => setSearchParams({ search: searchQueryVerb, group: e.target.value })}
+                        onChange={(e) => setSearchParams({ search: searchQueryVerb, group: e.target.value, special: special })}
                     >
                         <option value=''>Select Group</option>
                         <option value='I'>Group I</option>
@@ -74,12 +79,21 @@ export default function JapaneseVerb() {
                     </Form.Control>
                 </Form.Group>
 
+                <Form.Group controlId='specialverb' className='specialverb'>
+                    <Form.Check
+                        type='checkbox'
+                        label='Special'
+                        checked={special === 'true'}
+                        onChange={(e) => setSearchParams({ search: searchQueryVerb, group: group, special: e.target.checked ? 'true' : '' })}
+                    />
+                </Form.Group>
+
                 <div className='active-button'>
                     <Button type='reset' className='btn btn-reset' onClick={clearInput}>CLEAR</Button>
                 </div>
             </Form>
 
-            <div style={{ display: 'flex', justifyContent: 'center', margin: '0 0 40px' }}>
+            {/* <div style={{ display: 'flex', justifyContent: 'center', margin: '0 0 40px' }}>
                 <div style={{ backgroundColor: '#28a74580', padding: '0 40px' }}>
                     {shuffledVerb.filter(verb => verb.Hiragana !== 'NoVerb').map((verb, index) => (
                         <div key={index}>
@@ -108,17 +122,23 @@ export default function JapaneseVerb() {
                         </div>
                     ))}
                 </div>
-            </div>
+            </div> */}
 
             <div className='japanese-content'>
                 <Row className='japanese-row'>
                     {filteredVerb.filter(verb => verb.Hiragana !== 'NoVerb').map((verb, index) => (
-                        <Col key={index} xs={6} sm={6} md={6} lg={4} xl={3} xxl={3} className='japanese-col'>
+                        <Col key={index} xs={4} sm={4} md={4} lg={3} xl={2} xxl={2} className='japanese-col'>
                             {/* <Col key={verb.Kanji} xs={6} sm={6} md={6} lg={4} xl={3} xxl={3} className='japanese-col'> */}
                             <div
                                 className='grid-card'
                                 style={{
-                                    backgroundColor:
+                                    color: (
+                                        verb.Group === 'III' ?
+                                            '#fff'
+                                            :
+                                            '#000'
+                                    ),
+                                    backgroundColor: (
                                         verb.Group === 'I' ?
                                             '#fdd9e5'
                                             :
@@ -127,14 +147,14 @@ export default function JapaneseVerb() {
                                                 :
                                                 '#f86aa1'
                                             )
+                                    )
                                 }}
                             >
                                 <div className='card-body'>
                                     <h3 className='japanese-font' style={{ backgroundColor: verb.Kanji === 'NoVerb' ? '#dc3545' : '' }}>{verb.Kanji}</h3>
                                     <h4 className='japanese-font'>{verb.Hiragana}</h4>
-                                    <p>Group: {verb.Group}</p>
-                                    <p>Meaning: {verb.Meaning}</p>
-                                    <p className='japanese-font'>Romaji: {verb.Romaji}</p>
+                                    <p><span style={{ fontFamily: 'none' }}>{verb.Group}</span> : {verb.Meaning}</p>
+                                    {/* <p>Romaji: {verb.Romaji}</p> */}
                                 </div>
                             </div>
                         </Col>

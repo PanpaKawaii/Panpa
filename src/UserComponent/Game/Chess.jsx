@@ -76,7 +76,7 @@ export default function Chess() {
     const [Refresh, setRefresh] = useState(0);
 
     useEffect(() => {
-        setPlayTable(TestOnlyKingVsAll);
+        setPlayTable(InitialPlayTable);
 
         setPlayer(1);
         setPick([0, 0, 0]);
@@ -128,22 +128,44 @@ export default function Chess() {
                     }
                 }
             };
-            if (cell === -1 && PlayTable[row][col - 1] === 0 && PlayTable[row][col - 2] === 0 && PlayTable[row][col - 3] === 0 && Castling[0] === true) {//Nhập thành King đen cánh trái
+            if (//Nhập thành King đen cánh trái
+                cell === -1 &&
+                PlayTable[row][col - 1] === 0 && checkIsHavingEnemies(row, col - 1) === false &&
+                PlayTable[row][col - 2] === 0 && checkIsHavingEnemies(row, col - 2) === false &&
+                PlayTable[row][col - 3] === 0 && checkIsHavingEnemies(row, col - 3) === false &&
+                Castling[0] === true
+            ) {
                 let redcell = document.getElementById(`cell-${row}-${col - 2}`);
                 redcell.classList.add('moveablecell');
                 newAvailablePath = [...newAvailablePath, [row, col - 2]];
             }
-            if (cell === -1 && PlayTable[row][col + 1] === 0 && PlayTable[row][col + 2] === 0 && Castling[1] === true) {//Nhập thành King đen cánh phải
+            if (//Nhập thành King đen cánh phải
+                cell === -1 &&
+                PlayTable[row][col + 1] === 0 && checkIsHavingEnemies(row, col + 1) === false &&
+                PlayTable[row][col + 2] === 0 && checkIsHavingEnemies(row, col + 2) === false &&
+                Castling[1] === true
+            ) {
                 let redcell = document.getElementById(`cell-${row}-${col + 2}`);
                 redcell.classList.add('moveablecell');
                 newAvailablePath = [...newAvailablePath, [row, col + 2]];
             }
-            if (cell === 1 && PlayTable[row][col - 1] === 0 && PlayTable[row][col - 2] === 0 && PlayTable[row][col - 3] === 0 && Castling[2] === true) {//Nhập thành King trắng cánh trái
+            if (//Nhập thành King trắng cánh trái
+                cell === 1 &&
+                PlayTable[row][col - 1] === 0 && checkIsHavingEnemies(row, col - 1) === false &&
+                PlayTable[row][col - 2] === 0 && checkIsHavingEnemies(row, col - 2) === false &&
+                PlayTable[row][col - 3] === 0 && checkIsHavingEnemies(row, col - 3) === false &&
+                Castling[2] === true
+            ) {
                 let redcell = document.getElementById(`cell-${row}-${col - 2}`);
                 redcell.classList.add('moveablecell');
                 newAvailablePath = [...newAvailablePath, [row, col - 2]];
             }
-            if (cell === 1 && PlayTable[row][col + 1] === 0 && PlayTable[row][col + 2] === 0 && Castling[3] === true) {//Nhập thành King trắng cánh phải
+            if (//Nhập thành King trắng cánh phải
+                cell === 1 &&
+                PlayTable[row][col + 1] === 0 && checkIsHavingEnemies(row, col + 1) === false &&
+                PlayTable[row][col + 2] === 0 && checkIsHavingEnemies(row, col + 2) === false &&
+                Castling[3] === true
+            ) {
                 let redcell = document.getElementById(`cell-${row}-${col + 2}`);
                 redcell.classList.add('moveablecell');
                 newAvailablePath = [...newAvailablePath, [row, col + 2]];
@@ -616,6 +638,7 @@ export default function Chess() {
 
     {/*
         Vua không được đi vào ô bị chiếu
+        Vua bị chiếu thì không được nhập thành!!!
         Quân mình sau khi đi thì Vua mình không được bị chiếu
     */ }
 

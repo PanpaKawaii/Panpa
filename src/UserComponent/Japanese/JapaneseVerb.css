@@ -41,6 +41,29 @@
             width: 120px;
         }
 
+        .specialverb {
+            height: 38px;
+            padding: .375rem .75rem;
+            background-clip: padding-box;
+            border: var(--bs-border-width) solid var(--bs-border-color);
+            border-radius: var(--bs-border-radius);
+            box-sizing: border-box;
+
+            .form-check {
+
+                .form-check-input:checked {
+                    background-color: #fd73a7;
+                    border-color: #fd73a7;
+                }
+
+                .form-check-input:focus {
+                    border-color: #f99dbc;
+                    outline: 0;
+                    box-shadow: 0 0 0 0.25rem rgba(249, 157, 188, 0.314);
+                }
+            }
+        }
+
         #groupverb {
             text-align: center;
         }
@@ -91,7 +114,8 @@
                         width: 100%;
                         height: fit-content;
 
-                        h3, h4 {
+                        h3,
+                        h4 {
                             margin: 0 0 8px;
                             font-weight: bold;
                         }
