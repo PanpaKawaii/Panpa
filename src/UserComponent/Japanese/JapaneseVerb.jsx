@@ -153,7 +153,10 @@ export default function JapaneseVerb() {
                                 <div className='card-body'>
                                     <h3 className='japanese-font' style={{ backgroundColor: verb.Kanji === 'NoVerb' ? '#dc3545' : '' }}>{verb.Kanji}</h3>
                                     <h4 className='japanese-font'>{verb.Hiragana}</h4>
-                                    <p><span style={{ fontFamily: 'none' }}>{verb.Group}</span> : {verb.Meaning}</p>
+                                    <p>
+                                        {verb.Special == 'true' && <i className='fa-solid fa-star' style={{ color: '#dc3545' }}></i>}
+                                        <span style={{ fontFamily: 'none' }}>{verb.Group}</span> : {verb.Meaning}
+                                    </p>
                                     {/* <p>Romaji: {verb.Romaji}</p> */}
                                 </div>
                             </div>
