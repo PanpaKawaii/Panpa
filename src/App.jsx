@@ -22,6 +22,8 @@ import RandomCard from './UserComponent/Game/RandomCard.jsx'
 import ToDoList from './UserComponent/Game/ToDoList.jsx'
 import TestObject from './UserComponent/Game/TestObject.jsx'
 
+import Sphere from './UserComponent/Object/Sphere.jsx'
+
 import ListJapanese from './UserComponent/Japanese/ListJapanese.jsx'
 import JapaneseKanji from './UserComponent/Japanese/JapaneseKanji.jsx'
 import JapaneseVerb from './UserComponent/Japanese/JapaneseVerb.jsx'
@@ -49,6 +51,8 @@ function App() {
         <Route path='game/randomcard' element={<RandomCard />} />
         <Route path='game/todolist' element={<ToDoList />} />
         <Route path='game/object' element={<TestObject />} />
+
+        <Route path='sphere' element={<Sphere />} />
 
         <Route path='japanese' element={<ListJapanese />} >
           <Route path='kanji' element={<JapaneseKanji />} />
