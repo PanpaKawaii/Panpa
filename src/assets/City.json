@@ -1,0 +1,202 @@
+{
+    "message": "accurate",
+    "cod": "200",
+    "count": 2,
+    "list": [
+        {
+            "id": 1562822,
+            "name": "Socialist Republic of Vietnam",
+            "coord": {
+                "lat": 16.1667,
+                "lon": 107.8333
+            },
+            "main": {
+                "temp": 284.13,
+                "feels_like": 283.89,
+                "temp_min": 284.13,
+                "temp_max": 284.13,
+                "pressure": 1025,
+                "humidity": 100,
+                "sea_level": 1025,
+                "grnd_level": 980
+            },
+            "dt": 1742357390,
+            "wind": {
+                "speed": 0.83,
+                "deg": 247
+            },
+            "sys": {
+                "country": "VN"
+            },
+            "rain": null,
+            "snow": null,
+            "clouds": {
+                "all": 100
+            },
+            "weather": [
+                {
+                    "id": 804,
+                    "main": "Clouds",
+                    "description": "overcast clouds",
+                    "icon": "04d"
+                }
+            ]
+        },
+        {
+            "id": 6252001,
+            "name": "United States",
+            "coord": {
+                "lat": 39.76,
+                "lon": -98.5
+            },
+            "main": {
+                "temp": 286.22,
+                "feels_like": 284.89,
+                "temp_min": 286.22,
+                "temp_max": 286.22,
+                "pressure": 990,
+                "humidity": 50,
+                "sea_level": 990,
+                "grnd_level": 930
+            },
+            "dt": 1742357447,
+            "wind": {
+                "speed": 13.09,
+                "deg": 38
+            },
+            "sys": {
+                "country": "US"
+            },
+            "rain": null,
+            "snow": null,
+            "clouds": {
+                "all": 100
+            },
+            "weather": [
+                {
+                    "id": 804,
+                    "main": "Clouds",
+                    "description": "overcast clouds",
+                    "icon": "04n"
+                }
+            ]
+        },
+        {
+            "id": 1861060,
+            "name": "Japan",
+            "coord": {
+                "lat": 35.6854,
+                "lon": 139.7531
+            },
+            "main": {
+                "temp": 285.04,
+                "feels_like": 283.25,
+                "temp_min": 283.64,
+                "temp_max": 285.29,
+                "pressure": 1018,
+                "humidity": 37,
+                "sea_level": 1018,
+                "grnd_level": 1016
+            },
+            "dt": 1742447146,
+            "wind": {
+                "speed": 2.06,
+                "deg": 10
+            },
+            "sys": {
+                "country": "JP"
+            },
+            "rain": null,
+            "snow": null,
+            "clouds": {
+                "all": 20
+            },
+            "weather": [
+                {
+                    "id": 801,
+                    "main": "Clouds",
+                    "description": "few clouds",
+                    "icon": "02d"
+                }
+            ]
+        },
+        {
+            "id": 6269131,
+            "name": "England",
+            "coord": {
+                "lat": 52.1605,
+                "lon": -0.7031
+            },
+            "main": {
+                "temp": 279.76,
+                "feels_like": 279.76,
+                "temp_min": 279.57,
+                "temp_max": 279.76,
+                "pressure": 1021,
+                "humidity": 92,
+                "sea_level": 1021,
+                "grnd_level": 1010
+            },
+            "dt": 1742447671,
+            "wind": {
+                "speed": 0.71,
+                "deg": 151
+            },
+            "sys": {
+                "country": "GB"
+            },
+            "rain": null,
+            "snow": null,
+            "clouds": {
+                "all": 84
+            },
+            "weather": [
+                {
+                    "id": 803,
+                    "main": "Clouds",
+                    "description": "broken clouds",
+                    "icon": "04n"
+                }
+            ]
+        },
+        {
+            "id": 6251999,
+            "name": "Canada",
+            "coord": {
+                "lat": 60.1087,
+                "lon": -113.6426
+            },
+            "main": {
+                "temp": 248.61,
+                "feels_like": 248.61,
+                "temp_min": 248.61,
+                "temp_max": 248.61,
+                "pressure": 1019,
+                "humidity": 100,
+                "sea_level": 1019,
+                "grnd_level": 981
+            },
+            "dt": 1742447671,
+            "wind": {
+                "speed": 1.31,
+                "deg": 36
+            },
+            "sys": {
+                "country": "CA"
+            },
+            "rain": null,
+            "snow": null,
+            "clouds": {
+                "all": 97
+            },
+            "weather": [
+                {
+                    "id": 804,
+                    "main": "Clouds",
+                    "description": "overcast clouds",
+                    "icon": "04n"
+                }
+            ]
+        }
+    ]
+}

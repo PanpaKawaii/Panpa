@@ -1,36 +1,50 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
-function LinkDot({ position, onClick }) {
+import CITY from '../../assets/City.json';
+
+function LinkDot({ position, onClick, country }) {
     return (
         <mesh position={position} onClick={onClick}>
             <sphereGeometry args={[0.05, 16, 16]} />
-            <meshStandardMaterial color='red' />
+            <meshStandardMaterial color={
+                country === 'Socialist Republic of Vietnam' ?
+                    'red'
+                    :
+                    (country === 'orange' ?
+                        'red'
+                        :
+                        (country === 'white' ?
+                            'red'
+                            :
+                            'red'
+                        )
+                    )
+            } />
         </mesh>
     )
 }
 
 export default function Links() {
+
+    const listcities = CITY.list;
+
     const navigate = useNavigate();
     const radius = 5;
-    const links = [
-        { theta: Math.PI / 4, phi: Math.PI / 3, url: '/game' },
-        { theta: Math.PI / 2, phi: Math.PI / 2, url: '/game' },
-        { theta: (3 * Math.PI) / 4, phi: Math.PI, url: '/game' },
-    ];
 
     return (
         <>
-            {links.map((link, index) => {
-                const x = radius * Math.sin(link.theta) * Math.cos(link.phi);
-                const y = radius * Math.sin(link.theta) * Math.sin(link.phi);
-                const z = radius * Math.cos(link.theta);
+            {listcities.map((city, index) => {
+                const x = radius * Math.cos(city.coord.lat * Math.PI / 180) * Math.sin((city.coord.lon + 90) * Math.PI / 180);
+                const z = radius * Math.sin(city.coord.lat * Math.PI / 180);
+                const y = radius * Math.cos(city.coord.lat * Math.PI / 180) * Math.cos((city.coord.lon + 90) * Math.PI / 180);
 
                 return (
                     <LinkDot
                         key={index}
-                        position={[x, y, z]}
-                        onClick={() => navigate(link.url)}
+                        position={[x, z, y]}
+                        onClick={() => navigate(city.url ? city.url : `/${city.name}`)}
+                        country={city.name}
                     />
                 );
             })}
