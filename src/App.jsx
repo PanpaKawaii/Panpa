@@ -20,9 +20,9 @@ import GenerateMaze from './UserComponent/Game/GenerateMaze.jsx'
 import TypePi from './UserComponent/Game/TypePi.jsx'
 import RandomCard from './UserComponent/Game/RandomCard.jsx'
 import ToDoList from './UserComponent/Game/ToDoList.jsx'
-import TestObject from './UserComponent/Game/TestObject.jsx'
+import Object from './UserComponent/Game/Object.jsx'
 
-import Sphere from './UserComponent/Object/Sphere.jsx'
+import Space from './UserComponent/Object/Space.jsx'
 
 import ListJapanese from './UserComponent/Japanese/ListJapanese.jsx'
 import JapaneseKanji from './UserComponent/Japanese/JapaneseKanji.jsx'
@@ -50,9 +50,9 @@ function App() {
         <Route path='game/typepi' element={<TypePi />} />
         <Route path='game/randomcard' element={<RandomCard />} />
         <Route path='game/todolist' element={<ToDoList />} />
-        <Route path='game/object' element={<TestObject />} />
+        <Route path='game/object' element={<Object />} />
 
-        <Route path='sphere' element={<Sphere />} />
+        <Route path='space' element={<Space />} />
 
         <Route path='japanese' element={<ListJapanese />} >
           <Route path='kanji' element={<JapaneseKanji />} />

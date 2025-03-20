@@ -1,7 +1,7 @@
 import React from 'react';
-import './TestObject.css';
+import './Object.css';
 
-export default function TestObject() {
+export default function Object() {
 
     const maxRow = 10;
     const maxCol = 12;

@@ -17,7 +17,7 @@ export default function GuestHeader() {
         { text: 'Contact', path: '/contact' },
         { text: 'App', path: '/testapp' },
         { text: 'Game', path: '/game' },
-        { text: 'Sphere', path: '/sphere' },
+        { text: 'Space', path: '/space' },
         { text: 'Japanese', path: '/japanese' },
         { text: 'Sign In', path: '/signinsignup' },
     ];
@@ -37,7 +37,7 @@ export default function GuestHeader() {
                     <Link to='/contact' className='menu-item'><i className='fa-regular fa-address-card icon'></i> Contact</Link>
                     <Link to='/testapp' className='menu-item'><i className='fa-solid fa-laptop icon'></i> App</Link>
                     <Link to='/game' className='menu-item'><i className='fa-solid fa-gamepad icon'></i> Game</Link>
-                    <Link to='/sphere' className='menu-item'><i className='fa-solid fa-earth icon'></i> Sphere</Link>
+                    <Link to='/space' className='menu-item'><i className='fa-solid fa-earth icon'></i> Space</Link>
                     <Link to='/japanese' className='menu-item'><i className='fa-solid fa-torii-gate icon'></i> Japanese</Link>
                     <Link to='/signinsignup' className='menu-item'><i className='fas fa-sign-in-alt icon'></i> Sign In</Link>
 

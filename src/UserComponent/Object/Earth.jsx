@@ -4,7 +4,7 @@ import { TextureLoader } from 'three';
 import DayTime from '../../assets/2k_earth_daymap.jpg';
 import NightTime from '../../assets/2k_earth_nightmap.jpg';
 
-export default function TestSphere1() {
+export default function Earth() {
 
     const dayTexture = useLoader(TextureLoader, DayTime);
     const nightTexture = useLoader(TextureLoader, NightTime);
