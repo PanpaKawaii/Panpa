@@ -7,7 +7,7 @@ import GuestHeader from './UserComponent/HeaderFooter/Header/GuestHeader.jsx'
 
 import HomeContent from './UserComponent/Home/HomeContent.jsx'
 
-import BookingMovie from './UserComponent/BookingMovie/BookingSeat.jsx'
+import GoogleMap from './UserComponent/GoogleMap/GoogleMap.jsx'
 
 import ListGame from './UserComponent/Game/ListGame.jsx'
 import Minesweeper from './UserComponent/Game/Minesweeper.jsx'
@@ -37,7 +37,8 @@ function App() {
       <GuestHeader />
       <Routes>
         <Route path='/' element={<HomeContent />} />
-        <Route path='bookingmovie' element={<BookingMovie />} />
+
+        <Route path='googlemap' element={<GoogleMap />} />
 
         <Route path='game' element={<ListGame />} />
         <Route path='game/minesweeper' element={<Minesweeper />} />
