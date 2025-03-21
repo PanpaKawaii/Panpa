@@ -1,0 +1,68 @@
+{
+    "list": [
+        {
+            "id": 1562822,
+            "name": "Vietnam",
+            "coord": {
+                "lat": 16.1667,
+                "lon": 107.8333
+            }
+        },
+        {
+            "id": 1861060,
+            "name": "Japan",
+            "coord": {
+                "lat": 35.6854,
+                "lon": 139.7531
+            }
+        },
+        {
+            "id": 1873107,
+            "name": "North Korea",
+            "coord": {
+                "lat": 40,
+                "lon": 127
+            }
+        },
+        {
+            "id": 1873107,
+            "name": "South Korea",
+            "coord": {
+                "lat": 36,
+                "lon": 128
+            }
+        },
+        {
+            "id": 1873107,
+            "name": "India",
+            "coord": {
+                "lat": 21,
+                "lon": 78
+            }
+        },
+        {
+            "id": 6252001,
+            "name": "United States",
+            "coord": {
+                "lat": 39.76,
+                "lon": -98.5
+            }
+        },
+        {
+            "id": 6269131,
+            "name": "England",
+            "coord": {
+                "lat": 52.1605,
+                "lon": -0.7031
+            }
+        },
+        {
+            "id": 6251999,
+            "name": "Canada",
+            "coord": {
+                "lat": 60.1087,
+                "lon": -113.6426
+            }
+        }
+    ]
+}

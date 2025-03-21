@@ -1,20 +1,20 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import CITY from '../../assets/City.json';
+import COUNTRY from '../../assets/Country.json';
 
-function LinkDot({ position, onClick, country }) {
+function LinkDot({ position, onClick, name }) {
     return (
         <mesh position={position} onClick={onClick}>
             <sphereGeometry args={[0.05, 16, 16]} />
             <meshStandardMaterial color={
-                country === 'Socialist Republic of Vietnam' ?
+                name === 'Socialist Republic of Vietnam' ?
                     'red'
                     :
-                    (country === 'orange' ?
+                    (name === 'orange' ?
                         'red'
                         :
-                        (country === 'white' ?
+                        (name === 'white' ?
                             'red'
                             :
                             'red'
@@ -27,14 +27,14 @@ function LinkDot({ position, onClick, country }) {
 
 export default function Links() {
 
-    const listcities = CITY.list;
+    const list = COUNTRY.list;
 
     const navigate = useNavigate();
     const radius = 5;
 
     return (
         <>
-            {listcities.map((city, index) => {
+            {list.map((city, index) => {
                 const x = radius * Math.cos(city.coord.lat * Math.PI / 180) * Math.sin((city.coord.lon + 90) * Math.PI / 180);
                 const z = radius * Math.sin(city.coord.lat * Math.PI / 180);
                 const y = radius * Math.cos(city.coord.lat * Math.PI / 180) * Math.cos((city.coord.lon + 90) * Math.PI / 180);

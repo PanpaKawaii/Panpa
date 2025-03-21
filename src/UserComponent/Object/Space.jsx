@@ -4,8 +4,6 @@ import React from "react";
 import Earth from './Earth';
 import Links from './LinkDot';
 
-// import { RotatingSphere } from "./Earth";
-
 export default function Space() {
     return (
         <div className='sphere-container'
@@ -30,23 +28,18 @@ export default function Space() {
                 <directionalLight
                     position={[-5, 5 * Math.tan(-23.44 * Math.PI / 180), -5]}
                     intensity={3}
-                    color={'#fff'} />
+                    color={'#fff'}
+                    castShadow
+                />
 
-                <Earth />
+                <Earth
+                    style={{
+                        boxShadow: '0 0 10px 10px #ffffff80'
+                    }} />
                 <Links />
 
                 <OrbitControls minDistance={10} maxDistance={10} />
             </Canvas>
-
-            {/* <Canvas camera={{ position: [0, 0, 5] }}>
-                <ambientLight intensity={0.5} />
-                <directionalLight
-                    position={[5, 5 * Math.tan(0 * Math.PI / 180), 0]}
-                    intensity={3}
-                    color={'#fff'} />
-                <RotatingSphere />
-                <OrbitControls minDistance={10} maxDistance={10} />
-            </Canvas> */}
         </div>
     )
 }
