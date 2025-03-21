@@ -1,23 +1,41 @@
 import { OrbitControls } from '@react-three/drei';
 import { Canvas } from '@react-three/fiber';
-import React from "react";
+import React from 'react';
 import Earth from './Earth';
 import Links from './LinkDot';
 
 export default function Space() {
     return (
-        <div className='sphere-container'
+        <div
             style={{
-                backgroundColor: '#333',
                 display: 'flex',
                 justifyContent: 'center',
                 alignItems: 'center',
                 position: 'relative',
                 padding: '0 auto',
+                backgroundColor: '#333'
             }}
         >
-
-            <Canvas camera={{ position: [5, 5, 5] }}
+            <div style={{
+                position: 'absolute',
+                width: '705px',
+                height: '705px',
+                backgroundColor: '#fff',
+                borderRadius: '50%',
+                boxShadow: '0 0 80px 30px #007bff70',
+            }}>
+            </div>
+            <div style={{
+                position: 'absolute',
+                width: '710px',
+                height: '710px',
+                backgroundColor: '#fff',
+                borderRadius: '50%',
+                boxShadow: '0 0 30px 3px #ffffff',
+            }}>
+            </div>
+            {/* Change to your location */}
+            <Canvas camera={{ position: [-1.4707, 1.3922, -4.5715] }}
                 style={{
                     width: '800px',
                     height: '100vh',
@@ -32,13 +50,14 @@ export default function Space() {
                     castShadow
                 />
 
-                <Earth
-                    style={{
-                        boxShadow: '0 0 10px 10px #ffffff80'
-                    }} />
+                <Earth />
                 <Links />
 
-                <OrbitControls minDistance={10} maxDistance={10} />
+                <OrbitControls
+                    minDistance={10}
+                    maxDistance={10}
+                    enablePan={false}
+                />
             </Canvas>
         </div>
     )

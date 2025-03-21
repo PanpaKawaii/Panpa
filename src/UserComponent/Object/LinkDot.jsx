@@ -1,35 +1,48 @@
-import React from 'react';
+import { Text } from '@react-three/drei';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import COUNTRY from '../../assets/Country.json';
 
-function LinkDot({ position, onClick, name }) {
+function LinkDot({ position, onClick, country, rotation }) {
+
+    const [hovered, setHovered] = useState(false);
+
     return (
-        <mesh position={position} onClick={onClick}>
-            <sphereGeometry args={[0.05, 16, 16]} />
+        <mesh
+            position={position}
+            onClick={onClick}
+            rotation={rotation}
+            onPointerOver={() => setHovered(true)}
+            onPointerOut={() => setHovered(false)}
+            cursor='pointer'
+        >
+            <sphereGeometry args={[hovered ? 0.05 : 0.03, 16, 16]} />
             <meshStandardMaterial color={
-                name === 'Socialist Republic of Vietnam' ?
-                    'red'
-                    :
-                    (name === 'orange' ?
-                        'red'
-                        :
-                        (name === 'white' ?
-                            'red'
-                            :
-                            'red'
-                        )
-                    )
+                country === 'Vietnam' ? 'red' :
+                    (country === 'orange' ? 'red' :
+                        (country === 'white' ? 'red' : 'gray'))
             } />
+            <Text
+                position={[0, 0, 0.3]}
+                fontSize={0.1}
+                color='white'
+                anchorX='center'
+                anchorY='middle'
+            >
+                {/* FFFFFFFFFF */}
+                {country}
+                {/* FFFFFFFFFF */}
+            </Text>
         </mesh>
     )
 }
 
 export default function Links() {
 
-    const list = COUNTRY.list;
-
     const navigate = useNavigate();
+
+    const list = COUNTRY.list;
     const radius = 5;
 
     return (
@@ -45,6 +58,11 @@ export default function Links() {
                         position={[x, z, y]}
                         onClick={() => navigate(city.url ? city.url : `/${city.name}`)}
                         country={city.name}
+                        rotation={[
+                            (0) * Math.PI / 180,
+                            (city.coord.lon + 90) * Math.PI / 180,
+                            (0) * Math.PI / 180,
+                        ]}
                     />
                 );
             })}

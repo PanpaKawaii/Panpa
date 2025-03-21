@@ -1,55 +1,27 @@
 {
     "list": [
         {
-            "id": 1562822,
-            "name": "Vietnam",
+            "name": "Cambodia",
             "coord": {
-                "lat": 16.1667,
-                "lon": 107.8333
+                "lat": 13,
+                "lon": 105
             }
         },
         {
-            "id": 1861060,
-            "name": "Japan",
+            "name": "Canada",
             "coord": {
-                "lat": 35.6854,
-                "lon": 139.7531
+                "lat": 60.1087,
+                "lon": -113.6426
             }
         },
         {
-            "id": 1873107,
-            "name": "North Korea",
+            "name": "China",
             "coord": {
-                "lat": 40,
-                "lon": 127
+                "lat": 35,
+                "lon": 105
             }
         },
         {
-            "id": 1873107,
-            "name": "South Korea",
-            "coord": {
-                "lat": 36,
-                "lon": 128
-            }
-        },
-        {
-            "id": 1873107,
-            "name": "India",
-            "coord": {
-                "lat": 21,
-                "lon": 78
-            }
-        },
-        {
-            "id": 6252001,
-            "name": "United States",
-            "coord": {
-                "lat": 39.76,
-                "lon": -98.5
-            }
-        },
-        {
-            "id": 6269131,
             "name": "England",
             "coord": {
                 "lat": 52.1605,
@@ -57,11 +29,80 @@
             }
         },
         {
-            "id": 6251999,
-            "name": "Canada",
+            "name": "India",
             "coord": {
-                "lat": 60.1087,
-                "lon": -113.6426
+                "lat": 20,
+                "lon": 77
+            }
+        },
+        {
+            "name": "Indonesia",
+            "coord": {
+                "lat": -5,
+                "lon": 120
+            }
+        },
+        {
+            "name": "Iran",
+            "coord": {
+                "lat": 32,
+                "lon": 53
+            }
+        },
+        {
+            "name": "Japan",
+            "coord": {
+                "lat": 35.6854,
+                "lon": 139.7531
+            }
+        },
+        {
+            "name": "Laos",
+            "coord": {
+                "lat": 18,
+                "lon": 105
+            }
+        },
+        {
+            "name": "Nepal",
+            "coord": {
+                "lat": 28,
+                "lon": 84
+            }
+        },
+        {
+            "name": "North Korea",
+            "coord": {
+                "lat": 40,
+                "lon": 127
+            }
+        },
+        {
+            "name": "South Korea",
+            "coord": {
+                "lat": 36,
+                "lon": 128
+            }
+        },
+        {
+            "name": "Thailand",
+            "coord": {
+                "lat": 15,
+                "lon": 100
+            }
+        },
+        {
+            "name": "United States",
+            "coord": {
+                "lat": 39.76,
+                "lon": -98.5
+            }
+        },
+        {
+            "name": "Vietnam",
+            "coord": {
+                "lat": 16.1667,
+                "lon": 107.8333
             }
         }
     ]
