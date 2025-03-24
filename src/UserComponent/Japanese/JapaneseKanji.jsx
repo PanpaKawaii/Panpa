@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Button, Col, Form, Row, Table } from 'react-bootstrap';
+import { Button, Form, Table } from 'react-bootstrap';
 import { useSearchParams } from 'react-router-dom';
 import './JapaneseKanji.css';
 
@@ -34,12 +34,12 @@ export default function JapaneseKanji() {
     }
 
     const closeAll = () => {
-        const cards = document.getElementsByClassName('card-body');
+        const cards = document.getElementsByClassName('grid-card');
         Array.from(cards).forEach(card => card.classList.add('rotate'));
     }
 
     const openAll = () => {
-        const cards = document.getElementsByClassName('card-body');
+        const cards = document.getElementsByClassName('grid-card');
         Array.from(cards).forEach(card => card.classList.remove('rotate'));
     }
 
@@ -71,45 +71,43 @@ export default function JapaneseKanji() {
             </Form>
 
             <div className='japanese-content'>
-                <Row className='japanese-row'>
+                <div className='japanese-row'>
                     {filteredKanji.filter(kanji => kanji.Id !== 'NoKanji').map((kanji, index) => (
-                        <Col key={kanji.Id} xs={6} sm={6} md={4} lg={3} xl={3} xxl={2} className='japanese-col'>
-                            <div className='grid-card'>
-                                <div
-                                    id={`poker-card-${index}`}
-                                    onClick={() => rotateCard(index)}
-                                    className='card-body'
-                                    style={{
-                                        color: (
-                                            kanji.SinoVietnamese === 'NoKanji' ||
-                                            kanji.On === 'NoKanji' ||
-                                            kanji.Kun === 'NoKanji' ||
-                                            kanji.Romaji === 'NoKanji' ||
-                                            !kanji.Romaji
-                                        ) ? 'red' : 'black'
-                                    }}
-                                >
-                                    <div className='face front'>
-                                        <h1 className='japanese-font'><>{kanji.Id}</></h1>
-                                        <h4>{kanji.SinoVietnamese}</h4>
-                                        <p className='japanese-font'>On: {kanji.On}</p>
-                                        <p className='japanese-font'>Kun: {kanji.Kun}</p>
-                                        <p className='japanese-font'>Romaji: {kanji.Romaji}</p>
-                                    </div>
+                        <div className='japanese-col'>
+                            <div key={kanji.Id}
+                                id={`poker-card-${index}`}
+                                onClick={() => rotateCard(index)}
+                                className='grid-card'
+                                style={{
+                                    color: (
+                                        kanji.SinoVietnamese === 'NoKanji' ||
+                                        kanji.On === 'NoKanji' ||
+                                        kanji.Kun === 'NoKanji' ||
+                                        kanji.Romaji === 'NoKanji' ||
+                                        !kanji.Romaji
+                                    ) ? 'red' : 'black'
+                                }}
+                            >
+                                <div className='face front'>
+                                    <h1 className='japanese-font'><>{kanji.Id}</></h1>
+                                    <h4>{kanji.SinoVietnamese}</h4>
+                                    <p className='japanese-font'>On: {kanji.On}</p>
+                                    <p className='japanese-font'>Kun: {kanji.Kun}</p>
+                                    {/* <p className='japanese-font'>Romaji: {kanji.Romaji}</p> */}
+                                </div>
 
-                                    <div className='face back'>
-                                        <h3>{kanji.SinoVietnamese}</h3>
-                                        {KanjiExample.filter(include => include.Word.includes(kanji.Id)).map((example, index) => (
-                                            <div key={index}>
-                                                <span className='japanese-font'>{example.Hiragana}</span> - <span>{example.Meaning}</span>
-                                            </div>
-                                        ))}
-                                    </div>
+                                <div className='face back'>
+                                    <h3>{kanji.SinoVietnamese}</h3>
+                                    {KanjiExample.filter(include => include.Word.includes(kanji.Id)).map((example, index) => (
+                                        <div key={index}>
+                                            <span className='japanese-font'>{example.Hiragana}</span> - <span>{example.Meaning}</span>
+                                        </div>
+                                    ))}
                                 </div>
                             </div>
-                        </Col>
+                        </div>
                     ))}
-                </Row>
+                </div>
             </div>
 
             <div className='japanese-table-content'>

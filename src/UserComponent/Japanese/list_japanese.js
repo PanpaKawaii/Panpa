@@ -678,7 +678,7 @@ export const Verb = [
     { Hiragana: 'おちます', Kanji: '落ちます', Group: 'II', Meaning: 'Rơi', Special: 'true', Romaji: 'ochimasu' },
     { Hiragana: 'できます', Kanji: '出来ます', Group: 'II', Meaning: 'Có thể', Special: 'true', Romaji: 'dekimasu' },////////////////////////////////////////////////////////////////////
     { Hiragana: 'かります', Kanji: '借ります', Group: 'II', Meaning: 'Mượn', Special: 'true', Romaji: 'karimasu' },
-    { Hiragana: 'つづきます', Kanji: '続きます', Group: 'II', Meaning: 'Tiếp tục', Special: 'true', Romaji: 'tsugimasu' },
+    { Hiragana: 'つづきます', Kanji: '続きます', Group: 'II', Meaning: 'Tiếp tục', Special: 'true', Romaji: 'tsudukimasu' },
     { Hiragana: 'しんじます', Kanji: '信じます', Group: 'II', Meaning: 'Tin tưởng', Special: 'true', Romaji: 'shinjimasu' },
 
     { Hiragana: 'ふえます', Kanji: '増えます', Group: 'II', Meaning: 'Tăng lên', Special: 'false', Romaji: 'fuemasu' },
