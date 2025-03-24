@@ -1,13 +1,12 @@
-import { useLoader } from '@react-three/fiber';
-import React, { useRef } from 'react';
-import { useFrame } from '@react-three/fiber';
-import { TextureLoader } from 'three';
 import { Sphere } from '@react-three/drei';
+import { useFrame, useLoader } from '@react-three/fiber';
+import React, { useRef } from 'react';
+import { TextureLoader } from 'three';
+import Cloud from '../../assets/EarthMaterials/200-2001465_earth-clouds-2048-earth-clouds-texture-png.png';
 import DayTime from '../../assets/EarthMaterials/2k_earth_daymap.jpg';
 import NightTime from '../../assets/EarthMaterials/2k_earth_nightmap.jpg';
-import Cloud from '../../assets/EarthMaterials/200-2001465_earth-clouds-2048-earth-clouds-texture-png.png';
 
-export default function Earth() {
+export default function Earth(props) {
 
     const sphereRef = useRef();
     useFrame(() => {
@@ -19,10 +18,11 @@ export default function Earth() {
     const dayTexture = useLoader(TextureLoader, DayTime);
     const nightTexture = useLoader(TextureLoader, NightTime);
     const cloudTexture = useLoader(TextureLoader, Cloud);
+    const radius = props.radius;
 
     return (
         <>
-            <Sphere args={[5, 64, 64]}>
+            <Sphere args={[radius, 64, 64]}>
                 <meshStandardMaterial
                     attach='material'
                     map={dayTexture}
@@ -32,7 +32,7 @@ export default function Earth() {
                 />
             </Sphere>
 
-            <Sphere position={[0, 0, 0]} args={[5, 64, 64]}>
+            <Sphere position={[0, 0, 0]} args={[radius, 64, 64]}>
                 <meshStandardMaterial
                     attach='material'
                     map={nightTexture}
@@ -42,7 +42,7 @@ export default function Earth() {
                 />
             </Sphere>
 
-            <Sphere ref={sphereRef} args={[5.05, 64, 64]}>
+            <Sphere ref={sphereRef} args={[radius + 0.03, 64, 64]}>
                 <meshStandardMaterial
                     attach='material'
                     map={cloudTexture}

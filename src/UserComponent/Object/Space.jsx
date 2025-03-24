@@ -5,6 +5,9 @@ import Earth from './Earth';
 import Links from './LinkDot';
 
 export default function Space() {
+
+    const radius = 5;
+
     return (
         <div
             style={{
@@ -35,7 +38,14 @@ export default function Space() {
             }}>
             </div>
             {/* Change to your location */}
-            <Canvas camera={{ position: [-1.4707, 1.3922, -4.5715] }}
+            <Canvas
+                camera={{
+                    position: [
+                        radius * Math.cos((107) * Math.PI / 180),
+                        radius * Math.tan((17) * Math.PI / 180),
+                        radius * Math.sin((107 + 180) * Math.PI / 180),
+                    ]
+                }}
                 style={{
                     width: '800px',
                     height: '100vh',
@@ -44,14 +54,14 @@ export default function Space() {
 
                 <ambientLight intensity={0.9} />
                 <directionalLight
-                    position={[-5, 5 * Math.tan(-23.44 * Math.PI / 180), -5]}
+                    position={[-radius, radius * Math.tan(-23.44 * Math.PI / 180), -radius]}
                     intensity={3}
                     color={'#fff'}
                     castShadow
                 />
 
-                <Earth />
-                <Links />
+                <Earth radius={radius} />
+                <Links radius={radius} />
 
                 <OrbitControls
                     minDistance={10}

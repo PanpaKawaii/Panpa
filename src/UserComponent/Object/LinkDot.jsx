@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 
 import COUNTRY from '../../assets/Country.json';
 
-function LinkDot({ position, onClick, country, rotation }) {
+function LinkDot({ position, onClick, country, isClicked, rotation }) {
 
     const [hovered, setHovered] = useState(false);
 
@@ -19,14 +19,13 @@ function LinkDot({ position, onClick, country, rotation }) {
         >
             <sphereGeometry args={[hovered ? 0.05 : 0.03, 16, 16]} />
             <meshStandardMaterial color={
-                country === 'Vietnam' ? 'red' :
-                    (country === 'orange' ? 'red' :
-                        (country === 'white' ? 'red' : 'yellow'))
+                isClicked ? 'red' : 'yellow'
             } />
             <Text
-                position={[0, 0, 0.3]}
-                fontSize={hovered ? 0.15 : 0.1}
+                position={[0, 0, 0.2]}
+                fontSize={hovered ? 0.1 : 0.08}
                 color='white'
+                fontWeight='bold'
                 anchorX='center'
                 anchorY='middle'
             >
@@ -38,12 +37,19 @@ function LinkDot({ position, onClick, country, rotation }) {
     )
 }
 
-export default function Links() {
+export default function Links(props) {
+
+    console.log('Links rerender');
 
     const navigate = useNavigate();
-
+    const [clickedCountry, setClickedCountry] = useState(null);
     const list = COUNTRY.list;
-    const radius = 5;
+    const radius = props.radius;
+
+    const handleClickCountry = (name, lat, lon) => {
+        setClickedCountry(prev => name)
+        navigate(`/space?search=${name.replace(' ', '%20')}&lat=${lat.toFixed(2)}&lon=${lon.toFixed(2)}`)
+    }
 
     return (
         <>
@@ -56,8 +62,9 @@ export default function Links() {
                     <LinkDot
                         key={index}
                         position={[x, z, y]}
-                        onClick={() => navigate(city.url ? city.url : `/${city.name}`)}
+                        onClick={() => handleClickCountry(city.name, city.coord.lat, city.coord.lon)}
                         country={city.name}
+                        isClicked={clickedCountry === city.name}
                         rotation={[
                             (0) * Math.PI / 180,
                             (city.coord.lon + 90) * Math.PI / 180,
