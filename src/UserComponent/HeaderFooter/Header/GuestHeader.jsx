@@ -32,7 +32,6 @@ export default function GuestHeader() {
                     </Typography>
 
                     <Link to='/' className='menu-item'><i className='fa-solid fa-house icon'></i> Home</Link>
-                    <Link to='/googlemap' className='menu-item'><i className='fa-solid fa-map icon'></i> Google Map</Link>
                     <Link to='/about' className='menu-item'><i className='fa-solid fa-circle-info icon'></i> About</Link>
                     <Link to='/contact' className='menu-item'><i className='fa-regular fa-address-card icon'></i> Contact</Link>
                     <Link to='/testapp' className='menu-item'><i className='fa-solid fa-laptop icon'></i> App</Link>

@@ -22,10 +22,31 @@
             }
         },
         {
+            "name": "Denmark",
+            "coord": {
+                "lat": 56,
+                "lon": 10
+            }
+        },
+        {
             "name": "England",
             "coord": {
                 "lat": 52.1605,
                 "lon": -0.7031
+            }
+        },
+        {
+            "name": "France",
+            "coord": {
+                "lat": 46,
+                "lon": 2
+            }
+        },
+        {
+            "name": "Germany",
+            "coord": {
+                "lat": 51.5,
+                "lon": 10.5
             }
         },
         {
@@ -50,6 +71,27 @@
             }
         },
         {
+            "name": "Iraq",
+            "coord": {
+                "lat": 33,
+                "lon": 44
+            }
+        },
+        {
+            "name": "Israel",
+            "coord": {
+                "lat": 31.5,
+                "lon": 34.75
+            }
+        },
+        {
+            "name": "Italy",
+            "coord": {
+                "lat": 42.8333,
+                "lon": 12.8333
+            }
+        },
+        {
             "name": "Japan",
             "coord": {
                 "lat": 35.6854,
@@ -61,6 +103,20 @@
             "coord": {
                 "lat": 18,
                 "lon": 105
+            }
+        },
+        {
+            "name": "Malaysia",
+            "coord": {
+                "lat": 2.5,
+                "lon": 112.5
+            }
+        },
+        {
+            "name": "Myanmar",
+            "coord": {
+                "lat": 22,
+                "lon": 98
             }
         },
         {
@@ -78,10 +134,52 @@
             }
         },
         {
+            "name": "Pakistan",
+            "coord": {
+                "lat": 30,
+                "lon": 70
+            }
+        },
+        {
+            "name": "Philippines",
+            "coord": {
+                "lat": 13,
+                "lon": 122
+            }
+        },
+        {
+            "name": "Qatar",
+            "coord": {
+                "lat": 25.5,
+                "lon": 51.25
+            }
+        },
+        {
+            "name": "Russia",
+            "coord": {
+                "lat": 60,
+                "lon": 100
+            }
+        },
+        {
+            "name": "Singapore",
+            "coord": {
+                "lat": 1.2897,
+                "lon": 103.8501
+            }
+        },
+        {
             "name": "South Korea",
             "coord": {
                 "lat": 36,
                 "lon": 128
+            }
+        },
+        {
+            "name": "Spain",
+            "coord": {
+                "lat": 40,
+                "lon": -4
             }
         },
         {

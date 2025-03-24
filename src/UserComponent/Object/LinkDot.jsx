@@ -21,11 +21,11 @@ function LinkDot({ position, onClick, country, rotation }) {
             <meshStandardMaterial color={
                 country === 'Vietnam' ? 'red' :
                     (country === 'orange' ? 'red' :
-                        (country === 'white' ? 'red' : 'gray'))
+                        (country === 'white' ? 'red' : 'yellow'))
             } />
             <Text
                 position={[0, 0, 0.3]}
-                fontSize={0.1}
+                fontSize={hovered ? 0.15 : 0.1}
                 color='white'
                 anchorX='center'
                 anchorY='middle'
