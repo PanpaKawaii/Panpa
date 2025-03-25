@@ -9,7 +9,7 @@
         font-family: 'Klee One', Arial, sans-serif;
     }
 
-    .header {
+    .heading {
         h2 {
             margin: 0 0 20px;
             color: #fd73a7;
@@ -88,26 +88,41 @@
         justify-content: center;
 
         .japanese-row {
-            width: 100%;
-            max-width: 1500px;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: repeat(6, minmax(0, 1fr));
+            gap: 20px;
 
             .japanese-col {
                 display: flex;
                 justify-content: center;
                 align-items: start;
 
+                .groupI {
+                    color: #000;
+                    background-color: #fdd9e5;
+                }
+
+                .groupII {
+                    color: #000;
+                    background-color: #f99dbc;
+                }
+
+                .groupIII {
+                    color: #fff;
+                    background-color: #f86aa1;
+                }
+
                 .grid-card {
                     width: 250px;
                     height: fit-content;
-                    margin: 0 0 20px;
-                    background-color: #ffeeee;
                     border: 2px solid #fe036a;
-                    border-radius: 20px;
+                    border-radius: 16px;
                     overflow: hidden;
                     align-items: center;
                     text-align: center;
-                    transition: all 0.3s ease;
                     box-shadow: 0px 0px 5px #f99dbc50;
+                    transition: all 0.3s ease;
 
                     .card-body {
                         padding: 8px 0;
@@ -118,10 +133,23 @@
                         h4 {
                             margin: 0 0 8px;
                             font-weight: bold;
+
+                            ._masu {
+                                display: none;
+                            }
                         }
 
                         p {
-                            margin: 0;
+                            margin: 0 5px;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            gap: 8px;
+
+                            i {
+                                color: gold;
+                                filter: drop-shadow(0 0 1px #000);
+                            }
                         }
                     }
                 }
@@ -134,15 +162,56 @@
         }
     }
 
-    @media screen and (max-width: 576px) {
+    @media screen and (max-width: 1400px) {
+        .japanese-content {
+            .japanese-row {
+                grid-template-columns: repeat(5, minmax(0, 1fr));
+            }
+        }
+    }
+
+    @media screen and (max-width: 1200px) {
+        .japanese-content {
+            .japanese-row {
+                grid-template-columns: repeat(4, minmax(0, 1fr));
+            }
+        }
+    }
+
+    @media screen and (max-width: 992px) {
+        .japanese-content {
+            .japanese-row {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+            }
+        }
+    }
+
+    @media screen and (max-width: 768px) {
         .japanese-content {
             .japanese-row {
                 .japanese-col {
                     .grid-card {
-                        width: 100%;
+                        .card-body{
+                            h3, h4 {
+                                ._masu{
+                                    display: inline-flex;
+                                }
+                                .masu{
+                                    display: none;
+                                }
+                            }
+                        }
                     }
                 }
             }
         }
     }
+
+    /* @media screen and (max-width: 576px) {
+        .japanese-content {
+            .japanese-row {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+            }
+        }
+    } */
 }

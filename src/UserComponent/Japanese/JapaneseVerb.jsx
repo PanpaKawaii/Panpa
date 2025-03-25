@@ -52,7 +52,7 @@ export default function JapaneseVerb() {
 
     return (
         <div className='japaneseverb-container'>
-            <div className='header'>
+            <div className='heading'>
                 <h2>Japanese Verb</h2>
             </div>
 
@@ -125,44 +125,34 @@ export default function JapaneseVerb() {
             </div> */}
 
             <div className='japanese-content'>
-                <Row className='japanese-row'>
+                <div className='japanese-row'>
                     {filteredVerb.filter(verb => verb.Hiragana !== 'NoVerb').map((verb, index) => (
-                        <Col key={index} xs={4} sm={4} md={4} lg={3} xl={2} xxl={2} className='japanese-col'>
-                            {/* <Col key={verb.Kanji} xs={6} sm={6} md={6} lg={4} xl={3} xxl={3} className='japanese-col'> */}
+                        <div key={index} className='japanese-col'>
                             <div
-                                className='grid-card'
-                                style={{
-                                    color: (
-                                        verb.Group === 'III' ?
-                                            '#fff'
-                                            :
-                                            '#000'
-                                    ),
-                                    backgroundColor: (
-                                        verb.Group === 'I' ?
-                                            '#fdd9e5'
-                                            :
-                                            (verb.Group === 'II' ?
-                                                '#f99dbc'
-                                                :
-                                                '#f86aa1'
-                                            )
-                                    )
-                                }}
+                                className={`grid-card
+                                    ${verb.Group === 'I' ? 'groupI' :
+                                        verb.Group === 'II' ? 'groupII' :
+                                            verb.Group === 'III' ? 'groupIII' : 'groupNONE'}`}
                             >
                                 <div className='card-body'>
-                                    <h3 className='japanese-font' style={{ backgroundColor: verb.Kanji === 'NoVerb' ? '#dc3545' : '' }}>{verb.Kanji}</h3>
-                                    <h4 className='japanese-font'>{verb.Hiragana}</h4>
+                                    <h3 className='japanese-font' style={{ backgroundColor: verb.Kanji === 'NoVerb' ? '#dc3545' : '' }}>
+                                        {verb.Kanji.replace('ます', '')}<span className='masu'>ます</span><span className='_masu'>..</span>
+                                    </h3>
+                                    <h4 className='japanese-font'>
+                                        {verb.Hiragana.replace('ます', '')}<span className='masu'>ます</span><span className='_masu'>..</span>
+                                    </h4>
                                     <p>
-                                        {verb.Special == 'true' && <i className='fa-solid fa-star' style={{ color: '#dc3545' }}></i>}
-                                        <span style={{ fontFamily: 'none' }}>{verb.Group}</span> : {verb.Meaning}
+                                        {verb.Special == 'true' && <i className='fa-solid fa-star'></i>}
+                                        <span>
+                                            <span style={{ fontFamily: 'none' }}>{verb.Group}</span> : {verb.Meaning}
+                                        </span>
                                     </p>
                                     {/* <p>Romaji: {verb.Romaji}</p> */}
                                 </div>
                             </div>
-                        </Col>
+                        </div>
                     ))}
-                </Row>
+                </div>
             </div>
         </div>
     )

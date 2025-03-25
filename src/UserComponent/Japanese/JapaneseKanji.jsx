@@ -49,7 +49,7 @@ export default function JapaneseKanji() {
 
     return (
         <div className='japanesekanji-container'>
-            <div className='header'>
+            <div className='heading'>
                 <h2>Japanese Kanji</h2>
             </div>
 
@@ -73,9 +73,9 @@ export default function JapaneseKanji() {
             <div className='japanese-content'>
                 <div className='japanese-row'>
                     {filteredKanji.filter(kanji => kanji.Id !== 'NoKanji').map((kanji, index) => (
-                        <div className='japanese-col'>
-                            <div key={kanji.Id}
-                                id={`poker-card-${index}`}
+                        <div key={kanji.Id}
+                            className='japanese-col'>
+                            <div id={`poker-card-${index}`}
                                 onClick={() => rotateCard(index)}
                                 className='grid-card'
                                 style={{
