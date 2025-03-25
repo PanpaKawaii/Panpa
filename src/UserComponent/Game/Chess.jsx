@@ -1,11 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { Button, Form, Table } from 'react-bootstrap';
+import { Button, Form } from 'react-bootstrap';
 import './Chess.css';
 
 export default function Chess() {
-
     console.log('Chess rerender');
-
 
     const [PlayTable, setPlayTable] = useState([]);
 
@@ -64,19 +62,20 @@ export default function Chess() {
         [1, 2, 3, 4, 6, 5, 0, 0]
     ]
 
-    const [Player, setPlayer] = useState(1);
-    const [Pick, setPick] = useState([0, 0, 0]);
-    const [AvailablePath, setAvailablePath] = useState([]);
-    const [Move, setMove] = useState(false);
-    const [Castling, setCastling] = useState([true, true, true, true]);
-    const [EnPassant, setEnPassant] = useState([0, 0, 0]);
-    const [Promotion, setPromotion] = useState([0, 0, 0, false]);
+    const [Player, setPlayer] = useState(1);//1or2
+    const [Pick, setPick] = useState([0, 0, 0]);//[cell, row, col]
+    const [AvailablePath, setAvailablePath] = useState([]);//[...newAvailablePath, [row, col]]
+    const [Move, setMove] = useState(false);//Is picked to move
+    const [Castling, setCastling] = useState([true, true, true, true]);//[LeftBlack, RightBlack, LeftWhite, RightWhite]
+    const [EnPassant, setEnPassant] = useState([0, 0, 0]);//[Pick[0], row, col]
+    const [Promotion, setPromotion] = useState([0, 0, 0, false]);//[Pick[0], row, col, Is available for promotion]
     const [Rotate, setRotate] = useState(false);
 
     const [Refresh, setRefresh] = useState(0);
 
     useEffect(() => {
         setPlayTable(InitialPlayTable);
+        // setPlayTable(TestOnlyKingVsAll);
 
         setPlayer(1);
         setPick([0, 0, 0]);
@@ -130,9 +129,9 @@ export default function Chess() {
             };
             if (//Nhập thành King đen cánh trái
                 cell === -1 &&
-                PlayTable[row][col - 1] === 0 && checkIsHavingEnemies(row, col - 1) === false &&
-                PlayTable[row][col - 2] === 0 && checkIsHavingEnemies(row, col - 2) === false &&
-                PlayTable[row][col - 3] === 0 && checkIsHavingEnemies(row, col - 3) === false &&
+                PlayTable[row][col - 1] === 0 && checkIsHavingEnemies(row, col - 1, PlayTable) === false &&
+                PlayTable[row][col - 2] === 0 && checkIsHavingEnemies(row, col - 2, PlayTable) === false &&
+                PlayTable[row][col - 3] === 0 && checkIsHavingEnemies(row, col - 3, PlayTable) === false &&
                 Castling[0] === true
             ) {
                 let redcell = document.getElementById(`cell-${row}-${col - 2}`);
@@ -141,8 +140,8 @@ export default function Chess() {
             }
             if (//Nhập thành King đen cánh phải
                 cell === -1 &&
-                PlayTable[row][col + 1] === 0 && checkIsHavingEnemies(row, col + 1) === false &&
-                PlayTable[row][col + 2] === 0 && checkIsHavingEnemies(row, col + 2) === false &&
+                PlayTable[row][col + 1] === 0 && checkIsHavingEnemies(row, col + 1, PlayTable) === false &&
+                PlayTable[row][col + 2] === 0 && checkIsHavingEnemies(row, col + 2, PlayTable) === false &&
                 Castling[1] === true
             ) {
                 let redcell = document.getElementById(`cell-${row}-${col + 2}`);
@@ -151,9 +150,9 @@ export default function Chess() {
             }
             if (//Nhập thành King trắng cánh trái
                 cell === 1 &&
-                PlayTable[row][col - 1] === 0 && checkIsHavingEnemies(row, col - 1) === false &&
-                PlayTable[row][col - 2] === 0 && checkIsHavingEnemies(row, col - 2) === false &&
-                PlayTable[row][col - 3] === 0 && checkIsHavingEnemies(row, col - 3) === false &&
+                PlayTable[row][col - 1] === 0 && checkIsHavingEnemies(row, col - 1, PlayTable) === false &&
+                PlayTable[row][col - 2] === 0 && checkIsHavingEnemies(row, col - 2, PlayTable) === false &&
+                PlayTable[row][col - 3] === 0 && checkIsHavingEnemies(row, col - 3, PlayTable) === false &&
                 Castling[2] === true
             ) {
                 let redcell = document.getElementById(`cell-${row}-${col - 2}`);
@@ -162,8 +161,8 @@ export default function Chess() {
             }
             if (//Nhập thành King trắng cánh phải
                 cell === 1 &&
-                PlayTable[row][col + 1] === 0 && checkIsHavingEnemies(row, col + 1) === false &&
-                PlayTable[row][col + 2] === 0 && checkIsHavingEnemies(row, col + 2) === false &&
+                PlayTable[row][col + 1] === 0 && checkIsHavingEnemies(row, col + 1, PlayTable) === false &&
+                PlayTable[row][col + 2] === 0 && checkIsHavingEnemies(row, col + 2, PlayTable) === false &&
                 Castling[3] === true
             ) {
                 let redcell = document.getElementById(`cell-${row}-${col + 2}`);
@@ -171,7 +170,7 @@ export default function Chess() {
                 newAvailablePath = [...newAvailablePath, [row, col + 2]];
             }
             console.log('Before', newAvailablePath);
-            newAvailablePath = eliminateUnavailablePath(newAvailablePath);
+            newAvailablePath = eliminateUnavailablePath(newAvailablePath, row, col);
             console.log('After', newAvailablePath);
             setAvailablePath(p => newAvailablePath);
         } else if (cell === 2 || cell === -2) {//////////////////////////////////////////////////////////////////////////////////////////////////// Queen
@@ -487,21 +486,28 @@ export default function Chess() {
     }
 
 
-    const eliminateUnavailablePath = (AvailablePath) => {
-        let NeedToEleminating = [];
+    const eliminateUnavailablePath = (AvailablePath, itsrow, itscol) => {
+        let NeedEliminating = [];
+        let newPlayTable = PlayTable.map(row => [...row]);
+        newPlayTable[itsrow][itscol] = 0;
+        console.log('itsrow', itsrow);
+        console.log('itscol', itscol);
+        console.log('PlayTable', PlayTable);
+        console.log('newPlayTable', newPlayTable);
+
         for (const path of AvailablePath) {
-            if (checkIsHavingEnemies(path[0], path[1])) {
-                NeedToEleminating = [...NeedToEleminating, [path[0], path[1]]];
+            if (checkIsHavingEnemies(path[0], path[1], newPlayTable)) {
+                NeedEliminating = [...NeedEliminating, [path[0], path[1]]];
                 let redcell = document.getElementById(`cell-${path[0]}-${path[1]}`);
                 redcell.classList.remove('moveablecell');
             }
         }
-        console.log('NeedToEleminating', NeedToEleminating);
-        let DoneAvailablePath = AvailablePath.filter(path => !NeedToEleminating.some(needPath => needPath[0] === path[0] && needPath[1] === path[1]));
+        console.log('NeedEliminating', NeedEliminating);
+        let DoneAvailablePath = AvailablePath.filter(path => !NeedEliminating.some(needPath => needPath[0] === path[0] && needPath[1] === path[1]));
         return DoneAvailablePath;
     }
 
-    const checkIsHavingEnemies = (row, col) => {
+    const checkIsHavingEnemies = (row, col, PlayTable) => {
         // console.log('checkIsHavingEnemies');
         if (row - Player >= 0 && row - Player <= 7 && col - Player >= 0 && col - Player <= 7) {
             if (PlayTable[row - Player][col - Player] === Player * (-6)) {
@@ -816,9 +822,9 @@ export default function Chess() {
                         <Button className='btn' onClick={() => setRefresh(Refresh + 1)}>RESTART</Button>
                         <Button className='btn' onClick={() => setPlayer(PLAYER => -PLAYER)}>SET PLAYER {Player}</Button>
                         <Button className='btn' style={{ backgroundColor: Rotate ? '#ccc' : '#999' }} onClick={() => setRotate(p => !p)} >
-                            <i className='fa-solid fa-chess-king black-side' style={{ transform: Rotate && 'rotateZ(180deg)', color: 'black' }}></i>
+                            <i className='fa-regular fa-chess-king black-side' style={{ transform: Rotate && 'rotateZ(180deg)' }}></i>
                             <span> ROTATE </span>
-                            <i className='fa-solid fa-chess-king white-side' style={{ color: 'white' }}></i>
+                            <i className='fa-regular fa-chess-king white-side'></i>
                         </Button>
                     </div>
                     <Form.Group controlId='gamemode' className='form-group'>
@@ -863,14 +869,14 @@ export default function Chess() {
                                 )
                     }}
                 >
-                    {HasWon === 1 && <h2 ><b><i className='fa-solid fa-xmark'></i> WON!</b></h2>}
-                    {HasWon === 2 && <h2 style={{ color: '#01d0fd' }}><b><i className='fa-solid fa-circle'></i> WON!</b></h2>}
+                    {HasWon === 1 && <h2><b>WON!</b></h2>}
+                    {HasWon === 2 && <h2><b>WON!</b></h2>}
                 </div>
             </div>
 
             {/* Main Content =================================================================================================================================================================== */}
             <div className='content'>
-                <Table
+                <table
                     className='no-wrap align-middle'
                     style={{
                         // '--table-width': 8,
@@ -935,7 +941,7 @@ export default function Chess() {
                             </tr>
                         </tbody>
                     }
-                </Table>
+                </table>
 
                 {/* <Table
                     className='no-wrap align-middle'
