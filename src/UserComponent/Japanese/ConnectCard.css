@@ -1,0 +1,66 @@
+.japanese-game {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+
+    .japanese-font {
+        font-family: 'Klee One', Arial, sans-serif;
+    }
+
+    .romaji-font {
+        font-family: 'Quicksand', Arial, sans-serif;
+    }
+
+    .japanese-row {
+        padding: 20px;
+        display: grid;
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        gap: 20px;
+
+        .japanese-col {
+            display: flex;
+            justify-content: center;
+            align-items: start;
+
+            .grid-card {
+                cursor: pointer;
+                padding: 0;
+                width: 200px;
+                height: 200px;
+                background-color: #fdd9e5;
+                border: 2px solid #f99dbc;
+                border-radius: 16px;
+                box-shadow: 0px 0px 5px #f99dbc50;
+                box-sizing: border-box;
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                overflow: hidden;
+                transition: all 0.5s ease;
+
+                h1 {
+                    margin: 8px;
+                    font-size: 144px;
+                }
+
+                h2 {
+                    margin: 8px;
+                    font-size: 40px;
+                    font-weight: bold;
+                }
+            }
+
+            .correct {
+                color: #ffb8b8;
+                background-color: #ffffff;
+            }
+
+            .picked {
+                color: #f0a6be;
+                background-color: #cf5f82;
+            }
+        }
+    }
+}

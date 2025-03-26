@@ -37,7 +37,7 @@ export const Kanji = [
     { Id: '七', SinoVietnamese: 'THẤT', On: 'シチ、シツ', Kun: 'なな、なの', Romaji: 'shichi, shitsu, nana, nano' },
     { Id: '八', SinoVietnamese: 'BÁT', On: 'ハチ', Kun: 'や、やっ、よう', Romaji: 'hachi, ya, ya-tsu, you' },
     { Id: '九', SinoVietnamese: 'CỬU', On: 'キュウ、ク', Kun: 'ここの', Romaji: 'kyuu, ku, kokono' },
-    { Id: '十', SinoVietnamese: 'THẬP', On: 'ジュウ、ジッ、ジュッ', Kun: 'とお、と', Romaji: 'juu, ji-stu, ju-tsu, too, to' },
+    { Id: '十', SinoVietnamese: 'THẬP', On: 'ジュウ、ジッ、ジュッ', Kun: 'とお、と', Romaji: 'juu, ji-tsu, ju-tsu, too, to' },
     { Id: '年', SinoVietnamese: 'NIÊN', On: 'ネン', Kun: 'とし', Romaji: 'nen, toshi' },
 
     { Id: '東', SinoVietnamese: 'ĐÔNG', On: 'トウ', Kun: 'ひがし', Romaji: 'tou, higashi' },
@@ -144,15 +144,54 @@ export const Kanji = [
 
     { Id: '～', SinoVietnamese: 'NoKanji', On: 'NoKanji', Kun: 'NoKanji', Romaji: 'NoKanji' },
 
+    { Id: '酒', SinoVietnamese: 'TUỶ', On: 'シュウ', Kun: 'さけ', Romaji: 'shuu, sake' },
+    { Id: '作', SinoVietnamese: 'TÁC', On: 'サク', Kun: 'つく', Romaji: 'saku, tsuku' },
+    { Id: '茶', SinoVietnamese: 'TRÀ', On: 'チャ', Kun: 'おちゃ', Romaji: 'cha, ocha' },
+    { Id: '持', SinoVietnamese: 'TRÌ', On: 'ジ', Kun: 'もつ', Romaji: 'ji, motsu' },
+    { Id: '願', SinoVietnamese: 'NGUYỆN', On: 'ガン', Kun: 'ねが', Romaji: 'gan, nega' },
+    { Id: '料', SinoVietnamese: 'LIỆU', On: 'リョウ', Kun: 'かかり', Romaji: 'ryou, kakari' },
+    { Id: '理', SinoVietnamese: 'LÝ', On: 'リ', Kun: 'ことわり', Romaji: 'ri, kotowari' },
+    { Id: '味', SinoVietnamese: 'VỊ', On: 'ミ', Kun: 'あじ', Romaji: 'mi, aji' },
+    { Id: '色', SinoVietnamese: 'SẮC', On: 'ショク', Kun: 'いろ', Romaji: 'shoku, iro' },
+    { Id: '野', SinoVietnamese: 'DẦ', On: 'ヤ', Kun: 'の', Romaji: 'ya, no' },
+    { Id: '菜', SinoVietnamese: 'THẢI', On: 'サイ', Kun: 'な', Romaji: 'sai, na' },
+    { Id: '中', SinoVietnamese: 'TRUNG', On: 'チュウ', Kun: 'なか', Romaji: 'chuu, naka' },
+    { Id: '入', SinoVietnamese: 'NHẬP', On: 'ニュウ', Kun: 'い', Romaji: 'nyuu, i' },
+
+    { Id: '社', SinoVietnamese: 'XÃ', On: 'シャ', Kun: 'やしろ', Romaji: 'sha, yashiro' },
+    { Id: '支', SinoVietnamese: 'CHI', On: 'シ', Kun: 'えだ', Romaji: 'shi, eda' },
+    { Id: '張', SinoVietnamese: 'TRƯỜNG', On: 'チョウ', Kun: 'はり', Romaji: 'chou, hari' },
+    { Id: '発', SinoVietnamese: 'PHÁT', On: 'ハツ', Kun: 'おこ', Romaji: 'hatsu, oko' },
+    { Id: '港', SinoVietnamese: 'CẢNG', On: 'コウ', Kun: 'みなと', Romaji: 'kō, minato' },
+    { Id: '到', SinoVietnamese: 'ĐẾN', On: 'トウ', Kun: 'いた', Romaji: 'tō, ita' },
+    { Id: '着', SinoVietnamese: 'TRƯỚC', On: 'チャク', Kun: 'き', Romaji: 'chaku, ki' },
+    { Id: '自', SinoVietnamese: 'TỰ', On: 'ジ', Kun: 'みずから', Romaji: 'ji, mizukara' },
+    { Id: '車', SinoVietnamese: 'XẾ', On: 'シャ', Kun: 'くるま', Romaji: 'sha, kuruma' },
+    { Id: '電', SinoVietnamese: 'ĐIỆN', On: 'デン', Kun: 'いなずま', Romaji: 'den, inazuma' },
+    { Id: '使', SinoVietnamese: 'SỬ', On: 'シ', Kun: 'つか', Romaji: 'shi, tsuka' },
+    { Id: '借', SinoVietnamese: 'MƯỢN', On: 'シャク', Kun: 'かり', Romaji: 'shaku, kari' },
+    { Id: '送', SinoVietnamese: 'TỐNG', On: 'ソウ', Kun: 'おく', Romaji: 'sō, oku' },
+
+    { Id: '体', SinoVietnamese: 'THỂ', On: 'タイ', Kun: 'からだ', Romaji: 'tai, karada' },
+    { Id: '頭', SinoVietnamese: 'ĐẦU', On: 'トウ', Kun: 'あたま', Romaji: 'tō, atama' },
+    { Id: '目', SinoVietnamese: 'MỤC', On: 'モク', Kun: 'め', Romaji: 'moku, me' },
+    { Id: '耳', SinoVietnamese: 'NHĨ', On: 'ジ', Kun: 'みみ', Romaji: 'ji, mimi' },
+    { Id: '上', SinoVietnamese: 'THƯỢNG', On: 'ジョウ', Kun: 'うえ', Romaji: 'jō, ue' },
+    { Id: '下', SinoVietnamese: 'HẠ', On: 'カ', Kun: 'した', Romaji: 'ka, shita' },
+    { Id: '手', SinoVietnamese: 'THỦ', On: 'シュ', Kun: 'て', Romaji: 'shu, te' },
+    { Id: '足', SinoVietnamese: 'TỨC', On: 'ソク', Kun: 'あし', Romaji: 'soku, ashi' },
+    { Id: '毎', SinoVietnamese: 'MỖI', On: 'マイ', Kun: 'まい', Romaji: 'mai, mai' },
+    { Id: '末', SinoVietnamese: 'MẬT', On: 'マツ', Kun: 'すえ', Romaji: 'matsu, sue' },
+
+    { Id: '～.', SinoVietnamese: 'NoKanji', On: 'NoKanji', Kun: 'NoKanji', Romaji: 'NoKanji' },
+
     { Id: '晩', SinoVietnamese: 'VÃN', On: 'バン', Kun: 'ばん', Romaji: 'NoKanji' },
     { Id: '家', SinoVietnamese: 'GIA', On: 'カ、ケ', Kun: 'いえ', Romaji: 'NoKanji' },
     { Id: '犬', SinoVietnamese: 'KHUYỂN', On: 'ケン', Kun: 'いぬ', Romaji: 'NoKanji' },
     { Id: '猫', SinoVietnamese: 'MIÊU', On: 'ビョウ', Kun: 'ねこ', Romaji: 'NoKanji' },
-    { Id: '社', SinoVietnamese: 'XÃ', On: 'シャ', Kun: 'やしろ', Romaji: 'NoKanji' },
     { Id: '起', SinoVietnamese: 'KHỞI', On: 'キ', Kun: 'お', Romaji: 'NoKanji' },
     { Id: '寝', SinoVietnamese: 'TẨM', On: 'シン', Kun: 'ね', Romaji: 'NoKanji' },
     { Id: '帰', SinoVietnamese: 'QUY', On: 'キ', Kun: 'かえ', Romaji: 'NoKanji' },
-    { Id: '着', SinoVietnamese: 'TRƯỚC', On: 'チャク', Kun: 'き', Romaji: 'NoKanji' },
 
     { Id: 'NoKanji', SinoVietnamese: 'NoKanji', On: 'NoKanji', Kun: 'NoKanji', Romaji: 'NoKanji' },
     { Id: 'NoKanji', SinoVietnamese: 'NoKanji', On: 'NoKanji', Kun: 'NoKanji', Romaji: 'NoKanji' },
@@ -653,6 +692,7 @@ export const Verb = [
     { Hiragana: 'しります', Kanji: '知ります', Group: 'I', Meaning: 'Biết', Special: 'false', Romaji: 'shirimasu' },
     { Hiragana: 'へります', Kanji: '減ります', Group: 'I', Meaning: 'Giảm xuống', Special: 'false', Romaji: 'herimasu' },
     { Hiragana: 'きります', Kanji: '切ります', Group: 'I', Meaning: 'Cắt', Special: 'false', Romaji: 'kirimasu' },
+    { Hiragana: 'つづきます', Kanji: '続きます', Group: 'I', Meaning: 'Tiếp tục', Special: 'false', Romaji: 'tsudukimasu' },
 
 
     //「え」ます、Một âm tiết
@@ -678,7 +718,6 @@ export const Verb = [
     { Hiragana: 'おちます', Kanji: '落ちます', Group: 'II', Meaning: 'Rơi', Special: 'true', Romaji: 'ochimasu' },
     { Hiragana: 'できます', Kanji: '出来ます', Group: 'II', Meaning: 'Có thể', Special: 'true', Romaji: 'dekimasu' },////////////////////////////////////////////////////////////////////
     { Hiragana: 'かります', Kanji: '借ります', Group: 'II', Meaning: 'Mượn', Special: 'true', Romaji: 'karimasu' },
-    { Hiragana: 'つづきます', Kanji: '続きます', Group: 'II', Meaning: 'Tiếp tục', Special: 'true', Romaji: 'tsudukimasu' },
     { Hiragana: 'しんじます', Kanji: '信じます', Group: 'II', Meaning: 'Tin tưởng', Special: 'true', Romaji: 'shinjimasu' },
 
     { Hiragana: 'ふえます', Kanji: '増えます', Group: 'II', Meaning: 'Tăng lên', Special: 'false', Romaji: 'fuemasu' },

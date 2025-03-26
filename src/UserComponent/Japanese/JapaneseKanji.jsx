@@ -5,6 +5,8 @@ import './JapaneseKanji.css';
 
 import { Kanji, KanjiExample } from './list_japanese';
 
+import ConnectCard from './ConnectCard'
+
 export default function JapaneseKanji() {
 
     const [searchParams, setSearchParams] = useSearchParams();
@@ -52,6 +54,8 @@ export default function JapaneseKanji() {
             <div className='heading'>
                 <h2>Japanese Kanji</h2>
             </div>
+
+            {/* <ConnectCard /> */}
 
             <Form onSubmit={handleEnterKanji}>
                 <Form.Group controlId='searchkanji' className='form-group'>

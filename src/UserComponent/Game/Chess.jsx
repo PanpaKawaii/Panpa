@@ -58,11 +58,11 @@ export default function Chess() {
         [0, 0, 0, 0, 0, -1, 0, 0],
         [0, 0, 0, 0, 0, 0, 0, 0],
         [0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0, 0],
-        [1, 2, 3, 4, 6, 5, 0, 0]
+        [0, 0, 0, 0, 6, 0, 0, 0],
+        [1, 2, 3, 4, 5, 0, 0, 0]
     ]
 
-    const [Player, setPlayer] = useState(1);//1or2
+    const [Player, setPlayer] = useState(1);//-1 is Black //1 is White
     const [Pick, setPick] = useState([0, 0, 0]);//[cell, row, col]
     const [AvailablePath, setAvailablePath] = useState([]);//[...newAvailablePath, [row, col]]
     const [Move, setMove] = useState(false);//Is picked to move
