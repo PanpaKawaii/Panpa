@@ -1,5 +1,4 @@
 import React from 'react';
-import { Card, Col, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import './ListGame.css';
 
@@ -35,20 +34,18 @@ export default function ListGame() {
                 <h1>List Game</h1>
             </div>
             <div className='content'>
-                <Row className='row'>
+                <div className='game-row'>
                     {ListGame.map((game, index) => (
-                        <Col key={index} xs={6} sm={6} md={4} lg={3} xl={3} xxl={2} className='col'>
+                        <div key={index} className='game-col'>
                             <Link to={`${game.link}`}>
-                                <Card>
-                                    <Card.Body>
-                                        <img src={game.src} alt={game.name} />
-                                        <p>{game.name}</p>
-                                    </Card.Body>
-                                </Card>
+                                <div className='card'>
+                                    <img src={game.src} alt={game.name} />
+                                    <p>{game.name}</p>
+                                </div>
                             </Link>
-                        </Col>
+                        </div>
                     ))}
-                </Row>
+                </div>
             </div>
         </div>
     )

@@ -1,5 +1,4 @@
 import React from 'react';
-import { Card, Col, Row } from 'react-bootstrap';
 import { Link, Outlet } from 'react-router-dom';
 import './ListJapanese.css';
 
@@ -11,28 +10,30 @@ export default function ListJapanese() {
     const ListJapanese = [
         { name: 'Kanji', src: Kanji, link: '/japanese/kanji' },
         { name: 'Verb', src: Verb, link: '/japanese/verb' },
+        { name: 'NoName', src: null, link: '/japanese' },
+        { name: 'NoName', src: null, link: '/japanese' },
+        { name: 'NoName', src: null, link: '/japanese' },
+        { name: 'NoName', src: null, link: '/japanese' },
     ];
 
     return (
         <div className='listjapanese-container'>
-            <div className='header'>
+            <div className='heading'>
                 <h1>List Japanese</h1>
             </div>
             <div className='content'>
-                <Row className='row'>
+                <div className='japanese-row'>
                     {ListJapanese.map((japanese, index) => (
-                        <Col key={index} xs={6} sm={6} md={4} lg={3} xl={3} xxl={2} className='col'>
+                        <div key={index} className='japanese-col'>
                             <Link to={`${japanese.link}`}>
-                                <Card>
-                                    <Card.Body>
-                                        <img src={japanese.src} alt={japanese.name} />
-                                        <p>{japanese.name}</p>
-                                    </Card.Body>
-                                </Card>
+                                <div className='card'>
+                                    <img src={japanese.src} alt={japanese.name} />
+                                    <p>{japanese.name}</p>
+                                </div>
                             </Link>
-                        </Col>
+                        </div>
                     ))}
-                </Row>
+                </div>
             </div>
             <hr />
             <Outlet />
