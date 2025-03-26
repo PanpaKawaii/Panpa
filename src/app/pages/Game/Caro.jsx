@@ -282,7 +282,7 @@ export default function Caro() {
 
     return (
         <div className='caro-container'>
-            <div className='header'>
+            <div className='heading'>
                 <h1>CARO</h1>
             </div>
 

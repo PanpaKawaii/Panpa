@@ -39,7 +39,7 @@ export default function TypePi() {
 
     return (
         <div className='typepi-container'>
-            <div className='header'>
+            <div className='heading'>
                 <h1>Type <span>π</span></h1>
                 <p>Length:
                     {

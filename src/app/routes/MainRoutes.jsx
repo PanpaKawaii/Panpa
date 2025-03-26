@@ -21,7 +21,7 @@ import ToDoList from '../pages/Game/ToDoList.jsx'
 import TypePi from '../pages/Game/TypePi.jsx'
 import WhatIsThePassword from '../pages/Game/WhatIsThePassword.jsx'
 
-import Space from '../pages/Object/Space.jsx'
+import Space from '../pages/Space/Space.jsx'
 
 import JapaneseKanji from '../pages/Japanese/JapaneseKanji.jsx'
 import JapaneseVerb from '../pages/Japanese/JapaneseVerb.jsx'

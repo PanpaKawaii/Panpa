@@ -6,7 +6,7 @@
     font-family: 'Quicksand', Arial, sans-serif;
     background-color: transparent;
 
-    .header {
+    .heading {
         h1 {
             margin: 0 0 60px;
             color: #666;
@@ -75,7 +75,7 @@
     }
 
     @media screen and (max-width: 992px) {
-        .header {
+        .heading {
             h1 {
                 font-size: 54px;
             }

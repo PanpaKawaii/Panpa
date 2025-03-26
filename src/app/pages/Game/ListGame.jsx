@@ -31,7 +31,7 @@ export default function ListGame() {
 
     return (
         <div className='listgame-container'>
-            <div className='header'>
+            <div className='heading'>
                 <h1>List Game</h1>
             </div>
             <div className='content'>

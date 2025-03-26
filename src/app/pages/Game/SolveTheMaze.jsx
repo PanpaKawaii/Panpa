@@ -178,7 +178,7 @@ export default function SolveTheMaze() {
 
     return (
         <div className='solvethemaze-container'>
-            <div className='header'>
+            <div className='heading'>
                 <h1>Solve The Maze</h1>
             </div>
 
