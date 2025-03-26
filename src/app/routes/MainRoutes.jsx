@@ -8,18 +8,20 @@ import GuestHeader from '../layouts/Header/GuestHeader.jsx'
 
 import HomeContent from '../pages/Home/HomeContent.jsx'
 
+import ListGame from '../pages/Game/ListGame.jsx'
+
 import Caro from '../pages/Game/Caro.jsx'
 import Chess from '../pages/Game/Chess.jsx'
-import GenerateMaze from '../pages/Game/GenerateMaze.jsx'
-import ListGame from '../pages/Game/ListGame.jsx'
 import Minesweeper from '../pages/Game/Minesweeper.jsx'
-import Object from '../pages/Game/Object.jsx'
-import RandomCard from '../pages/Game/RandomCard.jsx'
-import SolveTheMaze from '../pages/Game/SolveTheMaze.jsx'
 import Tetris from '../pages/Game/Tetris.jsx'
-import ToDoList from '../pages/Game/ToDoList.jsx'
-import TypePi from '../pages/Game/TypePi.jsx'
+import RandomCard from '../pages/Study/RandomCard.jsx'
+
 import WhatIsThePassword from '../pages/Game/WhatIsThePassword.jsx'
+import GenerateMaze from '../pages/Study/GenerateMaze.jsx'
+import Object from '../pages/Study/Object.jsx'
+import SolveTheMaze from '../pages/Study/SolveTheMaze.jsx'
+import ToDoList from '../pages/Study/ToDoList.jsx'
+import TypePi from '../pages/Study/TypePi.jsx'
 
 import Space from '../pages/Space/Space.jsx'
 
