@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Button, Form, Table } from 'react-bootstrap';
+import { Button, Form } from 'react-bootstrap';
 import './Caro.css';
 
 export default function Caro() {
@@ -114,28 +114,6 @@ export default function Caro() {
             console.log('NewConstantCell', NewConstantCell);
             setHasWon(Player);
         }
-
-        // let countCol = 0;
-        // let count = 0;
-        // let NewConstantCell = [...ConstantCell];
-        // for (let i = 0; i < GameMode.ColCount; i++) {
-        //     if (PlayTable[row][i].value === Player) {
-        //         count++;
-        //         NewConstantCell = [...NewConstantCell, [row, i]];
-        //         if (count >= countCol) countCol = count;
-        //         console.log('count col: ', count);
-        //         if (count >= GameMode.ConstantToWin) break;
-        //     }
-        //     else {
-        //         count = 0;
-        //         NewConstantCell = [];
-        //     }
-        // }
-        // if (countCol >= GameMode.ConstantToWin) {
-        //     setConstantCell(NewConstantCell);
-        //     console.log('NewConstantCell', NewConstantCell);
-        //     setHasWon(Player);
-        // }
     }
 
     const checkCol = (row, col) => {
@@ -168,28 +146,6 @@ export default function Caro() {
             console.log('NewConstantCell', NewConstantCell);
             setHasWon(Player);
         }
-
-        // let countRow = 0;
-        // let count = 0;
-        // let NewConstantCell = [...ConstantCell];
-        // for (let i = 0; i < GameMode.RowCount; i++) {
-        //     if (PlayTable[i][col].value === Player) {
-        //         count++;
-        //         NewConstantCell = [...NewConstantCell, [i, col]];
-        //         if (count >= countRow) countRow = count;
-        //         console.log('count row: ', count);
-        //         if (count >= GameMode.ConstantToWin) break;
-        //     }
-        //     else {
-        //         count = 0;
-        //         NewConstantCell = [];
-        //     }
-        // }
-        // if (countRow >= GameMode.ConstantToWin) {
-        //     setConstantCell(NewConstantCell);
-        //     console.log('NewConstantCell', NewConstantCell);
-        //     setHasWon(Player);
-        // }
     }
 
     const checkDiagonalDown = (row, col) => {
@@ -333,7 +289,7 @@ export default function Caro() {
             </div>
 
             <div className='content'>
-                <Table bordered
+                <table
                     className='no-wrap align-middle table'
                     style={{
                         '--table-width': GameMode.ColCount,
@@ -407,7 +363,7 @@ export default function Caro() {
                             </tr>
                         ))}
                     </tbody>
-                </Table>
+                </table>
             </div>
         </div>
     )

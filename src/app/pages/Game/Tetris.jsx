@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Button, Table } from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
 import './Tetris.css';
 export default function Tetris() {
 
@@ -407,7 +407,7 @@ export default function Tetris() {
             </div>
 
             <div className='content'>
-                <Table bordered
+                <table
                     className='no-wrap align-middle table'
                 // style={{ '--table-width': 10, }}
                 >
@@ -457,7 +457,7 @@ export default function Tetris() {
                             </tr>
                         ))}
                     </tbody>
-                </Table>
+                </table>
 
                 {/* <div className='game-detail'>
                     {[ColorCheck, ObjectL1, ObjectL2, ObjectZ1, ObjectZ2, ObjectT, ObjectO, ObjectI].map((object, index) => (

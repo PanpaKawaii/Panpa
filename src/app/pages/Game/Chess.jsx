@@ -877,7 +877,7 @@ export default function Chess() {
             {/* Main Content =================================================================================================================================================================== */}
             <div className='content'>
                 <table
-                    className='no-wrap align-middle'
+                    className='no-wrap align-middle table'
                     style={{
                         // '--table-width': 8,
                         // '--table-height': 8
@@ -944,7 +944,7 @@ export default function Chess() {
                 </table>
 
                 {/* <Table
-                    className='no-wrap align-middle'
+                    className='no-wrap align-middle table'
                     style={{
                         // '--table-width': 8,
                         // '--table-height': 8

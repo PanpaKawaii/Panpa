@@ -6,6 +6,7 @@ export default function ConnectCard() {
 
     const [Mix, setMix] = useState([]);
     const [Pick, setPick] = useState('');
+    const [Index, setIndex] = useState(null);
 
     const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
 
@@ -18,11 +19,13 @@ export default function ConnectCard() {
         card.classList.add('picked');
 
         if (Pick == '') {
-            setPick(Chosen.Id)
+            setPick(Chosen);
+            setIndex(index);
         }
 
-        await sleep(1000);
-        if (Chosen.Id == Pick?.SinoVietnamese || Chosen.SinoVietnamese == Pick?.Id) setcolor(index);
+        await sleep(300);
+        if (Chosen.Id === Pick.SinoVietnamese || Chosen.SinoVietnamese === Pick.Id) setcolor(index);
+        else console.log("False");
 
         if (Pick !== '') {
             const cards = document.getElementsByClassName('grid-card');
@@ -32,18 +35,20 @@ export default function ConnectCard() {
     }
 
     const setcolor = (index) => {
-        const card = document.getElementById(`poker-card-${index}`);
-        card.classList.add('correct');
+        const card1 = document.getElementById(`poker-card-${index}`);
+        card1.classList.add('correct');
+        const card2 = document.getElementById(`poker-card-${Index}`);
+        card2.classList.add('correct');
     }
 
 
     return (
-        <div>
+        <div className='connectcard-container'>
             <div className='heading'>
                 <h3>Connect Kanji</h3>
             </div>
 
-            <div className='japanese-game'>
+            <div className='japanese-content'>
                 <div className='japanese-row'>
                     {Mix.filter(kanji => kanji.Id !== 'NoKanji').map((kanji, index) => (
                         <div key={kanji.Id}
@@ -55,12 +60,12 @@ export default function ConnectCard() {
                                 {Kanji.some(k => k.Id === kanji.Id) ?
                                     <>
                                         <h1 className='japanese-font'>{kanji.Id}</h1>
-                                        <h2 className='romaji-font'>{kanji.SinoVietnamese}</h2>
+                                        {/* <h2 className='romaji-font'>{kanji.SinoVietnamese}</h2> */}
                                     </>
                                     :
                                     <>
                                         <h2 className='romaji-font'>{kanji.Id}</h2>
-                                        <h2 className='romaji-font'>{kanji.SinoVietnamese}</h2>
+                                        {/* <h2 className='romaji-font'>{kanji.SinoVietnamese}</h2> */}
                                     </>
                                 }
                             </div>

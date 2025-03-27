@@ -232,7 +232,9 @@ export default function WhatIsThePassword() {
                 <div className='error-message'>{Error && Error}</div>
 
                 <div className='content'>
-                    <Table className='no-wrap align-middle table'>
+                    <table
+                        className='no-wrap align-middle table'
+                    >
                         <thead className='list-header'>
                             <tr>
                                 <th>Index</th>
@@ -268,7 +270,7 @@ export default function WhatIsThePassword() {
                                 ))
                             }
                         </tbody>
-                    </Table>
+                    </table>
                 </div>
 
                 <div className='detail'>

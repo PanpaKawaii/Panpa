@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Button, Form, Table } from 'react-bootstrap';
+import { Button, Form } from 'react-bootstrap';
 import './Minesweeper.css';
 
 export default function Minesweeper() {
@@ -233,7 +233,7 @@ export default function Minesweeper() {
             </div>
 
             <div className='content'>
-                <Table
+                <table
                     className='no-wrap align-middle table'
                     style={{
                         '--table-width': GameMode.colCount,
@@ -323,7 +323,7 @@ export default function Minesweeper() {
                             </tr>
                         ))}
                     </tbody>
-                </Table>
+                </table>
 
                 <div className='detail'>
                     <div>

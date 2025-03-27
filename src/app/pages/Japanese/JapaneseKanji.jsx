@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Button, Form, Table } from 'react-bootstrap';
+import { Button, Form } from 'react-bootstrap';
 import { useSearchParams } from 'react-router-dom';
 import './JapaneseKanji.css';
 
@@ -55,7 +55,7 @@ export default function JapaneseKanji() {
                 <h2>Japanese Kanji</h2>
             </div>
 
-            {/* <ConnectCard /> */}
+            <ConnectCard />
 
             <Form onSubmit={handleEnterKanji}>
                 <Form.Group controlId='searchkanji' className='form-group'>
@@ -116,7 +116,7 @@ export default function JapaneseKanji() {
 
             <div className='japanese-table-content'>
                 <h2>Kanji Example</h2>
-                <Table striped bordered hover>
+                <table>
                     <thead>
                         <tr>
                             <th>Word</th>
@@ -143,7 +143,7 @@ export default function JapaneseKanji() {
                             </tr>
                         ))}
                     </tbody>
-                </Table>
+                </table>
             </div>
         </div>
     )
