@@ -36,6 +36,7 @@ export default function GuestHeader() {
                     <Link to='/contact' className='menu-item'><i className='fa-regular fa-address-card icon'></i> Contact</Link>
                     <Link to='/testapp' className='menu-item'><i className='fa-solid fa-laptop icon'></i> App</Link>
                     <Link to='/game' className='menu-item'><i className='fa-solid fa-gamepad icon'></i> Game</Link>
+                    <Link to='/object' className='menu-item'><i className='fa-solid fa-cube icon'></i> Object</Link>
                     <Link to='/space' className='menu-item'><i className='fa-solid fa-earth icon'></i> Space</Link>
                     <Link to='/japanese' className='menu-item'><i className='fa-solid fa-torii-gate icon'></i> Japanese</Link>
                     <Link to='/signinsignup' className='menu-item'><i className='fas fa-sign-in-alt icon'></i> Sign In</Link>

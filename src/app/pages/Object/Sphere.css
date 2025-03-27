@@ -1,0 +1,118 @@
+.scene-sphere {
+    width: 600px;
+    height: 600px;
+    perspective: 800px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-self: center;
+    /* transform: scale(1); */
+
+    .sphere {
+        position: relative;
+        width: 200px;
+        height: 200px;
+        transform-style: preserve-3d;
+        transition: all 1s ease;
+        transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+        animation: rotate_Y 10s linear infinite;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .face {
+            position: absolute;
+            background: #ff000080;
+            opacity: 0.9;
+            transition: all 1s ease;
+
+            /* border: 1px solid black; */
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .col-1 {
+            background-color: rgba(255, 0, 0, 0.5);
+        }
+
+        .col-2 {
+            background-color: rgba(255, 165, 0, 0.5);
+        }
+
+        .col-3 {
+            background-color: rgba(255, 255, 0, 0.5);
+        }
+
+        .col-4 {
+            background-color: rgba(0, 128, 0, 0.5);
+        }
+
+        .col-5 {
+            background-color: rgba(0, 0, 255, 0.5);
+        }
+
+        .col-6 {
+            background-color: rgba(128, 0, 128, 0.5);
+        }
+
+        .col-7 {
+            background-color: rgba(255, 0, 255, 0.5);
+        }
+
+        .col-8 {
+            background-color: rgba(0, 255, 255, 0.5);
+        }
+
+        .col-9 {
+            background-color: rgba(231, 170, 170, 0.5);
+        }
+
+        .col-10 {
+            background-color: rgba(31, 117, 173, 0.5);
+        }
+
+        .col-11 {
+            background-color: rgba(192, 192, 192, 0.5);
+        }
+
+        .col-12 {
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .col-13 {
+            background-color: rgba(255, 105, 180, 0.5);
+        }
+
+        .col-14 {
+            background-color: rgba(255, 215, 0, 0.5);
+        }
+
+        .col-15 {
+            background-color: rgba(0, 100, 0, 0.5);
+        }
+
+        .col-16 {
+            background-color: rgba(0, 255, 0, 0.5);
+        }
+
+        .col-17 {
+            background-color: rgba(0, 255, 255, 0.5);
+        }
+
+        .col-18 {
+            background-color: rgba(128, 128, 128, 0.5);
+        }
+
+        .col-19 {
+            background-color: rgba(218, 218, 218, 0.5);
+        }
+
+        .col-20 {
+            background-color: rgba(0, 0, 128, 0.5);
+        }
+    }
+}

@@ -1,0 +1,239 @@
+@keyframes spin {
+    from {
+        transform: rotateX(0deg) rotateY(0deg);
+    }
+
+    to {
+        transform: rotateX(360deg) rotateY(360deg);
+    }
+}
+
+@keyframes rotate_Y {
+    from {
+        transform: rotateY(0deg) rotateX(-66.56deg);
+    }
+
+    to {
+        transform: rotateY(360deg) rotateX(-66.56deg);
+    }
+}
+
+.object-container {
+    width: 100%;
+    min-height: 100vh;
+    margin: 40px 0;
+    text-align: center;
+    font-family: 'Quicksand', Arial, sans-serif;
+    gap: 200px;
+
+    .scene-card {
+        perspective: 1000px;
+        display: flex;
+        justify-self: center;
+
+        .card:hover {
+            transform: rotateY(180deg);
+        }
+
+        .card {
+            width: 200px;
+            height: 300px;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 0.6s;
+
+            .face {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                backface-visibility: hidden;
+            }
+
+            .front {
+                background: lightblue;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 24px;
+            }
+
+            .back {
+                background: lightcoral;
+                transform: rotateY(180deg);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 24px;
+            }
+        }
+    }
+
+    .scene-pyramid {
+        width: 300px;
+        height: 300px;
+        perspective: 800px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        justify-self: center;
+        /* transform: scale(5); */
+
+        .pyramid {
+            position: relative;
+            width: 100px;
+            height: 100px;
+            transform-style: preserve-3d;
+            transition: all 1s ease;
+            transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+            animation: spin 10s linear infinite;
+
+            .face {
+                position: absolute;
+                width: 100px;
+                height: 115.47px;
+                background: #007bff80;
+                opacity: 0.9;
+                transition: all 1s ease;
+
+                clip-path: polygon(50% 0%, 100% 75%, 0% 75%);
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            --Distance: 20.412px;
+            --Angle: -70.529deg;
+
+            .bottom {
+                transform: rotateY(180deg) translateZ(var(--Distance));
+                background-color: #ffff0080;
+            }
+
+            .front {
+                transform: rotateX(var(--Angle)) translateZ(var(--Distance));
+                background-color: #ff000080;
+            }
+
+            .left {
+                transform: rotateZ(120deg) rotateX(var(--Angle)) translateZ(var(--Distance));
+                background-color: #00800080;
+            }
+
+            .right {
+                transform: rotateZ(-120deg) rotateX(var(--Angle)) translateZ(var(--Distance));
+                background-color: #0000ff80;
+            }
+        }
+    }
+
+    .scene-octahedron {
+        width: 300px;
+        height: 300px;
+        perspective: 800px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        justify-self: center;
+        /* transform: scale(5); */
+
+        .octahedron {
+            position: relative;
+            width: 100px;
+            height: 100px;
+            transform-style: preserve-3d;
+            transition: all 1s ease;
+            transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+            animation: spin 10s linear infinite;
+
+            .face {
+                position: absolute;
+                width: 100px;
+                height: 115.47px;
+                background: #ff000080;
+                opacity: 0.9;
+                transition: all 1s ease;
+
+                clip-path: polygon(50% 0%, 100% 75%, 0% 75%);
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .floor {
+                position: absolute;
+                width: 100px;
+                height: 100px;
+                background: #ff000080;
+                opacity: 0.9;
+                transition: all 1s ease;
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            --Distance: 40.823px;
+            --SubDistance: -7.735px;
+            --Angle: -54.736deg;
+
+            .f1 {
+                transform: translateY(var(--SubDistance)) rotateZ(45deg) rotateX(var(--Angle)) translateZ(var(--Distance));
+                background-color: rgba(255, 0, 0, 0.5);
+            }
+
+            .f2 {
+                transform: translateY(var(--SubDistance)) rotateZ(135deg) rotateX(var(--Angle)) translateZ(var(--Distance));
+                background-color: rgba(255, 165, 0, 0.5);
+            }
+
+            .f3 {
+                transform: translateY(var(--SubDistance)) rotateZ(225deg) rotateX(var(--Angle)) translateZ(var(--Distance));
+                background-color: rgba(255, 255, 0, 0.5);
+            }
+
+            .f4 {
+                transform: translateY(var(--SubDistance)) rotateZ(315deg) rotateX(var(--Angle)) translateZ(var(--Distance));
+                background-color: rgba(0, 128, 0, 0.5);
+            }
+
+            .f5 {
+                transform: translateY(var(--SubDistance)) rotateZ(45deg) rotateX(calc(0deg - var(--Angle))) translateZ(calc(0px - var(--Distance)));
+                background-color: rgba(0, 0, 255, 0.5);
+            }
+
+            .f6 {
+                transform: translateY(var(--SubDistance)) rotateZ(135deg) rotateX(calc(0deg - var(--Angle))) translateZ(calc(0px - var(--Distance)));
+                background-color: rgba(128, 0, 128, 0.5);
+            }
+
+            .f7 {
+                transform: translateY(var(--SubDistance)) rotateZ(225deg) rotateX(calc(0deg - var(--Angle))) translateZ(calc(0px - var(--Distance)));
+                background-color: rgba(255, 0, 255, 0.5);
+            }
+
+            .f8 {
+                transform: translateY(var(--SubDistance)) rotateZ(315deg) rotateX(calc(0deg - var(--Angle))) translateZ(calc(0px - var(--Distance)));
+                background-color: rgba(0, 255, 255, 0.5);
+            }
+
+            .fl1 {
+                transform: rotateZ(45deg);
+                background-color: rgba(31, 117, 173, 0.5);
+            }
+
+            .fl2 {
+                transform: rotateX(90deg) rotateZ(45deg);
+                background-color: rgba(192, 192, 192, 0.5);
+            }
+
+            .fl3 {
+                transform: rotateY(90deg) rotateZ(-45deg);
+                background-color: rgba(0, 0, 0, 0.5);
+            }
+        }
+    }
+}

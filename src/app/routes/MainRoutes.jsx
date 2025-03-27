@@ -18,10 +18,11 @@ import RandomCard from '../pages/Study/RandomCard.jsx'
 
 import WhatIsThePassword from '../pages/Game/WhatIsThePassword.jsx'
 import GenerateMaze from '../pages/Study/GenerateMaze.jsx'
-import Object from '../pages/Study/Object.jsx'
 import SolveTheMaze from '../pages/Study/SolveTheMaze.jsx'
 import ToDoList from '../pages/Study/ToDoList.jsx'
 import TypePi from '../pages/Study/TypePi.jsx'
+
+import Object from '../pages/Object/Object.jsx'
 
 import Space from '../pages/Space/Space.jsx'
 
@@ -50,7 +51,8 @@ export default function MainRoutes() {
                 <Route path='game/typepi' element={<TypePi />} />
                 <Route path='game/randomcard' element={<RandomCard />} />
                 <Route path='game/todolist' element={<ToDoList />} />
-                <Route path='game/object' element={<Object />} />
+
+                <Route path='object' element={<Object />} />
 
                 <Route path='space' element={<Space />} />
 
