@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import './Sphere.css';
 
 export default function Sphere() {

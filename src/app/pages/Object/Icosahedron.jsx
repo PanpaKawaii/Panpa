@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import './Icosahedron.css';
 
 export default function Icosahedron() {

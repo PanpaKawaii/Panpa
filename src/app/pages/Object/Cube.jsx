@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import './Cube.css';
 
 export default function Cube() {
