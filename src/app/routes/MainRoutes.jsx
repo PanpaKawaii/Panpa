@@ -29,6 +29,8 @@ import JapaneseKanji from '../pages/Japanese/JapaneseKanji.jsx'
 import JapaneseVerb from '../pages/Japanese/JapaneseVerb.jsx'
 import ListJapanese from '../pages/Japanese/ListJapanese.jsx'
 
+import SignInSignUp from '../pages/SignInSignUp/SignInSignUp.jsx'
+
 export default function MainRoutes() {
     return (
         <BrowserRouter>
@@ -56,6 +58,8 @@ export default function MainRoutes() {
                     <Route path='kanji' element={<JapaneseKanji />} />
                     <Route path='verb' element={<JapaneseVerb />} />
                 </Route>
+
+                <Route path='signinsignup' element={<SignInSignUp />} />
 
             </Routes>
             <Footer />
