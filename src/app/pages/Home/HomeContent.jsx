@@ -3,6 +3,8 @@ import { Button, Card, Carousel, Col, Form, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import './HomeContent.css';
 
+import Cube from '../Object/Cube.jsx';
+
 export default function HomeContent() {
 
     const [STOREs, setSTOREs] = useState(null);
@@ -34,6 +36,8 @@ export default function HomeContent() {
             <div className='POD-home'>
                 <p>Hiện tại trang Home chưa có gì hết</p>
                 <p>Mọi người qua trang Game và Japanese giúp tui nha</p>
+
+                <Cube />
             </div>
         )
 

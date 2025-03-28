@@ -3,6 +3,7 @@ import { Canvas } from '@react-three/fiber';
 import React from 'react';
 import Earth from './Earth';
 import Links from './LinkDot';
+import StarsBackground from '../../assets/EarthMaterials/StarsBackground.png';
 
 export default function Space() {
 
@@ -16,7 +17,7 @@ export default function Space() {
                 alignItems: 'center',
                 position: 'relative',
                 padding: '0 auto',
-                backgroundColor: '#333'
+                background: `url(${StarsBackground})`
             }}
         >
             <div style={{

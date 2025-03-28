@@ -4,7 +4,7 @@
     }
 
     to {
-        transform: rotateX(360deg) rotateY(360deg);
+        transform: rotateX(360deg) rotateY(720deg);
     }
 }
 
@@ -24,5 +24,8 @@
     margin: 40px 0;
     text-align: center;
     font-family: 'Quicksand', Arial, sans-serif;
-    gap: 200px;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }

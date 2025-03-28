@@ -1,12 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Sphere.css';
 
 export default function Sphere() {
 
-    const maxRow = 10;
-    const maxCol = 12;
+    const [maxRow, setMaxRow] = useState(6);
+    const [maxCol, setMaxCol] = useState(8);
     const Distance = 200;
-    const ContainerFaceWidth = Distance;
+    const ContainerFaceWidth = 500;
     const ContainerFaceHeight = 2 * Distance * Math.tan((90 / (maxRow)) * (Math.PI / 180));
 
     return (
@@ -19,7 +19,7 @@ export default function Sphere() {
                                 key={`${row}-${col}`}
                                 className={`face row-${row + 1} col-${col + 1}`}
                                 style={{
-                                    background: '#ff000080',
+                                    background: `rgba(${255 - row * 85 % 256}, ${165 - col * 85 % 256}, ${0 - row * 85 % 256}, 0.3)`,
                                     transform: `rotateZ(${360 / maxCol * (col + 1)}deg) rotateX(${-90 / maxRow + (row + 1) * 180 / maxRow}deg) translateZ(${Distance}px)`,
                                     width: `${ContainerFaceWidth}px`,
                                     height: `${ContainerFaceHeight}px`,
@@ -37,6 +37,10 @@ export default function Sphere() {
                     {/* <div style={{width: '100%', backgroundColor: '#dc3545', textAlign: 'center'}}>A</div> */}
                 </div>
             </div>
+            <button className='btn' onClick={() => setMaxRow(p => p + 1)}>UP ROW {maxRow}</button>
+            <button className='btn' onClick={() => { if (maxRow > 2) setMaxRow(p => p - 1) }}>DOWN ROW {maxRow}</button>
+            <button className='btn' onClick={() => setMaxCol(p => p + 1)}>UP COL {maxCol}</button>
+            <button className='btn' onClick={() => { if (maxCol > 3) setMaxCol(p => p - 1) }}>DOWN COL {maxCol}</button>
         </>
     )
 }
