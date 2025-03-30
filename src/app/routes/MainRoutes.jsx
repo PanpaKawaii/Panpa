@@ -32,6 +32,12 @@ import ListJapanese from '../pages/Japanese/ListJapanese.jsx'
 
 import SignInSignUp from '../pages/SignInSignUp/SignInSignUp.jsx'
 
+import Account from '../pages/User/Account.jsx'
+import AccountInformation from '../pages/User/AccountInformation/AccountInformation.jsx'
+import OrderManagement from '../pages/User/OrderManagement/OrderManagement.jsx'
+import HelpCenter from '../pages/User/HelpCenter/HelpCenter.jsx'
+import Notification from '../pages/User/Notification/Notification.jsx'
+
 export default function MainRoutes() {
     return (
         <BrowserRouter>
@@ -62,6 +68,13 @@ export default function MainRoutes() {
                 </Route>
 
                 <Route path='signinsignup' element={<SignInSignUp />} />
+
+                <Route path='account' element={<Account />} >
+                    <Route path='information' element={<AccountInformation />} />
+                    <Route path='order' element={<OrderManagement />} />
+                    <Route path='help-center' element={<HelpCenter />} />
+                    <Route path='notification' element={<Notification />} />
+                </Route>
 
             </Routes>
             <Footer />

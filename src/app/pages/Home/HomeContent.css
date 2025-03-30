@@ -1,8 +1,4 @@
-body {
-    margin: 0;
-}
-
-.POD-home {
+.home-container {
     width: 100%;
     min-height: 100vh;
     margin: 40px 0;
