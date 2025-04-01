@@ -31,6 +31,7 @@ import JapaneseVerb from '../pages/Japanese/JapaneseVerb.jsx'
 import ListJapanese from '../pages/Japanese/ListJapanese.jsx'
 
 import SignInSignUp from '../pages/SignInSignUp/SignInSignUp.jsx'
+import Dice from '../pages/Game/Dice.jsx'
 
 import Account from '../pages/User/Account.jsx'
 import AccountInformation from '../pages/User/AccountInformation/AccountInformation.jsx'
@@ -68,6 +69,7 @@ export default function MainRoutes() {
                 </Route>
 
                 <Route path='signinsignup' element={<SignInSignUp />} />
+                <Route path='dice' element={<Dice />} />
 
                 <Route path='account' element={<Account />} >
                     <Route path='information' element={<AccountInformation />} />

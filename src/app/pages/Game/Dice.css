@@ -1,0 +1,130 @@
+.dice-container {
+    width: 100%;
+    min-height: 100vh;
+    padding: 60px 0;
+    text-align: center;
+    font-family: 'Quicksand', Arial, sans-serif;
+    background-color: #777777;
+    background: url('./DiceBackground.png') center no-repeat;
+
+    .heading {
+        h1 {
+            margin: 0 0 20px;
+            color: #fff;
+            text-shadow: 1px 1px 4px #0055aa;
+            font-size: 54px;
+            font-weight: bold;
+        }
+    }
+
+    .content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 200px 0;
+
+        .scene-dice {
+            width: 200px;
+            height: 200px;
+            perspective: 600px;
+
+            filter: drop-shadow(0 60px 12px #00000080);
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            justify-self: center;
+            gap: 20px;
+
+            .dice {
+                position: relative;
+                width: 100px;
+                height: 100px;
+                transform-style: preserve-3d;
+                transition: all 1.5s ease;
+                transition: all 5s ease;
+                transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+                /* animation: spin 10s linear infinite; */
+
+                .face {
+                    position: absolute;
+                    padding: 10px;
+                    width: 100px;
+                    height: 100px;
+                    /* opacity: 0.7; */
+                    background: #fffbee;
+                    /* transition: transform 20s cubic-bezier(0.25, 0, 0.75, 1); */
+
+                    border: 1px solid #000;
+
+                    display: grid;
+                    align-items: center;
+                }
+
+                --Distance: 50px;
+
+                .one {
+                    transform: translateZ(var(--Distance));
+                    font-size: 32px;
+                    color: #dc3545;
+                }
+
+                .two {
+                    transform: rotateY(90deg) translateZ(var(--Distance));
+                    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+                    .two-dot {
+                        color: transparent;
+                    }
+
+                    .two-0,
+                    .two-3 {
+                        color: #000;
+                    }
+                }
+
+                .three {
+                    transform: rotateX(90deg) translateZ(var(--Distance));
+                    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+                    .three-dot {
+                        color: transparent;
+                    }
+
+                    .three-0,
+                    .three-4,
+                    .three-8 {
+                        color: #000;
+                    }
+                }
+
+                .four {
+                    transform: rotateX(-90deg) translateZ(var(--Distance));
+                    grid-template-columns: repeat(2, minmax(0, 1fr));
+                }
+
+                .five {
+                    transform: rotateY(-90deg) translateZ(var(--Distance));
+                    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+                    .five-dot {
+                        color: transparent;
+                    }
+
+                    .five-0,
+                    .five-2,
+                    .five-4,
+                    .five-6,
+                    .five-8 {
+                        color: #000;
+                    }
+                }
+
+                .six {
+                    transform: rotateY(180deg) translateZ(var(--Distance));
+                    grid-template-columns: repeat(3, minmax(0, 1fr));
+                }
+            }
+        }
+    }
+}
