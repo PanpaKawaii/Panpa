@@ -16,7 +16,7 @@
         transform-style: preserve-3d;
         transition: all 1s ease;
         transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
-        animation: rotate_Y 10s linear infinite;
+        animation: earth_rotate 10s linear infinite;
 
         display: flex;
         justify-content: center;
@@ -114,5 +114,18 @@
         .col-20 {
             background-color: rgba(0, 0, 128, 0.5);
         }
+    }
+}
+
+.button-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+
+    .item {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
     }
 }

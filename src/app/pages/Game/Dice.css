@@ -8,16 +8,6 @@
     background-size: auto 100%;
     position: relative;
 
-    @keyframes spin {
-        from {
-            transform: rotateX(0deg) rotateY(0deg);
-        }
-
-        to {
-            transform: rotateX(360deg) rotateY(720deg);
-        }
-    }
-
     .prev-point {
         position: absolute;
         left: calc(50% - 50px);

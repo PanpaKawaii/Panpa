@@ -15,7 +15,7 @@ export default function Object() {
     return (
         <div className='object-container'>
 
-            <button onClick={() => setCount(p => p + 1)}>LEFT</button>
+            <button className='btn' onClick={() => setCount(p => p + 1)}>LEFT</button>
             {
                 Count % 7 === 0 ? <Card /> :
                     Count % 7 === 1 ? <Cube /> :
@@ -25,7 +25,7 @@ export default function Object() {
                                     Count % 7 === 5 ? <Icosahedron /> :
                                         Count % 7 === 6 ? <Sphere /> : <></>
             }
-            <button onClick={() => setCount(p => p + 6)}>RIGHT</button>
+            <button className='btn' onClick={() => setCount(p => p + 6)}>RIGHT</button>
 
         </div>
     )

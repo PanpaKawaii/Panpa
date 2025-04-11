@@ -37,10 +37,16 @@ export default function Sphere() {
                     {/* <div style={{width: '100%', backgroundColor: '#dc3545', textAlign: 'center'}}>A</div> */}
                 </div>
             </div>
-            <button className='btn' onClick={() => setMaxRow(p => p + 1)}>UP ROW {maxRow}</button>
-            <button className='btn' onClick={() => { if (maxRow > 2) setMaxRow(p => p - 1) }}>DOWN ROW {maxRow}</button>
-            <button className='btn' onClick={() => setMaxCol(p => p + 1)}>UP COL {maxCol}</button>
-            <button className='btn' onClick={() => { if (maxCol > 3) setMaxCol(p => p - 1) }}>DOWN COL {maxCol}</button>
+            <div className='button-box'>
+                <div className='item'>
+                    <button className='btn' onClick={() => setMaxRow(p => p + 1)}>UP ROW {maxRow}</button>
+                    <button className='btn' onClick={() => { if (maxRow > 2) setMaxRow(p => p - 1) }}>DOWN ROW {maxRow}</button>
+                </div>
+                <div className='item'>
+                    <button className='btn' onClick={() => setMaxCol(p => p + 1)}>UP COL {maxCol}</button>
+                    <button className='btn' onClick={() => { if (maxCol > 3) setMaxCol(p => p - 1) }}>DOWN COL {maxCol}</button>
+                </div>
+            </div>
         </>
     )
 }
