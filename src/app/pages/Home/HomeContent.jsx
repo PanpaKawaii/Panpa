@@ -36,7 +36,6 @@ export default function HomeContent() {
             <div className='home-container'>
                 <Cube />
                 <Link to='account/information'>ACCOUNT</Link>
-                <Link to='dice'>DICE</Link>
             </div>
         </>
     )

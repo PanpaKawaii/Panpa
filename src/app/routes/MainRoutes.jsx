@@ -52,6 +52,7 @@ export default function MainRoutes() {
                 <Route path='game/whatisthepassword' element={<WhatIsThePassword />} />
                 <Route path='game/caro' element={<Caro />} />
                 <Route path='game/chess' element={<Chess />} />
+                <Route path='game/luckydice' element={<Dice />} />
                 <Route path='game/tetris' element={<Tetris />} />
                 <Route path='game/solvethemaze' element={<SolveTheMaze />} />
                 <Route path='game/generatemaze' element={<GenerateMaze />} />
@@ -69,7 +70,6 @@ export default function MainRoutes() {
                 </Route>
 
                 <Route path='signinsignup' element={<SignInSignUp />} />
-                <Route path='dice' element={<Dice />} />
 
                 <Route path='account' element={<Account />} >
                     <Route path='information' element={<AccountInformation />} />

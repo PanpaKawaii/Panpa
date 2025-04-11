@@ -4,6 +4,9 @@ import './Dice.css';
 export default function Dice() {
 
     const [NumberOfDice, setNumberOfDice] = useState(1);
+    if (!localStorage.getItem('dice_point')) {
+        localStorage.setItem('dice_point', 0);
+    }
 
     const PossibleValue = [[
         [1, 4, 6, 3,],
@@ -129,7 +132,6 @@ export default function Dice() {
                             <pre>{JSON.stringify(Number, null, 0).replace(/,\n/g, ',').replace(/],/g, '],\n')}</pre>
                         </>
                     } */}
-                    {/* <h2>{AngleX % 4} | {AngleY % 4} | {AngleZ % 4}</h2> */}
                 </div>
                 <div className='content'>
                     {[...Array(NumberOfDice)].map((_, index) => (

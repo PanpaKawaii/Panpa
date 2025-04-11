@@ -19,6 +19,7 @@ export default function ListGame() {
         { name: 'What Is The Password?', src: WhatIsThePasswordSRC, link: '/game/whatisthepassword' },
         { name: 'Caro', src: CaroSRC, link: '/game/caro' },
         { name: 'Chess', src: null, link: '/game/chess' },
+        { name: 'Lucky Dice', src: null, link: '/game/luckydice' },
         { name: 'Tetris', src: TetrisSRC, link: '/game/tetris' },
         { name: 'Solve The Maze', src: SolveTheMazeSRC, link: '/game/solvethemaze' },
         { name: 'Generate Maze', src: GenerateMazeSRC, link: '/game/generatemaze' },
