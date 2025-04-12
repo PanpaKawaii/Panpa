@@ -9,6 +9,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        padding: 0 12px;
 
         h1 {
             margin: 0 0 20px;
@@ -23,11 +24,21 @@
             }
         }
 
-        p {
+        .pi-length,
+        .your-pi {
             width: 100%;
             max-width: 400px;
             font-weight: bold;
             font-size: 32px;
+            word-break: break-word;
+        }
+
+        .correct {
+            color: #28a745;
+        }
+
+        .incorrect {
+            color: #dc3545;
         }
     }
 
@@ -35,11 +46,20 @@
         width: 100%;
         max-width: 400px;
         justify-self: center;
-        padding: 0 10px;
+        margin: 20px 0 0;
 
-        .form-control:focus {
+        textarea {
+            outline: none;
+            width: 90%;
+            height: 160px;
+            padding: 6px 12px;
+            border-radius: 8px;
+            border: 2px solid #accfff;
+        }
+
+        textarea:focus {
             box-shadow: 0 0 0 0.25rem #007bff40;
-            border-color: #a2cfff;
+            border-color: #accfff;
         }
     }
 }

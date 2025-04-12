@@ -4,6 +4,7 @@ import './ListGame.css';
 
 import CaroSRC from '../../assets/imageGAMEs/Caro.png';
 import GenerateMazeSRC from '../../assets/imageGAMEs/GenerateMaze.png';
+import LuckyDiceSRC from '../../assets/imageGAMEs/LuckyDice.png';
 import MinesweeperSRC from '../../assets/imageGAMEs/Minesweeper.png';
 import RandomCardSRC from '../../assets/imageGAMEs/RandomCard.png';
 import SolveTheMazeSRC from '../../assets/imageGAMEs/SolveTheMaze.png';
@@ -19,7 +20,7 @@ export default function ListGame() {
         { name: 'What Is The Password?', src: WhatIsThePasswordSRC, link: '/game/whatisthepassword' },
         { name: 'Caro', src: CaroSRC, link: '/game/caro' },
         { name: 'Chess', src: null, link: '/game/chess' },
-        { name: 'Lucky Dice', src: null, link: '/game/luckydice' },
+        { name: 'Lucky Dice', src: LuckyDiceSRC, link: '/game/luckydice' },
         { name: 'Tetris', src: TetrisSRC, link: '/game/tetris' },
         { name: 'Solve The Maze', src: SolveTheMazeSRC, link: '/game/solvethemaze' },
         { name: 'Generate Maze', src: GenerateMazeSRC, link: '/game/generatemaze' },

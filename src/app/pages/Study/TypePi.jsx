@@ -4,7 +4,6 @@ import './TypePi.css';
 
 export default function TypePi() {
 
-    // var Pi = '3,14159265358979323846264338327950288419716939937510582097494459230781640628620899862803482534211706798214808651328230664709384460955058223172535940812848111745028';
     var Pi =
         '3,141592653589793238462643383279502884' +
         '19716939937510582097494459230781640628' +
@@ -41,34 +40,32 @@ export default function TypePi() {
         <div className='typepi-container'>
             <div className='heading'>
                 <h1>Type <span>π</span></h1>
-                <p>Length:
+                <div className='pi-length'>
+                    Length:
                     {
                         Pi.substring(0, YourPi.length).includes(YourPi) ?
                             <span> {PiLength}</span>
                             :
                             <span> 0</span>
                     }
-                </p>
+                </div>
 
-                <p style={{ color: Pi.substring(0, YourPi.length).includes(YourPi) ? '#28a745' : '#dc3545' }}>
-                    {YourPi.split('').map((char, index) => (
-                        <span key={index}>{char}{(index % 20 === 19) ? <br /> : ''}</span>
-                    ))}
-                </p>
+                <div className={`your-pi ${Pi.substring(0, YourPi.length).includes(YourPi) ? 'correct' : 'incorrect'}`}>
+                    {YourPi}
+                </div>
             </div>
 
-            <Form onSubmit={handleEnterPi}>
-                <Form.Group controlId='yourpi'>
-                    <Form.Control
-                        as='textarea'
-                        value={YourPi}
-                        placeholder='Write your Pi'
-                        onChange={(e) => {
-                            const validInput = e.target.value.replace(/[^0-9,]/g, '');
-                            setYourPi(validInput);
-                        }} />
-                </Form.Group>
-            </Form>
+            <form onSubmit={handleEnterPi}>
+                <textarea
+                    as='textarea'
+                    value={YourPi}
+                    placeholder='Write your Pi'
+                    onChange={(e) => {
+                        const validInput = e.target.value.replace(/[^0-9,]/g, '');
+                        setYourPi(validInput);
+                    }}
+                />
+            </form>
         </div>
     )
 }
