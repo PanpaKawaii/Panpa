@@ -27,7 +27,7 @@
         flex-wrap: wrap;
         gap: 10px;
 
-        .form-control:focus {
+        input:focus {
             box-shadow: 0 0 0 0.25rem rgba(249, 157, 188, 0.314);
             border-color: #f99dbc;
         }

@@ -55,24 +55,24 @@ export default function JapaneseKanji() {
                 <h2>Japanese Kanji</h2>
             </div>
 
-            <ConnectCard />
+            {/* <ConnectCard /> */}
 
-            <Form onSubmit={handleEnterKanji}>
-                <Form.Group controlId='searchkanji' className='form-group'>
-                    <Form.Control
+            <form onSubmit={handleEnterKanji}>
+                <div id='searchkanji' className='form-group'>
+                    <input
                         type='text'
                         placeholder='日、ニチ、ひ、nichi、NHẬT、...'
                         value={searchQueryKanji}
                         onChange={(e) => setSearchQueryKanji(e.target.value)}
-                    />
-                </Form.Group>
+                    ></input>
+                </div>
 
                 <div className='active-button'>
                     <Button type='reset' className='btn btn-reset' onClick={clearInput}>CLEAR</Button>
                     <Button className='btn' onClick={closeAll}>CLOSE ALL</Button>
                     <Button className='btn' onClick={openAll}>OPEN ALL</Button>
                 </div>
-            </Form>
+            </form>
 
             <div className='japanese-content'>
                 <div className='japanese-row'>
@@ -95,7 +95,6 @@ export default function JapaneseKanji() {
                                     <h4>{kanji.SinoVietnamese}</h4>
                                     <p className='japanese-font'>On: {kanji.On}</p>
                                     <p className='japanese-font'>Kun: {kanji.Kun}</p>
-                                    {/* <p className='japanese-font'>Romaji: {kanji.Romaji}</p> */}
                                 </div>
 
                                 <div className='face back'>
