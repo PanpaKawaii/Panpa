@@ -86,9 +86,7 @@ export default function JapaneseKanji() {
                                     color: (
                                         kanji.SinoVietnamese === 'NoKanji' ||
                                         kanji.On === 'NoKanji' ||
-                                        kanji.Kun === 'NoKanji' ||
-                                        kanji.Romaji === 'NoKanji' ||
-                                        !kanji.Romaji
+                                        kanji.Kun === 'NoKanji'
                                     ) ? 'red' : 'black'
                                 }}
                             >
