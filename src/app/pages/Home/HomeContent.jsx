@@ -5,6 +5,9 @@ import './HomeContent.css';
 
 import Cube from '../Object/Cube.jsx';
 
+import PaginationComponent from '../Study/PaginationComponent.jsx';
+import { Kanji } from '../Japanese/list_japanese';
+
 export default function HomeContent() {
 
     // const [STOREs, setSTOREs] = useState(null);
@@ -36,6 +39,7 @@ export default function HomeContent() {
             <div className='home-container'>
                 <Cube />
                 <Link to='account/information'>ACCOUNT</Link>
+                <PaginationComponent items={Kanji} pageSize={18}/>
             </div>
         </>
     )

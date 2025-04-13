@@ -245,13 +245,6 @@ export const Kanji = [
     { Id: '運', SinoVietnamese: 'VẬN', On: 'ウン', Kun: 'はこ' },
     { Id: '転', SinoVietnamese: 'CHUYỂN', On: 'テン', Kun: 'ころ' },
 
-    { Id: '～.', SinoVietnamese: 'NoKanji', On: 'NoKanji', Kun: 'NoKanji' },
-
-    { Id: '晩', SinoVietnamese: 'VÃN', On: 'バン', Kun: 'ばん' },
-    { Id: '寝', SinoVietnamese: 'TẨM', On: 'シン', Kun: 'ね' },
-    { Id: '犬', SinoVietnamese: 'KHUYỂN', On: 'ケン', Kun: 'いぬ' },
-    { Id: '猫', SinoVietnamese: 'MIÊU', On: 'ビョウ', Kun: 'ねこ' },
-
     { Id: 'NoKanji', SinoVietnamese: 'NoKanji', On: 'NoKanji', Kun: 'NoKanji' },
     { Id: 'NoKanji', SinoVietnamese: 'NoKanji', On: 'NoKanji', Kun: 'NoKanji' },
     { Id: 'NoKanji', SinoVietnamese: 'NoKanji', On: 'NoKanji', Kun: 'NoKanji' },

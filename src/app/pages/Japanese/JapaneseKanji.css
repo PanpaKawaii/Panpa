@@ -29,10 +29,10 @@
 
         input {
             outline: none;
-            width: 90%;
+            width: 100%;
             padding: 6px 12px;
             border-radius: 8px;
-            border: 2px solid #f99dbc;
+            border: 2px solid #fdd9e5;
         }
 
         input:focus {
@@ -60,6 +60,7 @@
 
             .btn:active {
                 background-color: #fd73a7;
+                border-color: #fd73a7;
             }
         }
     }
@@ -96,7 +97,7 @@
                     border-radius: 16px;
                     align-items: center;
                     text-align: center;
-                    box-shadow: 0px 0px 5px #f99dbc50;
+                    box-shadow: 0px 0px 8px #f99dbc80;
                     box-sizing: border-box;
                     transform-style: preserve-3d;
                     transition: all 0.5s ease;

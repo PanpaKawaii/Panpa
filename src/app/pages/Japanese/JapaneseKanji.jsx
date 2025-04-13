@@ -90,7 +90,7 @@ export default function JapaneseKanji() {
                                 }}
                             >
                                 <div className='face front'>
-                                    <h1 className='japanese-font'><>{kanji.Id}</></h1>
+                                    <h1 className='japanese-font'>{kanji.Id}</h1>
                                     <h4>{kanji.SinoVietnamese}</h4>
                                     <p className='japanese-font'>On: {kanji.On}</p>
                                     <p className='japanese-font'>Kun: {kanji.Kun}</p>

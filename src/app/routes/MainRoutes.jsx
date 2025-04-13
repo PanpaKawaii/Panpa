@@ -26,6 +26,7 @@ import Object from '../pages/Object/Object.jsx'
 
 import Space from '../pages/Space/Space.jsx'
 
+import RotateCard from '../pages/Game/RotateCard.jsx'
 import JapaneseKanji from '../pages/Japanese/JapaneseKanji.jsx'
 import JapaneseVerb from '../pages/Japanese/JapaneseVerb.jsx'
 import ListJapanese from '../pages/Japanese/ListJapanese.jsx'
@@ -57,6 +58,7 @@ export default function MainRoutes() {
                 <Route path='game/solvethemaze' element={<SolveTheMaze />} />
                 <Route path='game/generatemaze' element={<GenerateMaze />} />
                 <Route path='game/typepi' element={<TypePi />} />
+                <Route path='game/rotatecard' element={<RotateCard />} />
                 <Route path='game/randomcard' element={<RandomCard />} />
                 <Route path='game/todolist' element={<ToDoList />} />
 
