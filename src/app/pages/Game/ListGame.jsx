@@ -41,7 +41,7 @@ export default function ListGame() {
                             <Link to={`${game.link}`}>
                                 <div className='card'>
                                     <img src={game.src} alt={game.name} />
-                                    <p>{game.name}</p>
+                                    <div className='game-name'>{game.name}</div>
                                 </div>
                             </Link>
                         </div>

@@ -28,7 +28,7 @@ export default function ListJapanese() {
                             <Link to={`${japanese.link}`}>
                                 <div className='card'>
                                     <img src={japanese.src} alt={japanese.name} />
-                                    <p>{japanese.name}</p>
+                                    <div className='japanese-name'>{japanese.name}</div>
                                 </div>
                             </Link>
                         </div>

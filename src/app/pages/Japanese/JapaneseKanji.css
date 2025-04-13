@@ -27,6 +27,14 @@
         flex-wrap: wrap;
         gap: 10px;
 
+        input {
+            outline: none;
+            width: 90%;
+            padding: 6px 12px;
+            border-radius: 8px;
+            border: 2px solid #f99dbc;
+        }
+
         input:focus {
             box-shadow: 0 0 0 0.25rem rgba(249, 157, 188, 0.314);
             border-color: #f99dbc;
@@ -42,10 +50,12 @@
             justify-content: center;
             gap: 10px;
 
-            .btn {
+            .btn,
+            .btn:focus {
+                color: #fff;
                 background-color: #f99dbc;
                 font-weight: bold;
-                border: none;
+                border: 2px solid #f99dbc;
             }
 
             .btn:active {

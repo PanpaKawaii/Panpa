@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { Button, Form } from 'react-bootstrap';
 import { useSearchParams } from 'react-router-dom';
 import './JapaneseKanji.css';
 
@@ -68,9 +67,9 @@ export default function JapaneseKanji() {
                 </div>
 
                 <div className='active-button'>
-                    <Button type='reset' className='btn btn-reset' onClick={clearInput}>CLEAR</Button>
-                    <Button className='btn' onClick={closeAll}>CLOSE ALL</Button>
-                    <Button className='btn' onClick={openAll}>OPEN ALL</Button>
+                    <button type='reset' className='btn btn-reset' onClick={clearInput}>CLEAR</button>
+                    <button className='btn' onClick={closeAll}>CLOSE ALL</button>
+                    <button className='btn' onClick={openAll}>OPEN ALL</button>
                 </div>
             </form>
 
