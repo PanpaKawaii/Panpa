@@ -1,7 +1,7 @@
 import React from 'react';
 import './RotateCard.css';
 
-export default function RotateCard({ Array }) {
+export default function RotateCard({ ArrayProps }) {
 
     const rotateCard = (index) => {
         const card = document.getElementById(`poker-card-${index}`);
@@ -31,7 +31,7 @@ export default function RotateCard({ Array }) {
 
             <div className='rotatecard-content'>
                 <div className='rotatecard-row'>
-                    {Array.filter(kanji => kanji.Id !== 'NoKanji').map((kanji, index) => (
+                    {ArrayProps.filter(kanji => kanji.Id !== 'NoKanji').map((kanji, index) => (
                         <div key={kanji.Id}
                             className='rotatecard-col'>
                             <div id={`poker-card-${index}`}

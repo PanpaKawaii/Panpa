@@ -21,7 +21,7 @@ export default function PaginationComponent({ items, pageSize, Component }) {
 
     return (
         <div>
-            <Component Array={CurrentItems} />
+            <Component ArrayProps={CurrentItems} />
 
             <div>
                 <button onClick={() => goToPage(CurrentPage - 1)}>Previous</button>

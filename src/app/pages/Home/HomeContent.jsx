@@ -40,7 +40,6 @@ export default function HomeContent() {
             <div className='home-container'>
                 <Cube />
                 <Link to='account/information'>ACCOUNT</Link>
-                <PaginationComponent items={Kanji} pageSize={18} JapaneseKanji={JapaneseKanji}/>
             </div>
         </>
     )

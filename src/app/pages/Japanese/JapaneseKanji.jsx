@@ -2,17 +2,17 @@ import React, { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import './JapaneseKanji.css';
 
-import { KanjiExample } from './list_japanese';
+import { Kanji, KanjiExample } from './list_japanese';
 
 import ConnectCard from './ConnectCard'
 
-export default function JapaneseKanji({ Array }) {
+export default function JapaneseKanji({ ArrayProps }) {
 
     const [searchParams, setSearchParams] = useSearchParams();
     const query = searchParams.get('search') || '';
     const [searchQueryKanji, setSearchQueryKanji] = useState(query);
 
-    const filteredKanji = Array.filter((kanji) =>
+    const filteredKanji = (searchQueryKanji ? Kanji : ArrayProps).filter((kanji) =>
         Object.values(kanji).some(value => value.toLowerCase().includes(searchQueryKanji.toLowerCase()))
     );
 
