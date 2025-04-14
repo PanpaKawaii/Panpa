@@ -12,6 +12,7 @@ import ListGame from '../pages/Game/ListGame.jsx'
 
 import Caro from '../pages/Game/Caro.jsx'
 import Chess from '../pages/Game/Chess.jsx'
+import Dice from '../pages/Game/Dice.jsx'
 import Minesweeper from '../pages/Game/Minesweeper.jsx'
 import Tetris from '../pages/Game/Tetris.jsx'
 import RandomCard from '../pages/Study/RandomCard.jsx'
@@ -26,19 +27,23 @@ import Object from '../pages/Object/Object.jsx'
 
 import Space from '../pages/Space/Space.jsx'
 
-import RotateCard from '../pages/Game/RotateCard.jsx'
+
+import PaginationComponent from '../components/Pagination/PaginationComponent.jsx'
+
 import JapaneseKanji from '../pages/Japanese/JapaneseKanji.jsx'
 import JapaneseVerb from '../pages/Japanese/JapaneseVerb.jsx'
+import RotateCard from '../pages/Japanese/RotateCard.jsx'
+import { Kanji } from '../pages/Japanese/list_japanese'
 import ListJapanese from '../pages/Japanese/ListJapanese.jsx'
 
+
 import SignInSignUp from '../pages/SignInSignUp/SignInSignUp.jsx'
-import Dice from '../pages/Game/Dice.jsx'
 
 import Account from '../pages/User/Account.jsx'
 import AccountInformation from '../pages/User/AccountInformation/AccountInformation.jsx'
-import OrderManagement from '../pages/User/OrderManagement/OrderManagement.jsx'
 import HelpCenter from '../pages/User/HelpCenter/HelpCenter.jsx'
 import Notification from '../pages/User/Notification/Notification.jsx'
+import OrderManagement from '../pages/User/OrderManagement/OrderManagement.jsx'
 
 export default function MainRoutes() {
     return (
@@ -58,7 +63,6 @@ export default function MainRoutes() {
                 <Route path='game/solvethemaze' element={<SolveTheMaze />} />
                 <Route path='game/generatemaze' element={<GenerateMaze />} />
                 <Route path='game/typepi' element={<TypePi />} />
-                <Route path='game/rotatecard' element={<RotateCard />} />
                 <Route path='game/randomcard' element={<RandomCard />} />
                 <Route path='game/todolist' element={<ToDoList />} />
 
@@ -67,8 +71,10 @@ export default function MainRoutes() {
                 <Route path='space' element={<Space />} />
 
                 <Route path='japanese' element={<ListJapanese />} >
-                    <Route path='kanji' element={<JapaneseKanji />} />
+                    <Route path='kanji' element={<PaginationComponent items={Kanji} pageSize={18} Component={JapaneseKanji} />} />
+                    {/* <Route path='kanji' element={<PaginationComponent items={Kanji} pageSize={18}><JapaneseKanji /></PaginationComponent>} /> */}
                     <Route path='verb' element={<JapaneseVerb />} />
+                    <Route path='rotatecard' element={<PaginationComponent items={Kanji} pageSize={24} Component={RotateCard} />} />
                 </Route>
 
                 <Route path='signinsignup' element={<SignInSignUp />} />

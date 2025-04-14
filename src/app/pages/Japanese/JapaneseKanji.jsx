@@ -2,18 +2,17 @@ import React, { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import './JapaneseKanji.css';
 
-import { Kanji, KanjiExample } from './list_japanese';
+import { KanjiExample } from './list_japanese';
 
 import ConnectCard from './ConnectCard'
 
-export default function JapaneseKanji() {
+export default function JapaneseKanji({ Array }) {
 
     const [searchParams, setSearchParams] = useSearchParams();
     const query = searchParams.get('search') || '';
     const [searchQueryKanji, setSearchQueryKanji] = useState(query);
 
-    const filteredKanji = Kanji.filter((kanji) =>
-        // kanji.Id.toLowerCase().includes(searchQueryKanji.toLowerCase())
+    const filteredKanji = Array.filter((kanji) =>
         Object.values(kanji).some(value => value.toLowerCase().includes(searchQueryKanji.toLowerCase()))
     );
 
@@ -27,23 +26,6 @@ export default function JapaneseKanji() {
         document.getElementById('searchkanji').focus();
     }
 
-
-
-    const rotateCard = (index) => {
-        const card = document.getElementById(`poker-card-${index}`);
-        card.classList.toggle('rotate');
-    }
-
-    const closeAll = () => {
-        const cards = document.getElementsByClassName('grid-card');
-        Array.from(cards).forEach(card => card.classList.add('rotate'));
-    }
-
-    const openAll = () => {
-        const cards = document.getElementsByClassName('grid-card');
-        Array.from(cards).forEach(card => card.classList.remove('rotate'));
-    }
-
     const handleEnterKanji = (e) => {
         e.preventDefault();
     }
@@ -54,8 +36,6 @@ export default function JapaneseKanji() {
                 <h2>Japanese Kanji</h2>
             </div>
 
-            {/* <ConnectCard /> */}
-
             <form onSubmit={handleEnterKanji}>
                 <div id='searchkanji' className='form-group'>
                     <input
@@ -65,12 +45,7 @@ export default function JapaneseKanji() {
                         onChange={(e) => setSearchQueryKanji(e.target.value)}
                     ></input>
                 </div>
-
-                <div className='active-button'>
-                    <button type='reset' className='btn btn-reset' onClick={clearInput}>CLEAR</button>
-                    <button className='btn' onClick={closeAll}>CLOSE ALL</button>
-                    <button className='btn' onClick={openAll}>OPEN ALL</button>
-                </div>
+                <button type='reset' className='btn btn-reset' onClick={clearInput}>CLEAR</button>
             </form>
 
             <div className='japanese-content'>
@@ -79,7 +54,7 @@ export default function JapaneseKanji() {
                         <div key={kanji.Id}
                             className='japanese-col'>
                             <div id={`poker-card-${index}`}
-                                onClick={() => rotateCard(index)}
+                                // onClick={() => rotateCard(index)}
                                 className='grid-card'
                                 style={{
                                     color: (
@@ -96,21 +71,21 @@ export default function JapaneseKanji() {
                                     <p className='japanese-font'>Kun: {kanji.Kun}</p>
                                 </div>
 
-                                <div className='face back'>
+                                {/* <div className='face back'>
                                     <h3>{kanji.SinoVietnamese}</h3>
                                     {KanjiExample.filter(include => include.Word.includes(kanji.Id)).map((example, index) => (
                                         <div key={index}>
                                             <span className='japanese-font'>{example.Hiragana}</span> - <span>{example.Meaning}</span>
                                         </div>
                                     ))}
-                                </div>
+                                </div> */}
                             </div>
                         </div>
                     ))}
                 </div>
             </div>
 
-            <div className='japanese-table-content'>
+            {/* <div className='japanese-table-content'>
                 <h2>Kanji Example</h2>
                 <table>
                     <thead>
@@ -140,7 +115,7 @@ export default function JapaneseKanji() {
                         ))}
                     </tbody>
                 </table>
-            </div>
+            </div> */}
         </div>
     )
 }

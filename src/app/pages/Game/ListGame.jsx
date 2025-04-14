@@ -25,7 +25,6 @@ export default function ListGame() {
         { name: 'Solve The Maze', src: SolveTheMazeSRC, link: '/game/solvethemaze' },
         { name: 'Generate Maze', src: GenerateMazeSRC, link: '/game/generatemaze' },
         { name: 'Type Pi', src: TypePiSRC, link: '/game/typepi' },
-        { name: 'Rotate Card', src: null, link: '/game/rotatecard' },
         { name: 'Random Card (VW > 1227px)', src: RandomCardSRC, link: '/game/randomcard' },
         { name: 'To Do List', src: ToDoListSRC, link: '/game/todolist' },
     ];

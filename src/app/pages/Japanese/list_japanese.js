@@ -684,6 +684,17 @@ export const KanjiExample = [
 
 export const Verb = [
     { Hiragana: 'NoVerb', Kanji: 'NoVerb', Group: 'NoVerb', Meaning: 'NoVerb', Special: 'false' },
+    // さんします
+    // つくります
+    // つぎます
+    // たのしみます
+    // かんこうします
+    // ドライブします
+    // レンタルします
+    // よやくします
+    // うんてんします
+    // おもいます
+    // つれます
 
     //「い」ます
     { Hiragana: 'いきます', Kanji: '行きます', Group: 'I', Meaning: 'Đi', Special: 'true' },
