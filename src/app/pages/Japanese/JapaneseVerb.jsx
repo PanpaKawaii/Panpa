@@ -134,19 +134,17 @@ export default function JapaneseVerb() {
                                         verb.Group === 'II' ? 'groupII' :
                                             verb.Group === 'III' ? 'groupIII' : 'groupNONE'}`}
                             >
-                                <div className='card-body'>
-                                    {verb.Special == 'true' && <i className='fa-solid fa-star'></i>}
-                                    <div className='kanji japanese-font' style={{ backgroundColor: verb.Kanji === 'NoVerb' ? '#dc3545' : '' }}>
-                                        {verb.Kanji.replace('ます', '')}<span className='masu'>ます</span><span className='_masu'>..</span>
-                                    </div>
-                                    <div className=' hiragana japanese-font'>
-                                        {verb.Hiragana.replace('ます', '')}<span className='masu'>ます</span><span className='_masu'>..</span>
-                                    </div>
-                                    <div className='vietnamese'>
-                                        <span>
-                                            <span style={{ fontFamily: 'none' }}>{verb.Group}</span> : {verb.Meaning}
-                                        </span>
-                                    </div>
+                                {verb.Special == 'true' && <i className='fa-solid fa-star'></i>}
+                                <div className='kanji japanese-font' style={{ backgroundColor: verb.Kanji === 'NoVerb' ? '#dc3545' : '' }}>
+                                    {verb.Kanji.replace('ます', '')}<span className='masu'>ます</span><span className='_masu'>..</span>
+                                </div>
+                                <div className=' hiragana japanese-font'>
+                                    {verb.Hiragana.replace('ます', '')}<span className='masu'>ます</span><span className='_masu'>..</span>
+                                </div>
+                                <div className='vietnamese'>
+                                    <span>
+                                        <span style={{ fontFamily: 'none' }}>{verb.Group}</span> : {verb.Meaning}
+                                    </span>
                                 </div>
                             </div>
                         </div>

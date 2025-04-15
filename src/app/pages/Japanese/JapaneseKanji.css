@@ -76,10 +76,6 @@
                 justify-content: center;
                 align-items: start;
 
-                .rotate {
-                    transform: rotateY(-180deg);
-                }
-
                 .grid-card {
                     padding: 8px;
                     width: 200px;
@@ -91,9 +87,6 @@
                     text-align: center;
                     box-shadow: 0px 0px 8px #f99dbc80;
                     box-sizing: border-box;
-                    transform-style: preserve-3d;
-                    transition: all 0.5s ease;
-                    overflow: hidden;
 
                     h1 {
                         margin: 0;

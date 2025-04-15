@@ -53,7 +53,7 @@ export default function JapaneseKanji({ ArrayProps }) {
                     {filteredKanji.filter(kanji => kanji.Id !== 'NoKanji').map((kanji, index) => (
                         <div key={kanji.Id}
                             className='japanese-col'>
-                            <div id={`poker-card-${index}`}
+                            <div
                                 className='grid-card'
                                 style={{
                                     color: (
