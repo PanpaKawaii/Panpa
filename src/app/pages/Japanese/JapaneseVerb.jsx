@@ -135,19 +135,18 @@ export default function JapaneseVerb() {
                                             verb.Group === 'III' ? 'groupIII' : 'groupNONE'}`}
                             >
                                 <div className='card-body'>
-                                    <h3 className='japanese-font' style={{ backgroundColor: verb.Kanji === 'NoVerb' ? '#dc3545' : '' }}>
+                                    {verb.Special == 'true' && <i className='fa-solid fa-star'></i>}
+                                    <div className='kanji japanese-font' style={{ backgroundColor: verb.Kanji === 'NoVerb' ? '#dc3545' : '' }}>
                                         {verb.Kanji.replace('ます', '')}<span className='masu'>ます</span><span className='_masu'>..</span>
-                                    </h3>
-                                    <h4 className='japanese-font'>
+                                    </div>
+                                    <div className=' hiragana japanese-font'>
                                         {verb.Hiragana.replace('ます', '')}<span className='masu'>ます</span><span className='_masu'>..</span>
-                                    </h4>
-                                    <p>
-                                        {verb.Special == 'true' && <i className='fa-solid fa-star'></i>}
+                                    </div>
+                                    <div className='vietnamese'>
                                         <span>
                                             <span style={{ fontFamily: 'none' }}>{verb.Group}</span> : {verb.Meaning}
                                         </span>
-                                    </p>
-                                    {/* <p>Romaji: {verb.Romaji}</p> */}
+                                    </div>
                                 </div>
                             </div>
                         </div>

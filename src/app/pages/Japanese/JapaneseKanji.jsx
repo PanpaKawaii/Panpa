@@ -54,7 +54,6 @@ export default function JapaneseKanji({ ArrayProps }) {
                         <div key={kanji.Id}
                             className='japanese-col'>
                             <div id={`poker-card-${index}`}
-                                // onClick={() => rotateCard(index)}
                                 className='grid-card'
                                 style={{
                                     color: (
@@ -64,12 +63,10 @@ export default function JapaneseKanji({ ArrayProps }) {
                                     ) ? 'red' : 'black'
                                 }}
                             >
-                                <div className='face front'>
-                                    <h1 className='japanese-font'>{kanji.Id}</h1>
-                                    <h4>{kanji.SinoVietnamese}</h4>
-                                    <p className='japanese-font'>On: {kanji.On}</p>
-                                    <p className='japanese-font'>Kun: {kanji.Kun}</p>
-                                </div>
+                                <h1 className='japanese-font'>{kanji.Id}</h1>
+                                <div className='sinovietnamese'>{kanji.SinoVietnamese}</div>
+                                <div className='japanese-font'>On: {kanji.On}</div>
+                                <div className='japanese-font'>Kun: {kanji.Kun}</div>
 
                                 {/* <div className='face back'>
                                     <h3>{kanji.SinoVietnamese}</h3>

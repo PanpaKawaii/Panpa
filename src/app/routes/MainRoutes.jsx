@@ -32,6 +32,7 @@ import PaginationComponent from '../components/Pagination/PaginationComponent.js
 
 import JapaneseKanji from '../pages/Japanese/JapaneseKanji.jsx'
 import JapaneseVerb from '../pages/Japanese/JapaneseVerb.jsx'
+import JapaneseGrammar from '../pages/Japanese/JapaneseGrammar.jsx'
 import RotateCard from '../pages/Japanese/RotateCard.jsx'
 import { Kanji } from '../pages/Japanese/list_japanese'
 import ListJapanese from '../pages/Japanese/ListJapanese.jsx'
@@ -71,9 +72,10 @@ export default function MainRoutes() {
                 <Route path='space' element={<Space />} />
 
                 <Route path='japanese' element={<ListJapanese />} >
-                    <Route path='kanji' element={<PaginationComponent items={Kanji} pageSize={18} Component={JapaneseKanji} />} />
-                    {/* <Route path='kanji' element={<PaginationComponent items={Kanji} pageSize={18}><JapaneseKanji /></PaginationComponent>} /> */}
+                    <Route path='kanji' element={<PaginationComponent items={Kanji} pageSize={24} Component={JapaneseKanji} />} />
+                    {/* <Route path='kanji' element={<PaginationComponent items={Kanji} pageSize={24}><JapaneseKanji /></PaginationComponent>} /> */}
                     <Route path='verb' element={<JapaneseVerb />} />
+                    <Route path='grammar' element={<JapaneseGrammar />} />
                     <Route path='rotatecard' element={<PaginationComponent items={Kanji} pageSize={24} Component={RotateCard} />} />
                 </Route>
 
