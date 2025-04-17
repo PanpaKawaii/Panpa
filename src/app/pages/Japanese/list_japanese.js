@@ -245,8 +245,25 @@ export const Kanji = [
     { Id: '運', SinoVietnamese: 'VẬN', On: 'ウン', Kun: 'はこ' },
     { Id: '転', SinoVietnamese: 'CHUYỂN', On: 'テン', Kun: 'ころ' },
 
-    { Id: 'NoKanji', SinoVietnamese: 'NoKanji', On: 'NoKanji', Kun: 'NoKanji' },
-    { Id: 'NoKanji', SinoVietnamese: 'NoKanji', On: 'NoKanji', Kun: 'NoKanji' },
+    { Id: '観', SinoVietnamese: 'QUAN', On: 'カン', Kun: 'み' },
+    { Id: '光', SinoVietnamese: 'QUANG', On: 'コウ', Kun: 'ひか、ひかり' },
+    { Id: '性', SinoVietnamese: 'TÍNH', On: 'セイ、ヒョウ', Kun: 'せい、ひょう' },
+    { Id: '動', SinoVietnamese: 'ĐỘNG', On: 'ドウ', Kun: 'うご' },
+    { Id: '無', SinoVietnamese: 'VÔ', On: 'ム、ブ', Kun: 'な' },
+    { Id: '明', SinoVietnamese: 'MINH', On: 'メイ、ミョウ、ミン', Kun: 'あか' },
+    { Id: '便', SinoVietnamese: 'TIỆN', On: 'ベン、ビン', Kun: 'たよ' },
+    { Id: '利', SinoVietnamese: 'LỢI', On: 'リ', Kun: 'き' },
+
+    { Id: '受', SinoVietnamese: 'THỤ', On: 'ジュ', Kun: 'う' },
+    { Id: '付', SinoVietnamese: 'PHÓ', On: 'フ', Kun: 'つ' },
+    { Id: '問', SinoVietnamese: 'VẤN', On: 'モン', Kun: 'とう、と' },
+    { Id: '題', SinoVietnamese: 'ĐỀ', On: 'ダイ', Kun: 'だい' },
+    { Id: '同', SinoVietnamese: 'ĐỒNG', On: 'ドウ', Kun: 'おな' },
+    { Id: '集', SinoVietnamese: 'TẬP', On: 'シュウ', Kun: 'あつ' },
+    { Id: '始', SinoVietnamese: 'THỦY', On: 'シ', Kun: 'はじ' },
+    { Id: '終', SinoVietnamese: 'CHUNG', On: 'シュウ', Kun: 'お' },
+    { Id: '教', SinoVietnamese: 'GIÁO', On: 'キョウ', Kun: 'おし、おそ' },
+
     { Id: 'NoKanji', SinoVietnamese: 'NoKanji', On: 'NoKanji', Kun: 'NoKanji' },
     { Id: 'NoKanji', SinoVietnamese: 'NoKanji', On: 'NoKanji', Kun: 'NoKanji' },
     { Id: 'NoKanji', SinoVietnamese: 'NoKanji', On: 'NoKanji', Kun: 'NoKanji' },
@@ -695,6 +712,18 @@ export const Verb = [
     // うんてんします
     // おもいます
     // つれます
+
+    // なります
+
+    // なげます
+    // いのります
+    // ねがいます
+    // いわいます
+    // かんしゃします
+    // せいちょうします
+    // しゅうかくします
+    // まめまきます
+
 
     //「い」ます
     { Hiragana: 'いきます', Kanji: '行きます', Group: 'I', Meaning: 'Đi', Special: 'true' },

@@ -49,8 +49,8 @@ export default function JapaneseGrammar() {
             <div className='heading'>
                 <h2>Japanese Grammar</h2>
             </div>
-
             <div className='japanese-content'>
+                <h3 className=''>Listing</h3>
                 <div className='japanese-row'>
                     {Listing.map((grammar, index) => (
                         <div key={grammar.title}
