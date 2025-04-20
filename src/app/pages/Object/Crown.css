@@ -1,0 +1,40 @@
+.scene-crown {
+    width: 300px;
+    height: 300px;
+    perspective: 800px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-self: center;
+    /* transform: scale(5); */
+
+    .crown {
+        position: relative;
+        width: 100px;
+        height: 140px;
+        transform-style: preserve-3d;
+        transition: all 1s ease;
+        transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+        animation: spinY 20s linear infinite;
+
+        .face {
+            position: absolute;
+            width: 100px;
+            height: 140px;
+            background: #ffd700;
+            /* opacity: 0.9; */
+            transition: all 1s ease;
+
+            clip-path: polygon(50% 0%, 100% 50%, 100% 100%, 0% 100%, 0% 50%);
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            svg {
+                position: absolute;
+            }
+        }
+    }
+}

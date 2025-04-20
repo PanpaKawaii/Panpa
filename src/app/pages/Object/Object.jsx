@@ -7,26 +7,28 @@ import Octahedron from './Octahedron.jsx';
 import Dodecahedron from './Dodecahedron.jsx';
 import Icosahedron from './Icosahedron.jsx';
 import Sphere from './Sphere.jsx';
+import Crown from './Crown.jsx';
 
 export default function Object() {
 
     const [Count, setCount] = useState(0);
+    const List = [
+        <Crown />,
+        <Card />,
+        <Cube />,
+        <Pyramid />,
+        <Octahedron />,
+        <Dodecahedron />,
+        <Icosahedron />,
+        <Sphere />,
+    ];
 
     return (
         <div className='object-container'>
-
-            <button className='btn' onClick={() => setCount(p => p + 1)}>LEFT</button>
-            {
-                Count % 7 === 0 ? <Card /> :
-                    Count % 7 === 1 ? <Cube /> :
-                        Count % 7 === 2 ? <Pyramid /> :
-                            Count % 7 === 3 ? <Octahedron /> :
-                                Count % 7 === 4 ? <Dodecahedron /> :
-                                    Count % 7 === 5 ? <Icosahedron /> :
-                                        Count % 7 === 6 ? <Sphere /> : <></>
-            }
-            <button className='btn' onClick={() => setCount(p => p + 6)}>RIGHT</button>
-
+            {/* <div>Count: {Count}</div> */}
+            <button className='btn' onClick={() => setCount(p => p - 1)}>LEFT</button>
+            {List[((Count % List.length) + List.length) % List.length]}
+            <button className='btn' onClick={() => setCount(p => p + 1)}>RIGHT</button>
         </div>
-    )
+    );
 }
