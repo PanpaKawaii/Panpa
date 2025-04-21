@@ -12,8 +12,8 @@ import Crown from './Crown.jsx';
 export default function Object() {
 
     const [Count, setCount] = useState(0);
+    const [Position, setPosition] = useState([0, 0, 0]);
     const List = [
-        <Crown />,
         <Card />,
         <Cube />,
         <Pyramid />,
@@ -21,14 +21,32 @@ export default function Object() {
         <Dodecahedron />,
         <Icosahedron />,
         <Sphere />,
+        <Crown x={Position[0] * 10} y={Position[1] * 10} z={Position[2] * 10} />,
     ];
 
     return (
         <div className='object-container'>
-            {/* <div>Count: {Count}</div> */}
-            <button className='btn' onClick={() => setCount(p => p - 1)}>LEFT</button>
-            {List[((Count % List.length) + List.length) % List.length]}
-            <button className='btn' onClick={() => setCount(p => p + 1)}>RIGHT</button>
+            <div className='content'>
+                <button className='btn' onClick={() => setCount(p => p - 1)}>LEFT</button>
+                {List[((Count % List.length) + List.length) % List.length]}
+                <button className='btn' onClick={() => setCount(p => p + 1)}>RIGHT</button>
+            </div>
+            <form className='slider-form'>
+                <label>
+                    <div>X-axis: {Position[0] * 10}°</div>
+                    <input type='range' name='Xaxis' min='-36' max='36' value={Position[0]} onChange={(e) => { setPosition([e.target.value, Position[1], Position[2]]) }} />
+                </label>
+
+                <label>
+                    <div>Y-axis: {Position[1] * 10}°</div>
+                    <input type='range' name='Yaxis' min='-36' max='36' value={Position[1]} onChange={(e) => { setPosition([Position[0], e.target.value, Position[2]]) }} />
+                </label>
+
+                <label>
+                    <div>Z-axis: {Position[2] * 10}°</div>
+                    <input type='range' name='Zaxis' min='-36' max='36' value={Position[2]} onChange={(e) => { setPosition([Position[0], Position[1], e.target.value]) }} />
+                </label>
+            </form>
         </div>
     );
 }

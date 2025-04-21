@@ -1,17 +1,25 @@
 import React from 'react';
 import './Crown.css';
 
-export default function Crown() {
+export default function Crown(props) {
     return (
         <>
             <div className='scene-crown'>
-                <div className='crown'>
+                <div
+                    className='crown'
+                    // style={{
+                    //     transform: `rotateX(${props.x}deg) rotateY(${props.y}deg) rotateZ(${props.z}deg)`,
+                    // }}
+                >
                     {[...Array(12)].map((_, index) => (
                         <div
                             key={index}
                             className={'face'}
+                            // style={{
+                            //     transform: `rotateY(${360 / 12 * (index + 1)}deg) translateZ(${185.7}px)`,
+                            // }}
                             style={{
-                                transform: `rotateY(${360 / 12 * (index + 1)}deg) translateZ(${185.7}px)`,
+                                transform: `rotateX(${props.x}deg) rotateY(${360 / 12 * (index + 1) + props.y}deg) translateZ(${185.7}px)`,
                             }}
                         >
                             <svg width='100' height='140' viewBox='0 0 100 100'>
@@ -22,8 +30,6 @@ export default function Crown() {
                                     strokeWidth='2'
                                 />
                             </svg>
-
-                            {index + 1}
                         </div>
                     ))}
                 </div>
