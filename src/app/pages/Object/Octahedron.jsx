@@ -2,21 +2,40 @@ import React from 'react';
 import './Octahedron.css';
 
 export default function Octahedron() {
+
+    const Distance = 40.823;
+    const SubDistance = -7.735;
+    const Angle = -54.736;
+
     return (
         <>
             <div className='scene-octahedron'>
                 <div className='octahedron'>
-                    <div className='face f1'>Face1</div>
-                    <div className='face f2'>Face2</div>
-                    <div className='face f3'>Face3</div>
-                    <div className='face f4'>Face4</div>
-                    <div className='face f5'>Face5</div>
-                    <div className='face f6'>Face6</div>
-                    <div className='face f7'>Face7</div>
-                    <div className='face f8'>Face8</div>
-                    <div className='floor fl1'>Root1</div>
-                    <div className='floor fl2'>Root2</div>
-                    <div className='floor fl3'>Root3</div>
+                    {[...Array(8)].map((_, index) => (
+                        <div
+                            key={index}
+                            className={`face f${index + 1}`}
+                            style={{
+                                background: `hsl(${Math.round(index * (360 / 8))}, 70%, 50%, 0.5)`,
+                                transform: `
+                                translateY(${SubDistance}px)
+                                rotateZ(${index % 4 * 90 + 45}deg)
+                                rotateX(${index < 4 ? Angle : -Angle}deg)
+                                translateZ(${index < 4 ? Distance : -Distance}px)
+                                `,
+                            }}
+                        >
+                            Face{index + 1}
+                        </div>
+                    ))}
+                    {[...Array(3)].map((_, index) => (
+                        <div
+                            key={index}
+                            className={`floor fl${index + 1}`}
+                        >
+                            Root{index + 1}
+                        </div>
+                    ))}
                 </div>
             </div>
         </>
