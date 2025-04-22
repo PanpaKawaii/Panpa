@@ -23,6 +23,7 @@
             width: 100px;
             height: 140px;
             background: #ffd700;
+            border-bottom: 2px solid #ffbb00;
             /* opacity: 0.9; */
             transition: all 1s ease;
 
