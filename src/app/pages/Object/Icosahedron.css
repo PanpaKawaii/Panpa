@@ -24,7 +24,7 @@
             height: 115.47px;
             background: #ff000080;
             opacity: 0.9;
-            transition: all 4s ease;
+            transition: all 1s ease;
 
             clip-path: polygon(50% 0%, 100% 75%, 0% 75%);
 

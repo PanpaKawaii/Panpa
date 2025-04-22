@@ -11,8 +11,8 @@
 
     .pyramid {
         position: relative;
-        width: 100px;
-        height: 100px;
+        width: 200px;
+        height: 200px;
         transform-style: preserve-3d;
         transition: all 1s ease;
         transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
@@ -20,9 +20,9 @@
 
         .face {
             position: absolute;
-            width: 100px;
-            height: 115.47px;
-            background: #007bff80;
+            width: 200px;
+            height: 230.94px;
+            background: #ff000080;
             opacity: 0.9;
             transition: all 1s ease;
 
@@ -31,29 +31,6 @@
             display: flex;
             justify-content: center;
             align-items: center;
-        }
-
-        --Distance: 20.412px;
-        --Angle: -70.529deg;
-
-        .bottom {
-            transform: rotateY(180deg) translateZ(var(--Distance));
-            background-color: #ffff0080;
-        }
-
-        .front {
-            transform: rotateX(var(--Angle)) translateZ(var(--Distance));
-            background-color: #ff000080;
-        }
-
-        .left {
-            transform: rotateZ(120deg) rotateX(var(--Angle)) translateZ(var(--Distance));
-            background-color: #00800080;
-        }
-
-        .right {
-            transform: rotateZ(-120deg) rotateX(var(--Angle)) translateZ(var(--Distance));
-            background-color: #0000ff80;
         }
     }
 }
