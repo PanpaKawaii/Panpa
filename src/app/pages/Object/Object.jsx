@@ -30,16 +30,18 @@ export default function Object() {
         <div className='object-container'>
             <div
                 className='content'
-                // style={{
-                //     transform: `rotateX(${Position[0] * 10}deg) rotateY(${Position[1] * 10}deg) rotateZ(${Position[2] * 10}deg)`,
-                // }}
+            // style={{
+            //     transform: `rotateX(${Position[0] * 10}deg) rotateY(${Position[1] * 10}deg) rotateZ(${Position[2] * 10}deg)`,
+            // }}
             >
                 {List[((Count % List.length) + List.length) % List.length]}
             </div>
 
             <div className='slider-form'>
-                <button className='btn' onClick={() => setCount(p => p - 1)}>LEFT</button>
-                <button className='btn' onClick={() => setCount(p => p + 1)}>RIGHT</button>
+                <div className='button-box'>
+                    <button className='btn' onClick={() => setCount(p => p - 1)}>LEFT</button>
+                    <button className='btn' onClick={() => setCount(p => p + 1)}>RIGHT</button>
+                </div>
 
                 <label>
                     <div>X-axis: {Position[0] * 10}°</div>

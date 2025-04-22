@@ -1,17 +1,3 @@
-/* @keyframes earth {
-    0% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-20px);
-    }
-
-    100% {
-        transform: translateY(0);
-    }
-} */
-
 @keyframes moon_2 {
     0% {
         transform: rotateY(0deg) rotateX(20deg) translateZ(200px);
@@ -72,7 +58,7 @@
             position: absolute;
             width: 30px;
             height: 28.5318px;
-            background: #888;
+            background: #888888;
             transition: all 1s ease;
 
             clip-path: polygon(50% 0%, 100% 38.197%, 80.902% 100%, 19.098% 100%, 0% 38.197%);
@@ -80,58 +66,6 @@
             display: flex;
             justify-content: center;
             align-items: center;
-        }
-
-        --Distance: 20.61px;
-        --SubDistance: -1.506px;
-        --Angle: -116.565deg;
-
-        .f1 {
-            transform: rotateY(180deg) translateY(var(--SubDistance)) translateZ(var(--Distance));
-        }
-
-        .f2 {
-            transform: rotateX(var(--Angle)) translateY(var(--SubDistance)) translateZ(var(--Distance));
-        }
-
-        .f3 {
-            transform: rotateZ(72deg) rotateX(var(--Angle)) translateY(var(--SubDistance)) translateZ(var(--Distance));
-        }
-
-        .f4 {
-            transform: rotateZ(144deg) rotateX(var(--Angle)) translateY(var(--SubDistance)) translateZ(var(--Distance));
-        }
-
-        .f5 {
-            transform: rotateZ(216deg) rotateX(var(--Angle)) translateY(var(--SubDistance)) translateZ(var(--Distance));
-        }
-
-        .f6 {
-            transform: rotateZ(288deg) rotateX(var(--Angle)) translateY(var(--SubDistance)) translateZ(var(--Distance));
-        }
-
-        .f7 {
-            transform: rotateZ(180deg) translateY(var(--SubDistance)) translateZ(var(--Distance));
-        }
-
-        .f8 {
-            transform: rotateX(calc(180deg + var(--Angle))) translateY(var(--SubDistance)) translateZ(var(--Distance));
-        }
-
-        .f9 {
-            transform: rotateZ(72deg) rotateX(calc(180deg + var(--Angle))) translateY(var(--SubDistance)) translateZ(var(--Distance));
-        }
-
-        .f10 {
-            transform: rotateZ(144deg) rotateX(calc(180deg + var(--Angle))) translateY(var(--SubDistance)) translateZ(var(--Distance));
-        }
-
-        .f11 {
-            transform: rotateZ(216deg) rotateX(calc(180deg + var(--Angle))) translateY(var(--SubDistance)) translateZ(var(--Distance));
-        }
-
-        .f12 {
-            transform: rotateZ(288deg) rotateX(calc(180deg + var(--Angle))) translateY(var(--SubDistance)) translateZ(var(--Distance));
         }
     }
 
@@ -156,89 +90,6 @@
             display: flex;
             justify-content: center;
             align-items: center;
-        }
-
-        --Distance: 75.577px;
-        --Angle: -37.377deg;
-
-        .f1 {
-            transform: rotateZ(0deg) rotateX(var(--Angle)) translateZ(var(--Distance));
-        }
-
-        .f2 {
-            transform: rotateZ(72deg) rotateX(var(--Angle)) translateZ(var(--Distance));
-        }
-
-        .f3 {
-            transform: rotateZ(144deg) rotateX(var(--Angle)) translateZ(var(--Distance));
-        }
-
-        .f4 {
-            transform: rotateZ(216deg) rotateX(var(--Angle)) translateZ(var(--Distance));
-        }
-
-        .f5 {
-            transform: rotateZ(288deg) rotateX(var(--Angle)) translateZ(var(--Distance));
-        }
-
-        .f6 {
-            transform: rotateZ(36deg) rotateX(calc(41.81deg - var(--Angle))) translateZ(var(--Distance));
-        }
-
-        .f7 {
-            transform: rotateZ(108deg) rotateX(calc(41.81deg - var(--Angle))) translateZ(var(--Distance));
-        }
-
-        .f8 {
-            transform: rotateZ(180deg) rotateX(calc(41.81deg - var(--Angle))) translateZ(var(--Distance));
-        }
-
-        .f9 {
-            transform: rotateZ(252deg) rotateX(calc(41.81deg - var(--Angle))) translateZ(var(--Distance));
-        }
-
-        .f10 {
-            transform: rotateZ(324deg) rotateX(calc(41.81deg - var(--Angle))) translateZ(var(--Distance));
-        }
-
-        .f11 {
-            transform: rotateZ(36deg) rotateX(calc(-138.19deg - var(--Angle))) translateZ(var(--Distance));
-        }
-
-        .f12 {
-            transform: rotateZ(108deg) rotateX(calc(-138.19deg - var(--Angle))) translateZ(var(--Distance));
-        }
-
-        .f13 {
-            transform: rotateZ(180deg) rotateX(calc(-138.19deg - var(--Angle))) translateZ(var(--Distance));
-        }
-
-        .f14 {
-            transform: rotateZ(252deg) rotateX(calc(-138.19deg - var(--Angle))) translateZ(var(--Distance));
-        }
-
-        .f15 {
-            transform: rotateZ(324deg) rotateX(calc(-138.19deg - var(--Angle))) translateZ(var(--Distance));
-        }
-
-        .f16 {
-            transform: rotateZ(0deg) rotateX(calc(180deg + var(--Angle))) translateZ(var(--Distance));
-        }
-
-        .f17 {
-            transform: rotateZ(72deg) rotateX(calc(180deg + var(--Angle))) translateZ(var(--Distance));
-        }
-
-        .f18 {
-            transform: rotateZ(144deg) rotateX(calc(180deg + var(--Angle))) translateZ(var(--Distance));
-        }
-
-        .f19 {
-            transform: rotateZ(216deg) rotateX(calc(180deg + var(--Angle))) translateZ(var(--Distance));
-        }
-
-        .f20 {
-            transform: rotateZ(288deg) rotateX(calc(180deg + var(--Angle))) translateZ(var(--Distance));
         }
     }
 }
