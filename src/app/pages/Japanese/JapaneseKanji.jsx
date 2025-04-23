@@ -50,8 +50,8 @@ export default function JapaneseKanji({ ArrayProps }) {
                     <div className='kanji-example'>
                         {KanjiExample.filter(kanji => kanji.Word.includes(SelectedKanji.Id)).map((example, slt) => (
                             <div key={slt} className='item'>
-                                <div className='example-word'>{example.Word}</div>
-                                <div className='example-hiragana'>{example.Hiragana}</div>
+                                <div className='example-word japanese-font'>{example.Word}</div>
+                                <div className='example-hiragana japanese-font'>{example.Hiragana}</div>
                                 <div
                                     className='example-meaning'
                                     style={{

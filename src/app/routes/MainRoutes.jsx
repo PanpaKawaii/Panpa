@@ -72,7 +72,7 @@ export default function MainRoutes() {
                 <Route path='space' element={<Space />} />
 
                 <Route path='japanese' element={<ListJapanese />} >
-                    <Route path='kanji' element={<PaginationComponent items={[...Kanji].reverse()} pageSize={40} Component={JapaneseKanji} />} />
+                    <Route path='kanji' element={<PaginationComponent items={[...Kanji].reverse()} pageSize={24} Component={JapaneseKanji} />} />
                     {/* <Route path='kanji' element={<PaginationComponent items={Kanji} pageSize={24}><JapaneseKanji /></PaginationComponent>} /> */}
                     <Route path='verb' element={<JapaneseVerb />} />
                     <Route path='grammar' element={<JapaneseGrammar />} />

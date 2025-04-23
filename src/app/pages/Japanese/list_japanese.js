@@ -751,6 +751,7 @@ export const KanjiExample = [
     { Word: '市場', Hiragana: 'いちば', Meaning: 'Chợ' },
     { Word: '都市', Hiragana: 'とし', Meaning: 'Thành phố' },
 
+    { Word: '商売', Hiragana: 'しょうばい', Meaning: 'Buôn bán' },
     { Word: '品物', Hiragana: 'しなもの', Meaning: 'Hàng hoá' },
     { Word: '商品', Hiragana: 'しょうひん', Meaning: 'Sản phẩm, hàng hoá' },
     { Word: '電気製品', Hiragana: 'でんきせいひん', Meaning: 'Đồ điện' },
