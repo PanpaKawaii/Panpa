@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import './HomeContent.css';
 
 import Cube from '../Object/Cube.jsx';
+import Crown from '../Object/Crown.jsx';
 
 import PaginationComponent from '../../components/Pagination/PaginationComponent.jsx';
 import JapaneseKanji from '../Japanese/JapaneseKanji.jsx';
@@ -39,6 +40,7 @@ export default function HomeContent() {
         <>
             <div className='home-container'>
                 <Cube />
+                <Crown />
                 <Link to='account/information'>ACCOUNT</Link>
             </div>
         </>

@@ -30,11 +30,45 @@ export default function JapaneseKanji({ ArrayProps }) {
         e.preventDefault();
     }
 
+    const [SelectedKanji, setSelectedKanji] = useState(null);
+
     return (
         <div className='japanesekanji-container'>
             <div className='heading'>
                 <h2>Japanese Kanji</h2>
             </div>
+
+            {SelectedKanji &&
+                <div className='selected-kanji'>
+                    <div className='kanji-id'>
+                        <h1 className='japanese-font'>{SelectedKanji.Id}</h1>
+                        <div className='sinovietnamese'>{SelectedKanji.SinoVietnamese}</div>
+                        <div className='japanese-font'>On: {SelectedKanji.On}</div>
+                        <div className='japanese-font'>Kun: {SelectedKanji.Kun}</div>
+                    </div>
+                    <div className='line'></div>
+                    <div className='kanji-example'>
+                        {KanjiExample.filter(kanji => kanji.Word.includes(SelectedKanji.Id)).map((example, slt) => (
+                            <div key={slt} className='item'>
+                                <div className='example-word'>{example.Word}</div>
+                                <div className='example-hiragana'>{example.Hiragana}</div>
+                                <div
+                                    className='example-meaning'
+                                    style={{
+                                        color: (
+                                            example.Word === 'NoKanjiExample' ||
+                                            example.Hiragana === 'NoKanjiExample' ||
+                                            example.Meaning === 'NoKanjiExample' ||
+                                            example.Romaji === 'NoKanji' ||
+                                            !example.Romaji
+                                        ) ? 'red' : 'black'
+                                    }}
+                                >{example.Meaning}</div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            }
 
             <form onSubmit={handleEnterKanji}>
                 <div id='searchkanji' className='form-group'>
@@ -52,7 +86,12 @@ export default function JapaneseKanji({ ArrayProps }) {
                 <div className='japanese-row'>
                     {filteredKanji.filter(kanji => kanji.Id !== 'NoKanji').map((kanji, index) => (
                         <div key={kanji.Id}
-                            className='japanese-col'>
+                            className='japanese-col'
+                            onClick={() => {
+                                setSelectedKanji(kanji);
+                                window.scrollTo(0, 500);
+                            }}
+                        >
                             <div
                                 className='grid-card'
                                 style={{
@@ -82,7 +121,25 @@ export default function JapaneseKanji({ ArrayProps }) {
                 </div>
             </div>
 
-            {/* <div className='japanese-table-content'>
+            {/* <div>
+                {Kanji.filter(kanji => kanji.Id !== 'NoKanji').map((kanji, index) => (
+                    <div key={kanji.Id}>
+                        <div
+                            style={{
+                                color: (
+                                    kanji.SinoVietnamese === 'NoKanji' ||
+                                    kanji.On === 'NoKanji' ||
+                                    kanji.Kun === 'NoKanji'
+                                ) ? 'red' : 'black'
+                            }}
+                        >
+                            <div className='japanese-font'>{kanji.Id}</div>
+                        </div>
+                    </div>
+                ))}
+            </div> */}
+
+            <div className='japanese-table-content'>
                 <h2>Kanji Example</h2>
                 <table>
                     <thead>
@@ -94,7 +151,7 @@ export default function JapaneseKanji({ ArrayProps }) {
                     </thead>
                     <tbody>
                         {KanjiExample.filter(kanji => kanji.Word !== 'NoKanjiExample').map((example, e) => (
-                            <tr key={e}>
+                            <tr key={example.Word + example.Hiragana}>
                                 <td>{example.Word}</td>
                                 <td>{example.Hiragana}</td>
                                 <td
@@ -112,7 +169,7 @@ export default function JapaneseKanji({ ArrayProps }) {
                         ))}
                     </tbody>
                 </table>
-            </div> */}
+            </div>
         </div>
     )
 }

@@ -18,6 +18,62 @@
         }
     }
 
+    .selected-kanji {
+        display: flex;
+        justify-content: space-between;
+        align-items: start;
+        min-height: 420px;
+        margin: 0 100px;
+        background-color: #fdd9e5;
+        border: 2px solid #f99dbc;
+        border-radius: 16px;
+        box-shadow: 0px 0px 8px #f99dbc80;
+
+        .kanji-id {
+            padding: 0 20px;
+
+            h1 {
+                margin: 0;
+                font-size: 240px;
+            }
+
+            .sinovietnamese {
+                margin: 8px 0;
+                font-size: 24px;
+                font-weight: bold;
+            }
+        }
+
+        .line {
+            height: 100%;
+            min-height: 376px;
+            margin: 20px 0;
+            border-left: 2px solid #f99dbc;
+        }
+
+        .kanji-example {
+            padding: 20px;
+            display: flex;
+            gap: 4px;
+            flex: 1;
+            flex-wrap: wrap;
+
+            .item {
+                display: flex;
+                gap: 4px;
+                height: fit-content;
+                padding: 4px 8px;
+                background-color: #fdd9e5;
+                border: 2px solid #f99dbc;
+                border-radius: 8px;
+
+                .example-hiragana {
+                    color: #888;
+                }
+            }
+        }
+    }
+
     form {
         width: 100%;
         padding: 40px 0;
@@ -75,6 +131,7 @@
                 display: flex;
                 justify-content: center;
                 align-items: start;
+                cursor: pointer;
 
                 .grid-card {
                     padding: 8px;
@@ -129,6 +186,7 @@
         .japanese-content {
             .japanese-row {
                 grid-template-columns: repeat(3, minmax(0, 1fr));
+
                 .japanese-col {
                     .grid-card {
                         h1 {
