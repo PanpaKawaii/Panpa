@@ -70,6 +70,10 @@
                 .example-hiragana {
                     color: #888;
                 }
+
+                .example-meaning {
+                    color: red;
+                }
             }
         }
     }

@@ -58,10 +58,8 @@ export default function JapaneseKanji({ ArrayProps }) {
                                         color: (
                                             example.Word === 'NoKanjiExample' ||
                                             example.Hiragana === 'NoKanjiExample' ||
-                                            example.Meaning === 'NoKanjiExample' ||
-                                            example.Romaji === 'NoKanji' ||
-                                            !example.Romaji
-                                        ) ? 'red' : 'black'
+                                            example.Meaning === 'NoKanjiExample'
+                                        ) && '#007bff'
                                     }}
                                 >{example.Meaning}</div>
                             </div>
