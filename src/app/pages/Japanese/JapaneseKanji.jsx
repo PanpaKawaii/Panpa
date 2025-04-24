@@ -4,16 +4,104 @@ import './JapaneseKanji.css';
 
 import { Kanji, KanjiExample } from './list_japanese';
 
-import ConnectCard from './ConnectCard'
-
 export default function JapaneseKanji({ ArrayProps }) {
+
+    const HiraganaAndKatakanaToRomaji = (input) => {
+        const map = {
+            'キャ': 'kya', 'キュ': 'kyu', 'キョ': 'kyo',
+            'ギャ': 'gya', 'ギュ': 'gyu', 'ギョ': 'gyo',
+            'シャ': 'sha', 'シュ': 'shu', 'ショ': 'sho',
+            'ジャ': 'ja', 'ジュ': 'ju', 'ジョ': 'jo',
+            'チャ': 'cha', 'チュ': 'chu', 'チョ': 'cho',
+            'ヂャ': 'ja', 'ヂュ': 'ju', 'ヂョ': 'jo',
+            'ニャ': 'nya', 'ニュ': 'nyu', 'ニョ': 'nyo',
+            'ヒャ': 'hya', 'ヒュ': 'hyu', 'ヒョ': 'hyo',
+            'ビャ': 'bya', 'ビュ': 'byu', 'ビョ': 'byo',
+            'ピャ': 'pya', 'ピュ': 'pyu', 'ピョ': 'pyo',
+            'ミャ': 'mya', 'ミュ': 'myu', 'ミョ': 'myo',
+            'リャ': 'rya', 'リュ': 'ryu', 'リョ': 'ryo',
+
+            'ア': 'a', 'イ': 'i', 'ウ': 'u', 'エ': 'e', 'オ': 'o',
+            'カ': 'ka', 'キ': 'ki', 'ク': 'ku', 'ケ': 'ke', 'コ': 'ko',
+            'サ': 'sa', 'シ': 'shi', 'ス': 'su', 'セ': 'se', 'ソ': 'so',
+            'タ': 'ta', 'チ': 'chi', 'ツ': 'tsu', 'テ': 'te', 'ト': 'to',
+            'ナ': 'na', 'ニ': 'ni', 'ヌ': 'nu', 'ネ': 'ne', 'ノ': 'no',
+            'ハ': 'ha', 'ヒ': 'hi', 'フ': 'fu', 'ヘ': 'he', 'ホ': 'ho',
+            'マ': 'ma', 'ミ': 'mi', 'ム': 'mu', 'メ': 'me', 'モ': 'mo',
+            'ヤ': 'ya', 'ユ': 'yu', 'ヨ': 'yo',
+            'ラ': 'ra', 'リ': 'ri', 'ル': 'ru', 'レ': 're', 'ロ': 'ro',
+            'ワ': 'wa', 'ヲ': 'wo', 'ン': 'n',
+            'ガ': 'ga', 'ギ': 'gi', 'グ': 'gu', 'ゲ': 'ge', 'ゴ': 'go',
+            'ザ': 'za', 'ジ': 'ji', 'ズ': 'zu', 'ゼ': 'ze', 'ゾ': 'zo',
+            'ダ': 'da', 'ヂ': 'ji', 'ヅ': 'zu', 'デ': 'de', 'ド': 'do',
+            'バ': 'ba', 'ビ': 'bi', 'ブ': 'bu', 'ベ': 'be', 'ボ': 'bo',
+            'パ': 'pa', 'ピ': 'pi', 'プ': 'pu', 'ペ': 'pe', 'ポ': 'po',
+            'ー': '-',
+
+            'きゃ': 'kya', 'きゅ': 'kyu', 'きょ': 'kyo',
+            'ぎゃ': 'gya', 'ぎゅ': 'gyu', 'ぎょ': 'gyo',
+            'しゃ': 'sha', 'しゅ': 'shu', 'しょ': 'sho',
+            'じゃ': 'ja', 'じゅ': 'ju', 'じょ': 'jo',
+            'ちゃ': 'cha', 'ちゅ': 'chu', 'ちょ': 'cho',
+            'ぢゃ': 'ja', 'ぢゅ': 'ju', 'ぢょ': 'jo',
+            'にゃ': 'nya', 'にゅ': 'nyu', 'にょ': 'nyo',
+            'ひゃ': 'hya', 'ひゅ': 'hyu', 'ひょ': 'hyo',
+            'びゃ': 'bya', 'びゅ': 'byu', 'びょ': 'byo',
+            'ぴゃ': 'pya', 'ぴゅ': 'pyu', 'ぴょ': 'pyo',
+            'みゃ': 'mya', 'みゅ': 'myu', 'みょ': 'myo',
+            'りゃ': 'rya', 'りゅ': 'ryu', 'りょ': 'ryo',
+
+            'あ': 'a', 'い': 'i', 'う': 'u', 'え': 'e', 'お': 'o',
+            'か': 'ka', 'き': 'ki', 'く': 'ku', 'け': 'ke', 'こ': 'ko',
+            'さ': 'sa', 'し': 'shi', 'す': 'su', 'せ': 'se', 'そ': 'so',
+            'た': 'ta', 'ち': 'chi', 'つ': 'tsu', 'て': 'te', 'と': 'to',
+            'な': 'na', 'に': 'ni', 'ぬ': 'nu', 'ね': 'ne', 'の': 'no',
+            'は': 'ha', 'ひ': 'hi', 'ふ': 'fu', 'へ': 'he', 'ほ': 'ho',
+            'ま': 'ma', 'み': 'mi', 'む': 'mu', 'め': 'me', 'も': 'mo',
+            'や': 'ya', 'ゆ': 'yu', 'よ': 'yo',
+            'ら': 'ra', 'り': 'ri', 'る': 'ru', 'れ': 're', 'ろ': 'ro',
+            'わ': 'wa', 'を': 'wo', 'ん': 'n',
+            'が': 'ga', 'ぎ': 'gi', 'ぐ': 'gu', 'げ': 'ge', 'ご': 'go',
+            'ざ': 'za', 'じ': 'ji', 'ず': 'zu', 'ぜ': 'ze', 'ぞ': 'zo',
+            'だ': 'da', 'ぢ': 'ji', 'づ': 'zu', 'で': 'de', 'ど': 'do',
+            'ば': 'ba', 'び': 'bi', 'ぶ': 'bu', 'べ': 'be', 'ぼ': 'bo',
+            'ぱ': 'pa', 'ぴ': 'pi', 'ぷ': 'pu', 'ぺ': 'pe', 'ぽ': 'po',
+
+            '、': ', ',
+        };
+        let romaji = '';
+        let i = 0;
+        while (i < input.length) {
+            const twoChar = input.slice(i, i + 2);
+            if (map[twoChar]) {
+                romaji += map[twoChar];
+                i += 2;
+            } else if (input[i] === 'ッ' || input[i] === 'っ') {
+                const nextChar = input.slice(i + 1, i + 3);
+                let nextRomaji = map[nextChar] || map[input[i + 1]] || '';
+                if (nextRomaji.length > 0) {
+                    romaji += nextRomaji[0];
+                } else {
+                    romaji += 'tsu';
+                }
+                i++;
+            } else {
+                romaji += map[input[i]] || input[i];
+                i++;
+            }
+        }
+        return romaji;
+    }
 
     const [searchParams, setSearchParams] = useSearchParams();
     const query = searchParams.get('search') || '';
     const [searchQueryKanji, setSearchQueryKanji] = useState(query);
 
     const filteredKanji = (searchQueryKanji ? Kanji : ArrayProps).filter((kanji) =>
-        Object.values(kanji).some(value => value.toLowerCase().includes(searchQueryKanji.toLowerCase()))
+        Object.values(kanji).some(value =>
+            value.toLowerCase().includes(searchQueryKanji.toLowerCase()) ||
+            HiraganaAndKatakanaToRomaji(value).toLowerCase().includes(searchQueryKanji.toLowerCase())
+        )
     );
 
     useEffect(() => {
@@ -102,7 +190,9 @@ export default function JapaneseKanji({ ArrayProps }) {
                             >
                                 <h1 className='japanese-font'>{kanji.Id}</h1>
                                 <div className='sinovietnamese'>{kanji.SinoVietnamese}</div>
+                                <div className='japanese-font'>On: {HiraganaAndKatakanaToRomaji(kanji.On)}</div>
                                 <div className='japanese-font'>On: {kanji.On}</div>
+                                <div className='japanese-font'>Kun: {HiraganaAndKatakanaToRomaji(kanji.Kun)}</div>
                                 <div className='japanese-font'>Kun: {kanji.Kun}</div>
 
                                 {/* <div className='face back'>
@@ -142,7 +232,7 @@ export default function JapaneseKanji({ ArrayProps }) {
                 ))}
             </div>
 
-            <div className='japanese-table-content'>
+            {/* <div className='japanese-table-content'>
                 <h2>Kanji Example</h2>
                 <table>
                     <thead>
@@ -172,7 +262,7 @@ export default function JapaneseKanji({ ArrayProps }) {
                         ))}
                     </tbody>
                 </table>
-            </div>
+            </div> */}
         </div>
     )
 }
