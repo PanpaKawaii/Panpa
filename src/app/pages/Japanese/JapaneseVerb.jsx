@@ -136,10 +136,12 @@ export default function JapaneseVerb() {
                             >
                                 {verb.Special == 'true' && <i className='fa-solid fa-star'></i>}
                                 <div className='kanji japanese-font' style={{ backgroundColor: verb.Kanji === 'NoVerb' ? '#dc3545' : '' }}>
-                                    {verb.Kanji.replace('ます', '')}<span className='masu'>ます</span><span className='_masu'>..</span>
+                                    {verb.Kanji.replace('ます', '')}<span className='masu'>ます</span><span className='_masu'>_</span>
+                                    {/* {verb.Kanji} */}
                                 </div>
                                 <div className=' hiragana japanese-font'>
-                                    {verb.Hiragana.replace('ます', '')}<span className='masu'>ます</span><span className='_masu'>..</span>
+                                    {verb.Hiragana.replace('ます', '')}<span className='masu'>ます</span><span className='_masu'>_</span>
+                                    {/* {verb.Hiragana} */}
                                 </div>
                                 <div className='vietnamese'>
                                     <span>

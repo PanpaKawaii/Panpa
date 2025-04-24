@@ -87,7 +87,7 @@ export default function JapaneseKanji({ ArrayProps }) {
                             className='japanese-col'
                             onClick={() => {
                                 setSelectedKanji(kanji);
-                                window.scrollTo(0, 500);
+                                window.scrollTo(0, 650);
                             }}
                         >
                             <div
@@ -119,23 +119,28 @@ export default function JapaneseKanji({ ArrayProps }) {
                 </div>
             </div>
 
-            {/* <div>
+            <div
+                style={{
+                    display: 'flex',
+                    flexWrap: 'wrap'
+                }}
+            >
                 {Kanji.filter(kanji => kanji.Id !== 'NoKanji').map((kanji, index) => (
-                    <div key={kanji.Id}>
-                        <div
-                            style={{
-                                color: (
-                                    kanji.SinoVietnamese === 'NoKanji' ||
-                                    kanji.On === 'NoKanji' ||
-                                    kanji.Kun === 'NoKanji'
-                                ) ? 'red' : 'black'
-                            }}
-                        >
-                            <div className='japanese-font'>{kanji.Id}</div>
-                        </div>
+                    <div
+                        key={kanji.Id}
+                        className='japanese-font'
+                        style={{
+                            color: (
+                                kanji.SinoVietnamese === 'NoKanji' ||
+                                kanji.On === 'NoKanji' ||
+                                kanji.Kun === 'NoKanji'
+                            ) ? 'red' : 'black'
+                        }}
+                    >
+                        {kanji.Id}
                     </div>
                 ))}
-            </div> */}
+            </div>
 
             <div className='japanese-table-content'>
                 <h2>Kanji Example</h2>

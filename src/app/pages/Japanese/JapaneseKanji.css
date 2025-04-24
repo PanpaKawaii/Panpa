@@ -20,13 +20,13 @@
 
     .selected-kanji {
         display: flex;
+        justify-self: center;
         justify-content: space-between;
         align-items: start;
-        align-self: center;
         width: 100%;
         max-width: 1300px;
         min-height: 420px;
-        margin: 0 auto;
+        margin: 0 20px;
         background-color: #fdd9e5;
         border: 2px solid #f99dbc;
         border-radius: 16px;
@@ -57,7 +57,7 @@
         .kanji-example {
             padding: 20px;
             display: flex;
-            gap: 4px;
+            gap: 8px;
             flex: 1;
             flex-wrap: wrap;
 
@@ -69,9 +69,8 @@
                 background-color: #fdd9e5;
                 border: 2px solid #f99dbc;
                 border-radius: 8px;
-
-                font-size: 24px;
-                text-shadow: 1px 1px 1px #fff;
+                font-size: 20px;
+                flex-wrap: wrap;
 
                 .example-word {
                     font-weight: bold;
