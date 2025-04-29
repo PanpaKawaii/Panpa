@@ -170,7 +170,7 @@ export default function JapaneseKanji({ ArrayProps }) {
 
             <div className='japanese-content'>
                 <div className='japanese-row'>
-                    {filteredKanji.filter(kanji => kanji.Id !== 'NoKanji').map((kanji, index) => (
+                    {filteredKanji.filter(kanji => kanji.Id !== 'NoKanji').map((kanji) => (
                         <div key={kanji.Id}
                             className='japanese-col'
                             onClick={() => {
@@ -190,19 +190,10 @@ export default function JapaneseKanji({ ArrayProps }) {
                             >
                                 <h1 className='japanese-font'>{kanji.Id}</h1>
                                 <div className='sinovietnamese'>{kanji.SinoVietnamese}</div>
-                                <div className='japanese-font'>On: {HiraganaAndKatakanaToRomaji(kanji.On)}</div>
+                                {/* <div className='japanese-font'>On: {HiraganaAndKatakanaToRomaji(kanji.On)}</div> */}
                                 <div className='japanese-font'>On: {kanji.On}</div>
-                                <div className='japanese-font'>Kun: {HiraganaAndKatakanaToRomaji(kanji.Kun)}</div>
+                                {/* <div className='japanese-font'>Kun: {HiraganaAndKatakanaToRomaji(kanji.Kun)}</div> */}
                                 <div className='japanese-font'>Kun: {kanji.Kun}</div>
-
-                                {/* <div className='face back'>
-                                    <h3>{kanji.SinoVietnamese}</h3>
-                                    {KanjiExample.filter(include => include.Word.includes(kanji.Id)).map((example, index) => (
-                                        <div key={index}>
-                                            <span className='japanese-font'>{example.Hiragana}</span> - <span>{example.Meaning}</span>
-                                        </div>
-                                    ))}
-                                </div> */}
                             </div>
                         </div>
                     ))}
@@ -215,7 +206,7 @@ export default function JapaneseKanji({ ArrayProps }) {
                     flexWrap: 'wrap'
                 }}
             >
-                {Kanji.filter(kanji => kanji.Id !== 'NoKanji').map((kanji, index) => (
+                {Kanji.filter(kanji => kanji.Id !== 'NoKanji').map((kanji) => (
                     <div
                         key={kanji.Id}
                         className='japanese-font'
@@ -243,7 +234,7 @@ export default function JapaneseKanji({ ArrayProps }) {
                         </tr>
                     </thead>
                     <tbody>
-                        {KanjiExample.filter(kanji => kanji.Word !== 'NoKanjiExample').map((example, e) => (
+                        {KanjiExample.filter(kanji => kanji.Word !== 'NoKanjiExample').map((example) => (
                             <tr key={example.Word + example.Hiragana}>
                                 <td>{example.Word}</td>
                                 <td>{example.Hiragana}</td>
