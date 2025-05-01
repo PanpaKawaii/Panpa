@@ -175,7 +175,7 @@ export default function JapaneseKanji({ ArrayProps }) {
                             className='japanese-col'
                             onClick={() => {
                                 setSelectedKanji(kanji);
-                                window.scrollTo(0, 650);
+                                window.scrollTo(0, 500);
                             }}
                         >
                             <div

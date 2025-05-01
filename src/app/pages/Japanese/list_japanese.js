@@ -729,6 +729,245 @@ export const KanjiExample = [
     { Word: '空気', Hiragana: 'くうき', Meaning: 'Không khí' },
     { Word: '空港', Hiragana: 'くうこう', Meaning: 'Sân bay' },
 
+    // ĐINH ...
+
+    { Word: 'NoKanjiExample', Hiragana: 'NoKanjiExample', Meaning: 'NoKanjiExample' },
+
+
+
+    { Word: 'お酒', Hiragana: 'おさけ', Meaning: 'Rượu' },
+    { Word: '日本酒', Hiragana: 'にほんしゅ', Meaning: 'Rượu Nhật' },
+    { Word: '梅酒', Hiragana: 'うめしゅ', Meaning: 'Rượu mơ' },
+    { Word: '作ります', Hiragana: 'つくります', Meaning: 'Làm, tạo ra' },
+    { Word: '作文', Hiragana: 'さくぶん', Meaning: 'Đặt câu, viết văn' },
+    { Word: '乗り物', Hiragana: 'のりもの', Meaning: 'Phương tiện giao thông' },
+    { Word: '博物館', Hiragana: 'はくぶつかん', Meaning: 'Bảo tàng' },
+    { Word: '荷物', Hiragana: 'にもつ', Meaning: 'Hành lý' },
+    { Word: 'お茶', Hiragana: 'おちゃ', Meaning: 'Trà (Chè)' },
+    { Word: '喫茶店', Hiragana: 'きっさてん', Meaning: 'Quán cà phê, tiệm giải khát' },
+    { Word: '持ちます', Hiragana: 'もちます', Meaning: 'Cầm, mang / Có, sở hữu' },
+    { Word: '持ってきます', Hiragana: 'もってきます', Meaning: 'Mang theo, mang đến' },
+    { Word: 'お願いします', Hiragana: 'おねがいします', Meaning: 'Làm ơn, vui lòng (Yêu cầu)' },
+    { Word: 'お願い', Hiragana: 'おねがい', Meaning: 'Yêu cầu, điều nhờ vả' },
+    { Word: '願い事', Hiragana: 'ねがいごと', Meaning: 'Mong ước, ước nguyện' },
+
+    { Word: '資料', Hiragana: 'しりょう', Meaning: 'Tài liệu' },
+    { Word: '料金', Hiragana: 'りょうきん', Meaning: 'Tiền phí' },
+    { Word: '理由', Hiragana: 'りゆう', Meaning: 'Lí do' },
+    { Word: '無理', Hiragana: 'むり', Meaning: 'Vô lí, quá sức, quá khả năng' },
+    { Word: '料理', Hiragana: 'りょうり', Meaning: 'Thức ăn' },
+    { Word: '味', Hiragana: 'あじ', Meaning: 'Hương vị' },
+    { Word: '地味（な）', Hiragana: 'じみ', Meaning: 'Giản dị, đơn giản' },
+    { Word: '色', Hiragana: 'いろ', Meaning: 'Màu sắc' },
+    { Word: '色々', Hiragana: 'いろいろ', Meaning: 'Nhiều, phong phú' },
+    { Word: '野菜', Hiragana: 'やさい', Meaning: 'Rau' },
+    { Word: '中', Hiragana: 'なか', Meaning: 'Bên trong' },
+    { Word: '仕事中', Hiragana: 'しごとちゅう', Meaning: 'Đang làm việc' },
+    { Word: '中止します', Hiragana: 'ちゅうしします', Meaning: 'Dừng, hủy bỏ, hoãn lại' },
+    { Word: '中心', Hiragana: 'ちゅうしん', Meaning: 'Trung tâm' },
+    { Word: '一年中', Hiragana: 'いちねんじゅう', Meaning: 'Cả năm' },
+    { Word: '入ります', Hiragana: 'はいります', Meaning: 'Đi vào' },
+    { Word: '入っています', Hiragana: 'はいっています', Meaning: 'Có chứa, đựng' },
+    { Word: '入れます', Hiragana: 'いれます', Meaning: 'Cho vào, bỏ vào' },
+    { Word: '入学', Hiragana: 'にゅうがく', Meaning: 'Nhập học' },
+
+
+
+    { Word: '会います', Hiragana: 'あいます', Meaning: 'Gặp gỡ' },
+    { Word: '二次会', Hiragana: 'にじかい', Meaning: 'Tăng 2' },
+    { Word: '社会', Hiragana: 'しゃかい', Meaning: 'Xã hội' },
+    { Word: '会社員', Hiragana: 'かいしゃいん', Meaning: 'Nhân viên công ty' },
+    { Word: '入社', Hiragana: 'にゅうしゃ', Meaning: 'Việc vào công ty làm' },
+    { Word: '本社', Hiragana: 'ほんしゃ', Meaning: 'Trụ sở' },
+    { Word: '神社', Hiragana: 'じんじゃ', Meaning: 'Đền thờ' },
+    { Word: '支社', Hiragana: 'ししゃ', Meaning: 'Chi nhánh' },
+    { Word: '出ます', Hiragana: 'でます', Meaning: 'Đi ra, xuất hiện' },
+    { Word: '出かけます', Hiragana: 'でかけます', Meaning: 'Ra ngoài' },
+    { Word: '出します', Hiragana: 'だします', Meaning: 'Gửi, đưa ra, nộp' },
+    { Word: '出張', Hiragana: 'しゅっちょう', Meaning: 'Công tác' },
+    { Word: '出発', Hiragana: 'しゅっぱつ', Meaning: 'Xuất phát' },
+    { Word: '発音', Hiragana: 'はつおん', Meaning: 'Phát âm' },
+    { Word: '空間', Hiragana: 'くうかん', Meaning: 'Không gian' },
+    { Word: '港', Hiragana: 'みなと', Meaning: 'Cảng (biển)' },
+    { Word: '着きます', Hiragana: 'つきます', Meaning: 'Đến nơi' },
+    { Word: '着ます', Hiragana: 'きます', Meaning: 'Mặc' },
+    { Word: '到着', Hiragana: 'とうちゃく', Meaning: 'Đến nơi (hạ cánh)' },
+
+    { Word: '自由', Hiragana: 'じゆう', Meaning: 'Tự do' },
+    { Word: '自然', Hiragana: 'しぜん', Meaning: 'Tự nhiên, thiên nhiên' },
+    { Word: '車', Hiragana: 'くるま', Meaning: 'Xe ô tô' },
+    { Word: '自動車', Hiragana: 'じどうしゃ', Meaning: 'Ô tô' },
+    { Word: '自転車', Hiragana: 'じてんしゃ', Meaning: 'Xe đạp' },
+    { Word: '電車', Hiragana: 'でんしゃ', Meaning: 'Tàu điện' },
+    { Word: '電子レンジ', Hiragana: 'でんしレンジ', Meaning: 'Lò vi sóng' },
+    { Word: '電気', Hiragana: 'でんき', Meaning: 'Điện, điện lực, đèn điện' },
+    { Word: '電気製品', Hiragana: 'でんきせいひん', Meaning: 'Đồ điện' },
+    { Word: '病気', Hiragana: 'びょうき', Meaning: 'Bệnh, ốm' },
+    { Word: '人気', Hiragana: 'にんき', Meaning: 'Được yêu thích, ưa chuộng' },
+    { Word: '使います', Hiragana: 'つかいます', Meaning: 'Sử dụng' },
+    { Word: '大使館', Hiragana: 'たいしかん', Meaning: 'Đại sứ quán' },
+    { Word: '借ります', Hiragana: 'かります', Meaning: 'Vay, mượn' },
+    { Word: '送ります', Hiragana: 'おくります', Meaning: 'Đưa, tiễn, gửi đi' },
+
+
+
+    { Word: '体', Hiragana: 'からだ', Meaning: 'Cơ thể' },
+    { Word: '全体', Hiragana: 'ぜんたい', Meaning: 'Toàn bộ các phần' },
+    { Word: '頭', Hiragana: 'あたま', Meaning: 'Đầu' },
+    { Word: '目', Hiragana: 'め', Meaning: 'Mắt' },
+    { Word: '目次', Hiragana: 'もくじ', Meaning: 'Phụ lục' },
+    { Word: '耳', Hiragana: 'みみ', Meaning: 'Tai' },
+    { Word: '上', Hiragana: 'うえ', Meaning: 'Bên / phía trên' },
+    { Word: '上手', Hiragana: 'じょうず', Meaning: 'Giỏi' },
+    { Word: '下', Hiragana: 'した', Meaning: 'Bên / phía dưới' },
+    { Word: '下手', Hiragana: 'へた', Meaning: 'Kém' },
+    { Word: '手', Hiragana: 'て', Meaning: 'Tay' },
+    { Word: '歌手', Hiragana: 'かしゅ', Meaning: 'Ca sĩ' },
+
+    { Word: '運転手', Hiragana: 'うんてんしゅ', Meaning: 'Tài xế' },
+    { Word: '苦手', Hiragana: 'にがて', Meaning: 'Kém, yếu, không hợp, sợ' },
+    { Word: '選手', Hiragana: 'せんしゅ', Meaning: 'Tuyển thủ' },
+    { Word: '足', Hiragana: 'あし', Meaning: 'Chân' },
+    { Word: '足ります', Hiragana: 'たります', Meaning: 'Đủ' },
+    { Word: '二足', Hiragana: 'にそく', Meaning: '2 đôi (giày, tất,..)' },
+    { Word: '毎日', Hiragana: 'まいにち', Meaning: 'Mỗi ngày' },
+    { Word: '毎週', Hiragana: 'まいしゅう', Meaning: 'Mỗi tuần' },
+    { Word: '週末', Hiragana: 'しゅうまつ', Meaning: 'Cuối tuần' },
+    { Word: '元気', Hiragana: 'げんき', Meaning: 'Khỏe mạnh' },
+    { Word: '起きます', Hiragana: 'おきます', Meaning: 'Thức dậy' },
+    { Word: '歩きます', Hiragana: 'あるきます', Meaning: 'Đi bộ' },
+    { Word: '散歩します', Hiragana: 'さんぽします', Meaning: 'Đi dạo' },
+    { Word: '走ります', Hiragana: 'はしります', Meaning: 'Chạy' },
+    { Word: '泳ぎます', Hiragana: 'およぎます', Meaning: 'Bơi' },
+    { Word: '外食', Hiragana: 'がいしょく', Meaning: 'Ăn ở ngoài' },
+
+
+
+    { Word: 'お祝い', Hiragana: 'おいわい', Meaning: 'Sự chúc mừng' },
+    { Word: '誕生日', Hiragana: 'たんじょうび', Meaning: 'Sinh nhật' },
+    { Word: '結びます', Hiragana: 'むすびます', Meaning: 'Buộc' },
+    { Word: '結婚します', Hiragana: 'けっこんします', Meaning: 'Kết hôn' },
+    { Word: '離婚します', Hiragana: 'りこんします', Meaning: 'Ly hôn' },
+    { Word: '絵', Hiragana: 'え', Meaning: 'Bức tranh' },
+    { Word: '写ります', Hiragana: 'うつります', Meaning: 'Chụp lại, copy lại' },
+    { Word: '真面目', Hiragana: 'まじめ', Meaning: 'Nghiêm túc' },
+    { Word: '写真', Hiragana: 'しゃしん', Meaning: 'Bức ảnh' },
+    { Word: '真実', Hiragana: 'しんじつ', Meaning: 'Sự thật' },
+    { Word: '計ります', Hiragana: 'はかります', Meaning: 'Cân đo' },
+    { Word: '会計', Hiragana: 'かいけい', Meaning: 'Kế toán, tính toán, thanh toán' },
+    { Word: '家', Hiragana: 'いえ', Meaning: 'Nhà' },
+    { Word: '家族', Hiragana: 'かぞく', Meaning: 'Gia đình' },
+    { Word: '作家', Hiragana: 'さっか', Meaning: 'Tác giả' },
+    { Word: '画家', Hiragana: 'がか', Meaning: 'Họa sĩ' },
+    { Word: '思います', Hiragana: 'おもいます', Meaning: 'Nghĩ' },
+    { Word: '去年', Hiragana: 'きょねん', Meaning: 'Năm ngoái' },
+
+
+
+    { Word: '自己紹介', Hiragana: 'じこしょうかい', Meaning: 'Giới thiệu bản thân' },
+    { Word: '介護', Hiragana: 'かいご', Meaning: 'Điều dưỡng' },
+    { Word: '名前', Hiragana: 'なまえ', Meaning: 'Tên' },
+    { Word: '名字', Hiragana: 'みょうじ', Meaning: 'Họ' },
+    { Word: '有名', Hiragana: 'ゆうめい', Meaning: 'Nổi tiếng' },
+    { Word: '意思', Hiragana: 'いし', Meaning: 'Ý chí' },
+    { Word: '意味', Hiragana: 'いみ', Meaning: 'Ý nghĩa' },
+    { Word: '部屋', Hiragana: 'へや', Meaning: 'Căn phòng' },
+    { Word: '本屋', Hiragana: 'ほんや', Meaning: 'Tiệm sách' },
+    { Word: '寿司屋', Hiragana: 'すしや', Meaning: 'Tiệm sushi' },
+    { Word: '近い', Hiragana: 'ちかい', Meaning: 'Gần' },
+    { Word: '近所', Hiragana: 'きんじょ', Meaning: 'Hàng xóm, lân cận' },
+    { Word: '最近', Hiragana: 'さいきん', Meaning: 'Gần đây' },
+    { Word: '住みます', Hiragana: 'すみます', Meaning: 'Sinh sống' },
+    { Word: '住所', Hiragana: 'じゅうしょ', Meaning: 'Địa chỉ' },
+    { Word: '働きます', Hiragana: 'はたらきます', Meaning: 'Làm việc' },
+    { Word: '一番', Hiragana: 'いちばん', Meaning: 'Nhất, đầu tiên, số một' },
+    { Word: '一番目', Hiragana: 'いちばんめ', Meaning: 'Thứ nhất' },
+
+    { Word: '兄', Hiragana: 'あに', Meaning: 'Anh trai (mình)' },
+    { Word: 'お兄さん', Hiragana: 'おにいさん', Meaning: 'Anh trai (người khác)/gọi' },
+    { Word: '兄弟', Hiragana: 'きょうだい', Meaning: 'Anh em trai' },
+    { Word: '姉', Hiragana: 'あね', Meaning: 'Chị gái (mình)' },
+    { Word: 'お姉さん', Hiragana: 'おねえさん', Meaning: 'Chị gái (người khác)/gọi' },
+    { Word: '姉妹', Hiragana: 'しまい', Meaning: 'Chị em gái' },
+    { Word: '水族館', Hiragana: 'すいぞくかん', Meaning: 'Thuỷ cung' },
+    { Word: '民族', Hiragana: 'みんぞく', Meaning: 'Dân tộc' },
+    { Word: '長い', Hiragana: 'ながい', Meaning: 'Dài' },
+    { Word: '長所', Hiragana: 'ちょうしょ', Meaning: 'Sở trường' },
+    { Word: '成長', Hiragana: 'せいちょう', Meaning: 'Sự phát triển' },
+    { Word: '長生き', Hiragana: 'ながいき', Meaning: 'Sống lâu, trường thọ' },
+    { Word: '短い', Hiragana: 'みじかい', Meaning: 'Ngắn' },
+    { Word: '短文', Hiragana: 'たんぶん', Meaning: 'Đoạn văn ngắn' },
+    { Word: '短所', Hiragana: 'たんしょ', Meaning: 'Sở đoản' },
+    { Word: '低い', Hiragana: 'ひくい', Meaning: 'Thấp' },
+    { Word: '歌', Hiragana: 'うた', Meaning: 'Bài hát' },
+    { Word: '歌います', Hiragana: 'うたいます', Meaning: 'Hát' },
+
+
+
+    { Word: 'お客さん', Hiragana: 'おきゃくさん', Meaning: 'Khách hàng' },
+    { Word: '注ぎます', Hiragana: 'つぎます', Meaning: 'Rót (nước, rượu,..)' },
+    { Word: '注意します', Hiragana: 'ちゅういします', Meaning: 'Chú ý' },
+    { Word: '注文します', Hiragana: 'ちゅうもんします', Meaning: 'Gọi đồ, Oder' },
+    { Word: '洋服', Hiragana: 'ようふく', Meaning: 'Quần áo kiểu Âu' },
+    { Word: '洋食', Hiragana: 'ようしょく', Meaning: 'Đồ ăn Tây' },
+    { Word: '和食', Hiragana: 'わしょく', Meaning: 'Đồ ăn Nhật' },
+    { Word: '和服', Hiragana: 'わふく', Meaning: 'Quần áo kiểu Nhật' },
+    { Word: '和室', Hiragana: 'わしつ', Meaning: 'Phòng kiểu Nhật' },
+    { Word: '平和', Hiragana: 'へいわ', Meaning: 'Hoà bình' },
+    { Word: '心地', Hiragana: 'こころち', Meaning: 'Nhà' },
+    { Word: '地味', Hiragana: 'じみ', Meaning: 'Giản dị' },
+    { Word: '方', Hiragana: 'かた', Meaning: 'Vị (người)' },
+    { Word: '～方', Hiragana: '～かた', Meaning: 'Cách làm…' },
+    { Word: '地方', Hiragana: 'ちほう', Meaning: 'Địa phương' },
+    { Word: '方法', Hiragana: 'ほうほう', Meaning: 'Phương pháp, cách thức' },
+    { Word: '有料', Hiragana: 'ゆうりょう', Meaning: 'Có phí, mất phí' },
+    { Word: '牛乳', Hiragana: 'ぎゅうにゅう', Meaning: 'Sữa bò' },
+    { Word: '冷たい', Hiragana: 'つめたい', Meaning: 'Lạnh (cảm giác)' },
+    { Word: '冷やします', Hiragana: 'ひやします', Meaning: 'Làm lạnh' },
+    { Word: '冷えます', Hiragana: 'ひえます', Meaning: 'Nguội đi' },
+    { Word: '冷蔵庫', Hiragana: 'れいぞうこ', Meaning: 'Tủ lạnh' },
+
+    { Word: '飯', Hiragana: 'めし', Meaning: 'Cơm' },
+    { Word: 'ご飯', Hiragana: 'ごはん', Meaning: 'Bữa cơm' },
+    { Word: '塩', Hiragana: 'しお', Meaning: 'Muối' },
+    { Word: '全て', Hiragana: 'すべて', Meaning: 'Tất cả' },
+    { Word: '全然', Hiragana: 'ぜんぜん', Meaning: 'Hoàn toàn' },
+    { Word: '全部', Hiragana: 'ぜんぶ', Meaning: 'Toàn bộ' },
+    { Word: '熱い', Hiragana: 'あつい', Meaning: 'Nóng' },
+    { Word: '熱', Hiragana: 'ねつ', Meaning: 'Sốt' },
+    { Word: '苦い', Hiragana: 'にがい', Meaning: 'Đắng' },
+    { Word: '苦しい', Hiragana: 'くるしい', Meaning: 'Đau khổ' },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     { Word: 'NoKanjiExample', Hiragana: 'NoKanjiExample', Meaning: 'NoKanjiExample' },
@@ -753,7 +992,6 @@ export const KanjiExample = [
     { Word: '正しい', Hiragana: 'ただしい', Meaning: 'Đúng' },
     { Word: '正解', Hiragana: 'せいかい', Meaning: 'Chính xác' },
     { Word: '正社員', Hiragana: 'せいしゃいん', Meaning: 'Nhân viên chính thức' },
-    { Word: '週末', Hiragana: 'しゅうまつ', Meaning: 'Cuối tuần' },
     { Word: '年末', Hiragana: 'ねんまつ', Meaning: 'Cuối năm' },
     { Word: '父親', Hiragana: 'ちちおや', Meaning: 'Bố' },
     { Word: '母親', Hiragana: 'ははおや', Meaning: 'Mẹ' },
@@ -771,10 +1009,8 @@ export const KanjiExample = [
     { Word: '成人', Hiragana: 'せいじん', Meaning: 'Người trưởng thành' },
     { Word: '成人式', Hiragana: 'せいじんしき', Meaning: 'Lễ trưởng thành' },
     { Word: '成功', Hiragana: 'せいこう', Meaning: 'Thành công' },
-    { Word: '成長', Hiragana: 'せいちょう', Meaning: 'Trưởng thành, phát triển' },
     { Word: '事', Hiragana: 'こと', Meaning: 'Việc gì đó' },
     { Word: '仕事', Hiragana: 'しごと', Meaning: 'Công việc' },
-    { Word: '願い事', Hiragana: 'ねがいごと', Meaning: 'Mong ước, ước nguyện' },
     { Word: '合います', Hiragana: 'あいます', Meaning: 'Hợp' },
     { Word: '合わせます', Hiragana: 'あわせます', Meaning: 'Hợp lại, hoà trộn lại' },
     { Word: '合格', Hiragana: 'ごうかく', Meaning: 'Đỗ đạt' },
@@ -790,7 +1026,6 @@ export const KanjiExample = [
     { Word: '商売', Hiragana: 'しょうばい', Meaning: 'Buôn bán' },
     { Word: '品物', Hiragana: 'しなもの', Meaning: 'Hàng hoá' },
     { Word: '商品', Hiragana: 'しょうひん', Meaning: 'Sản phẩm, hàng hoá' },
-    { Word: '電気製品', Hiragana: 'でんきせいひん', Meaning: 'Đồ điện' },
     { Word: '日本製', Hiragana: 'にほんせい', Meaning: 'Sản xuất tại Nhật Bản' },
     { Word: '作製', Hiragana: 'さくせい', Meaning: 'Sự sản xuất; sự chế tác' },
     { Word: 'そうじ機', Hiragana: 'そうじき', Meaning: 'Máy hút bụi' },
@@ -798,12 +1033,10 @@ export const KanjiExample = [
     { Word: 'ご機嫌', Hiragana: 'ごきげん', Meaning: 'Sức khỏe (kính ngữ)' },
     { Word: '機会', Hiragana: 'きかい', Meaning: 'Cơ hội' },
     { Word: '店員', Hiragana: 'てんいん', Meaning: 'Nhân viên cửa hàng' },
-    { Word: '会社員', Hiragana: 'かいしゃいん', Meaning: 'Nhân viên công ty' },
     { Word: '銀行員', Hiragana: 'ぎんこういん', Meaning: 'Nhân viên ngân hàng' },
     { Word: '調べます', Hiragana: 'しらべます', Meaning: 'Tra cứu' },
     { Word: '体調', Hiragana: 'たいちょう', Meaning: 'Tình trạng cơ thể' },
     { Word: '調味料', Hiragana: 'ちょうみりょう', Meaning: 'Gia vị' },
-    { Word: '電子レンジ', Hiragana: 'でんしレンジ', Meaning: 'Lò vi sóng' },
     { Word: '調子', Hiragana: 'ちょうし', Meaning: 'Tình trạng' },
     { Word: '悪い', Hiragana: 'わるい', Meaning: 'Xấu' },
     { Word: '調子が悪い', Hiragana: 'ちょうしがわるい', Meaning: 'Hoạt động không tốt, trục trặc' },
@@ -834,8 +1067,6 @@ export const KanjiExample = [
     { Word: '神さま', Hiragana: 'かみさま', Meaning: 'Thần thánh' },
     { Word: '精神', Hiragana: 'せいしん', Meaning: 'Thần kinh' },
     { Word: '社長', Hiragana: 'しゃちょう', Meaning: 'Giám đốc' },
-    { Word: '入社', Hiragana: 'にゅうしゃ', Meaning: 'Việc vào công ty làm' },
-    { Word: '神社', Hiragana: 'じんじゃ', Meaning: 'Đền' },
     { Word: 'お寺', Hiragana: 'おてら', Meaning: 'Chùa' },
     { Word: '寺参り', Hiragana: 'てらまいり', Meaning: 'Việc viếng chùa' },
     { Word: '仏教', Hiragana: 'ぶっきょう', Meaning: 'Phật giáo' },
@@ -849,7 +1080,6 @@ export const KanjiExample = [
     { Word: '世界', Hiragana: 'せかい', Meaning: 'Thế giới' },
     { Word: '限界', Hiragana: 'げんかい', Meaning: 'Giới hạn' },
     { Word: '心', Hiragana: 'こころ', Meaning: 'Trái tim, tấm lòng' },
-    { Word: '中心', Hiragana: 'ちゅうしん', Meaning: 'Trung tâm' },
     { Word: '目的', Hiragana: 'もくてき', Meaning: 'Mục đích' },
     { Word: '伝統的', Hiragana: 'でんとうてき', Meaning: 'Mang tính truyền thống' },
     { Word: '日本的', Hiragana: 'にほんてき', Meaning: 'Mang tính Nhật Bản' },
@@ -861,8 +1091,6 @@ export const KanjiExample = [
     { Word: '家具', Hiragana: 'かぐ', Meaning: 'Dụng cụ gia đình' },
     { Word: '道具', Hiragana: 'どうぐ', Meaning: 'Dụng cụ nói chung' },
     { Word: '博士', Hiragana: 'はかせ', Meaning: 'Tiến sĩ' },
-    { Word: '博物館', Hiragana: 'はくぶつかん', Meaning: 'Bảo tàng' },
-    { Word: '大使館', Hiragana: 'たいしかん', Meaning: 'Đại sứ quán' },
     { Word: '旅館', Hiragana: 'りょかん', Meaning: 'Quán trọ (du lịch)' },
     { Word: '必ず', Hiragana: 'かならず', Meaning: 'Nhất định' },
     { Word: '要ります', Hiragana: 'いります', Meaning: 'Cần' },
@@ -896,14 +1124,12 @@ export const KanjiExample = [
     { Word: '議論', Hiragana: 'ぎろん', Meaning: 'Tranh luận' },
     { Word: '事務室', Hiragana: 'じむしつ', Meaning: 'Văn phòng' },
     { Word: '会議室', Hiragana: 'かいぎしつ', Meaning: 'Phòng họp' },
-    { Word: '和室', Hiragana: 'わしつ', Meaning: 'Phòng kiểu Nhật' },
     { Word: '寒い', Hiragana: 'さむい', Meaning: 'Lạnh (thời tiết)' },
     { Word: '～点', Hiragana: '～てん', Meaning: '～ Điểm' },
     { Word: '点数', Hiragana: 'てんすう', Meaning: 'Điểm số' },
     { Word: '注意点', Hiragana: 'ちゅういてん', Meaning: 'Điểm chú ý' },
 
     { Word: '服', Hiragana: 'ふく', Meaning: 'Quần áo' },
-    { Word: '和服', Hiragana: 'わふく', Meaning: 'Quần áo kiểu Nhật' },
     { Word: '売ります', Hiragana: 'うります', Meaning: 'Bán' },
     { Word: '売れます', Hiragana: 'うれます', Meaning: 'Bán chạy' },
     { Word: '安売ります', Hiragana: 'やすうります', Meaning: 'Bán đổ bán tháo' },
@@ -925,10 +1151,6 @@ export const KanjiExample = [
 
 
 
-    { Word: 'NoKanjiExample', Hiragana: 'NoKanjiExample', Meaning: 'NoKanjiExample' },
-    { Word: 'NoKanjiExample', Hiragana: 'NoKanjiExample', Meaning: 'NoKanjiExample' },
-    { Word: 'NoKanjiExample', Hiragana: 'NoKanjiExample', Meaning: 'NoKanjiExample' },
-    { Word: 'NoKanjiExample', Hiragana: 'NoKanjiExample', Meaning: 'NoKanjiExample' },
     { Word: 'NoKanjiExample', Hiragana: 'NoKanjiExample', Meaning: 'NoKanjiExample' },
     { Word: 'NoKanjiExample', Hiragana: 'NoKanjiExample', Meaning: 'NoKanjiExample' },
     { Word: 'NoKanjiExample', Hiragana: 'NoKanjiExample', Meaning: 'NoKanjiExample' },
