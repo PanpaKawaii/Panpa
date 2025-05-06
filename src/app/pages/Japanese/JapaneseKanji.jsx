@@ -6,19 +6,10 @@ import { Kanji, KanjiExample } from './list_japanese';
 
 export default function JapaneseKanji({ ArrayProps }) {
 
-    const Hiragana = [
-        'あ', 'い', 'う', 'え', 'お',   // a, i, u, e, o
-        'か', 'き', 'く', 'け', 'こ',   // ka, ki, ku, ke, ko
-        'さ', 'し', 'す', 'せ', 'そ',   // sa, shi, su, se, so
-        'た', 'ち', 'つ', 'て', 'と',   // ta, chi, tsu, te, to
-        'な', 'に', 'ぬ', 'ね', 'の',   // na, ni, nu, ne, no
-        'は', 'ひ', 'ふ', 'へ', 'ほ',   // ha, hi, fu, he, ho
-        'ま', 'み', 'む', 'め', 'も',   // ma, mi, mu, me, mo
-        'や', 'ゆ', 'よ',               // ya, yu, yo
-        'ら', 'り', 'る', 'れ', 'ろ',   // ra, ri, ru, re, ro
-        'わ', 'を',                     // wa, (w)o
-        'ん'                            // n
-    ];
+    const containsHiragana = (text) => {
+        return /[\u3040-\u309F]/.test(text);
+    }
+    const CheckOnyomi = Kanji.filter(kanji => containsHiragana(kanji.On));
 
     const HiraganaAndKatakanaToRomaji = (input) => {
         const map = {
@@ -214,7 +205,7 @@ export default function JapaneseKanji({ ArrayProps }) {
                 </div>
             </div>
 
-            <div
+            {/* <div
                 style={{
                     display: 'flex',
                     flexWrap: 'wrap'
@@ -235,12 +226,24 @@ export default function JapaneseKanji({ ArrayProps }) {
                         {kanji.Id}
                     </div>
                 ))}
-            </div>
+            </div> */}
 
-            <div>
-                <h3>Wrong Katakana</h3>
-
-            </div>
+            {/* <div
+                style={{
+                    display: 'flex',
+                    flexWrap: 'wrap'
+                }}
+            >
+                <div>Check Onyomi:</div>
+                {CheckOnyomi.map((kanji) => (
+                    <div
+                        key={kanji.Id}
+                        className='japanese-font'
+                    >
+                        {kanji.Id}
+                    </div>
+                ))}
+            </div> */}
 
             {/* <div className='japanese-table-content'>
                 <h2>Kanji Example</h2>
