@@ -1400,6 +1400,19 @@ export const Verb = [
     { Hiragana: 'コピーします', Kanji: 'コピーします', Group: 'III', Meaning: 'Sao chép', Special: 'false' },
 ];
 
+
+export const Radical = [
+    { Radical: '一', SinoVietnamese: 'Nhất', Meaning: 'Số một' },
+    { Radical: 'NoRadical', SinoVietnamese: 'NoRadical', Meaning: 'NoRadical' },
+    { Radical: 'NoRadical', SinoVietnamese: 'NoRadical', Meaning: 'NoRadical' },
+    { Radical: 'NoRadical', SinoVietnamese: 'NoRadical', Meaning: 'NoRadical' },
+    { Radical: 'NoRadical', SinoVietnamese: 'NoRadical', Meaning: 'NoRadical' },
+    { Radical: 'NoRadical', SinoVietnamese: 'NoRadical', Meaning: 'NoRadical' },
+    { Radical: 'NoRadical', SinoVietnamese: 'NoRadical', Meaning: 'NoRadical' },
+    { Radical: 'NoRadical', SinoVietnamese: 'NoRadical', Meaning: 'NoRadical' },
+    { Radical: 'NoRadical', SinoVietnamese: 'NoRadical', Meaning: 'NoRadical' },
+];
+
 export const Family = [
     { Word: 'NoFamily', Hiragana: 'そふ', Meaning: 'Ông' },
     { Word: 'NoFamily', Hiragana: 'そぼ', Meaning: 'Bà' },

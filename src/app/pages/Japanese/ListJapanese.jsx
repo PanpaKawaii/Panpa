@@ -10,9 +10,9 @@ export default function ListJapanese() {
     const ListJapanese = [
         { name: 'Kanji', src: Kanji, link: '/japanese/kanji' },
         { name: 'Verb', src: Verb, link: '/japanese/verb' },
+        { name: 'Radical', src: null, link: '/japanese/radical' },
         { name: 'Grammar', src: null, link: '/japanese/grammar' },
         { name: 'Rotate Card', src: null, link: '/japanese/rotatecard' },
-        { name: 'NoName', src: null, link: '/japanese' },
         { name: 'NoName', src: null, link: '/japanese' },
     ];
 

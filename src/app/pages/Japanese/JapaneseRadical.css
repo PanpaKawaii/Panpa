@@ -1,0 +1,246 @@
+.japaneseradical-container {
+    width: 100%;
+    min-height: 100vh;
+    margin: 40px 0;
+    text-align: center;
+    font-family: 'Quicksand', Arial, sans-serif;
+
+    .japanese-font {
+        font-family: 'Klee One', Arial, sans-serif;
+    }
+
+    .heading {
+        h2 {
+            margin: 0 0 20px;
+            color: #fd73a7;
+            font-size: 54px;
+            font-weight: bold;
+        }
+    }
+
+    .selected-radical {
+        display: flex;
+        justify-self: center;
+        justify-content: space-between;
+        align-items: start;
+        width: 100%;
+        max-width: 1300px;
+        min-height: 420px;
+        margin: 0 20px;
+        background-color: #fdd9e5;
+        border: 2px solid #f99dbc;
+        border-radius: 16px;
+        box-shadow: 0px 0px 8px #f99dbc80;
+
+        .radical-id {
+            padding: 0 20px;
+
+            h1 {
+                margin: 0;
+                font-size: 240px;
+            }
+
+            .sinovietnamese {
+                margin: 8px 0;
+                font-size: 24px;
+                font-weight: bold;
+            }
+        }
+
+        .line {
+            height: 100%;
+            min-height: 376px;
+            margin: 20px 0;
+            border-left: 2px solid #f99dbc;
+        }
+
+        .radical-example {
+            padding: 20px;
+            display: flex;
+            gap: 8px;
+            flex: 1;
+            flex-wrap: wrap;
+
+            .item {
+                display: flex;
+                gap: 4px;
+                height: fit-content;
+                padding: 4px 8px;
+                background-color: #fdd9e5;
+                border: 2px solid #f99dbc;
+                border-radius: 8px;
+                font-size: 20px;
+                flex-wrap: wrap;
+
+                .example-word {
+                    font-weight: bold;
+                }
+
+                .example-hiragana {
+                    color: #777;
+                    font-weight: bold;
+                }
+
+                .example-meaning {
+                    color: red;
+                }
+            }
+        }
+    }
+
+    form {
+        width: 100%;
+        padding: 40px 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 10px;
+
+        .form-group {
+            width: 100%;
+            max-width: 300px;
+
+            input {
+                outline: none;
+                width: 100%;
+                padding: 6px 12px;
+                border-radius: 8px;
+                border: 2px solid #fdd9e5;
+            }
+
+            input:focus {
+                box-shadow: 0 0 0 0.25rem rgba(249, 157, 188, 0.314);
+                border-color: #f99dbc;
+            }
+        }
+
+        .btn,
+        .btn:focus {
+            color: #fff;
+            background-color: #f99dbc;
+            font-weight: bold;
+            border: 2px solid #f99dbc;
+        }
+
+        .btn:active {
+            background-color: #fd73a7;
+            border-color: #fd73a7;
+        }
+    }
+
+    .japanese-content {
+        width: 100%;
+        height: fit-content;
+        display: flex;
+        justify-content: center;
+
+        .japanese-row {
+            padding: 20px;
+            display: grid;
+            grid-template-columns: repeat(6, minmax(0, 1fr));
+            gap: 20px;
+
+            .japanese-col {
+                display: flex;
+                justify-content: center;
+                align-items: start;
+                cursor: pointer;
+
+                .grid-card {
+                    padding: 8px;
+                    width: 200px;
+                    height: 100%;
+                    background-color: #fdd9e5;
+                    border: 2px solid #f99dbc;
+                    border-radius: 16px;
+                    align-items: center;
+                    text-align: center;
+                    box-shadow: 0px 0px 8px #f99dbc80;
+                    box-sizing: border-box;
+
+                    h1 {
+                        margin: 0;
+                        font-size: 120px;
+                    }
+
+                    .sinovietnamese {
+                        margin: 8px 0;
+                        font-size: 24px;
+                        font-weight: bold;
+                    }
+                }
+            }
+        }
+    }
+
+    /* @media screen and (max-width: 992px) {
+        form {
+            flex-direction: column;
+        }
+    } */
+
+    @media screen and (max-width: 1400px) {
+        .japanese-content {
+            .japanese-row {
+                grid-template-columns: repeat(4, minmax(0, 1fr));
+            }
+        }
+    }
+
+    @media screen and (max-width: 1200px) {
+        .japanese-content {
+            .japanese-row {
+                grid-template-columns: repeat(4, minmax(0, 1fr));
+            }
+        }
+    }
+
+    @media screen and (max-width: 992px) {
+        .japanese-content {
+            .japanese-row {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+
+                .japanese-col {
+                    .grid-card {
+                        h1 {
+                            font-size: 100px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+
+        .selected-radical {
+            flex-direction: column;
+            align-items: center;
+
+            .line {
+                display: none;
+            }
+        }
+
+        .japanese-content {
+            .japanese-row {
+                .japanese-col {
+                    .grid-card {
+                        h1 {
+                            font-size: 80px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    /* @media screen and (max-width: 576px) {
+        .japanese-content {
+            .japanese-row {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+            }
+        }
+    } */
+}

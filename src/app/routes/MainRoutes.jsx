@@ -32,9 +32,10 @@ import PaginationComponent from '../components/Pagination/PaginationComponent.js
 
 import JapaneseKanji from '../pages/Japanese/JapaneseKanji.jsx'
 import JapaneseVerb from '../pages/Japanese/JapaneseVerb.jsx'
+import JapaneseRadical from '../pages/Japanese/JapaneseRadical.jsx'
 import JapaneseGrammar from '../pages/Japanese/JapaneseGrammar.jsx'
 import RotateCard from '../pages/Japanese/RotateCard.jsx'
-import { Kanji } from '../pages/Japanese/list_japanese'
+import { Kanji, Radical } from '../pages/Japanese/list_japanese'
 import ListJapanese from '../pages/Japanese/ListJapanese.jsx'
 
 
@@ -75,6 +76,7 @@ export default function MainRoutes() {
                     <Route path='kanji' element={<PaginationComponent items={[...Kanji].reverse()} pageSize={24} Component={JapaneseKanji} />} />
                     {/* <Route path='kanji' element={<PaginationComponent items={Kanji} pageSize={24}><JapaneseKanji /></PaginationComponent>} /> */}
                     <Route path='verb' element={<JapaneseVerb />} />
+                    <Route path='radical' element={<PaginationComponent items={Radical} pageSize={24} Component={JapaneseRadical} />} />
                     <Route path='grammar' element={<JapaneseGrammar />} />
                     <Route path='rotatecard' element={<PaginationComponent items={Kanji} pageSize={24} Component={RotateCard} />} />
                 </Route>
