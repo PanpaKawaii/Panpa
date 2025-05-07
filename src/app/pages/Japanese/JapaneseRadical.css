@@ -18,76 +18,6 @@
         }
     }
 
-    .selected-radical {
-        display: flex;
-        justify-self: center;
-        justify-content: space-between;
-        align-items: start;
-        width: 100%;
-        max-width: 1300px;
-        min-height: 420px;
-        margin: 0 20px;
-        background-color: #fdd9e5;
-        border: 2px solid #f99dbc;
-        border-radius: 16px;
-        box-shadow: 0px 0px 8px #f99dbc80;
-
-        .radical-id {
-            padding: 0 20px;
-
-            h1 {
-                margin: 0;
-                font-size: 240px;
-            }
-
-            .sinovietnamese {
-                margin: 8px 0;
-                font-size: 24px;
-                font-weight: bold;
-            }
-        }
-
-        .line {
-            height: 100%;
-            min-height: 376px;
-            margin: 20px 0;
-            border-left: 2px solid #f99dbc;
-        }
-
-        .radical-example {
-            padding: 20px;
-            display: flex;
-            gap: 8px;
-            flex: 1;
-            flex-wrap: wrap;
-
-            .item {
-                display: flex;
-                gap: 4px;
-                height: fit-content;
-                padding: 4px 8px;
-                background-color: #fdd9e5;
-                border: 2px solid #f99dbc;
-                border-radius: 8px;
-                font-size: 20px;
-                flex-wrap: wrap;
-
-                .example-word {
-                    font-weight: bold;
-                }
-
-                .example-hiragana {
-                    color: #777;
-                    font-weight: bold;
-                }
-
-                .example-meaning {
-                    color: red;
-                }
-            }
-        }
-    }
-
     form {
         width: 100%;
         padding: 40px 0;
@@ -149,8 +79,8 @@
 
                 .grid-card {
                     padding: 8px;
-                    width: 200px;
-                    height: 100%;
+                    width: 160px;
+                    height: 240px;
                     background-color: #fdd9e5;
                     border: 2px solid #f99dbc;
                     border-radius: 16px;
@@ -161,7 +91,7 @@
 
                     h1 {
                         margin: 0;
-                        font-size: 120px;
+                        font-size: 80px;
                     }
 
                     .sinovietnamese {
@@ -174,16 +104,10 @@
         }
     }
 
-    /* @media screen and (max-width: 992px) {
-        form {
-            flex-direction: column;
-        }
-    } */
-
     @media screen and (max-width: 1400px) {
         .japanese-content {
             .japanese-row {
-                grid-template-columns: repeat(4, minmax(0, 1fr));
+                grid-template-columns: repeat(6, minmax(0, 1fr));
             }
         }
     }
@@ -199,48 +123,33 @@
     @media screen and (max-width: 992px) {
         .japanese-content {
             .japanese-row {
-                grid-template-columns: repeat(3, minmax(0, 1fr));
-
-                .japanese-col {
-                    .grid-card {
-                        h1 {
-                            font-size: 100px;
-                        }
-                    }
-                }
+                grid-template-columns: repeat(4, minmax(0, 1fr));
             }
         }
     }
 
     @media screen and (max-width: 768px) {
-
-        .selected-radical {
-            flex-direction: column;
-            align-items: center;
-
-            .line {
-                display: none;
-            }
-        }
-
         .japanese-content {
             .japanese-row {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+            }
+        }
+    }
+
+    @media screen and (max-width: 576px) {
+        .japanese-content {
+            .japanese-row {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+
                 .japanese-col {
                     .grid-card {
                         h1 {
-                            font-size: 80px;
+                            font-size: 40px;
+                            /* Change something here */
                         }
                     }
                 }
             }
         }
     }
-
-    /* @media screen and (max-width: 576px) {
-        .japanese-content {
-            .japanese-row {
-                grid-template-columns: repeat(3, minmax(0, 1fr));
-            }
-        }
-    } */
 }
