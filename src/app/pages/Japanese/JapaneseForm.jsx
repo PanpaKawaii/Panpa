@@ -1,7 +1,7 @@
 import React from 'react';
-import './JapaneseGrammar.css';
+import './JapaneseForm.css';
 
-export default function JapaneseGrammar() {
+export default function JapaneseForm() {
 
     const Listing = [
         {
@@ -47,27 +47,27 @@ export default function JapaneseGrammar() {
     ];
 
     return (
-        <div className='japanesegrammar-container'>
+        <div className='japaneseform-container'>
             <div className='heading'>
-                <h2>Japanese Grammar</h2>
+                <h2>Japanese Form</h2>
             </div>
             <div className='japanese-content'>
                 <h3 className=''>Listing</h3>
                 <div className='japanese-row'>
-                    {Listing.map((grammar) => (
-                        <div key={grammar.title}
+                    {Listing.map((form) => (
+                        <div key={form.title}
                             className='japanese-col'>
                             <div className='grid-card'>
 
-                                <h4 className='japanese-font'>{grammar.title}</h4>
+                                <h4 className='japanese-font'>{form.title}</h4>
 
-                                {grammar.formula.map((formula, index) => (
+                                {form.formula.map((formula, index) => (
                                     <div key={index} className='formula'>
                                         {formula}
                                     </div>
                                 ))}
 
-                                {grammar.example.map((example, index) => (
+                                {form.example.map((example, index) => (
                                     <div key={index} className='example'>
                                         <div>{example.japanese}</div>
                                         <div>{example.vietnamese}</div>

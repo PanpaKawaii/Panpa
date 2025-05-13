@@ -34,6 +34,7 @@ import JapaneseKanji from '../pages/Japanese/JapaneseKanji.jsx'
 import JapaneseVerb from '../pages/Japanese/JapaneseVerb.jsx'
 import JapaneseRadical from '../pages/Japanese/JapaneseRadical.jsx'
 import JapaneseGrammar from '../pages/Japanese/JapaneseGrammar.jsx'
+import JapaneseForm from '../pages/Japanese/JapaneseForm.jsx'
 import RotateCard from '../pages/Japanese/RotateCard.jsx'
 import { Kanji, Radical } from '../pages/Japanese/list_japanese'
 import ListJapanese from '../pages/Japanese/ListJapanese.jsx'
@@ -78,6 +79,7 @@ export default function MainRoutes() {
                     <Route path='verb' element={<JapaneseVerb />} />
                     <Route path='radical' element={<PaginationComponent items={Radical} pageSize={24} Component={JapaneseRadical} />} />
                     <Route path='grammar' element={<JapaneseGrammar />} />
+                    <Route path='form' element={<JapaneseForm />} />
                     <Route path='rotatecard' element={<PaginationComponent items={Kanji} pageSize={24} Component={RotateCard} />} />
                 </Route>
 

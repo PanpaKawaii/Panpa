@@ -12,8 +12,8 @@ export default function ListJapanese() {
         { name: 'Verb', src: Verb, link: '/japanese/verb' },
         { name: 'Radical', src: null, link: '/japanese/radical' },
         { name: 'Grammar', src: null, link: '/japanese/grammar' },
+        { name: 'Form', src: null, link: '/japanese/form' },
         { name: 'Rotate Card', src: null, link: '/japanese/rotatecard' },
-        { name: 'NoName', src: null, link: '/japanese' },
     ];
 
     return (
