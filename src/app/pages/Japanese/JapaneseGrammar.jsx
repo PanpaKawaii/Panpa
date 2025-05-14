@@ -3,7 +3,7 @@ import './JapaneseGrammar.css';
 
 export default function JapaneseGrammar() {
 
-    const Listing = [
+    const Grammar = [
         {
             //toka
             title: 'とか',
@@ -11,14 +11,16 @@ export default function JapaneseGrammar() {
                 '[N1] + とか + [N2] + とか...',
                 '[Vる] + とか + [Vる] + とか...',
             ],
-            example: [{
-                japanese: 'やさいとかくだものとかをたくさんたべます。',
-                vietnamese: '(Tôi ăn nhiều thứ như rau, trái cây...)',
-            },
-            {
-                japanese: '旅行で、スキーをするとか、美味しいものを食べるとかしたいです。',
-                vietnamese: '(Trong chuyến du lịch, tôi muốn làm những việc như trượt tuyết, ăn đồ ngon...)',
-            }]
+            example: [
+                {
+                    japanese: 'やさいとかくだものとかをたくさんたべます。',
+                    vietnamese: '(Tôi ăn nhiều thứ như rau, trái cây...)',
+                },
+                {
+                    japanese: '旅行で、スキーをするとか、美味しいものを食べるとかしたいです。',
+                    vietnamese: '(Trong chuyến du lịch, tôi muốn làm những việc như trượt tuyết, ăn đồ ngon...)',
+                },
+            ],
         },
         {
             //shika, dake
@@ -27,23 +29,25 @@ export default function JapaneseGrammar() {
                 '[N] + しか + (Vません)',
                 '[N] + だけ',
             ],
-            example: [{
-                japanese: '冷蔵庫にはビールが一本しかないです。',
-                vietnamese: '(Trong tủ lạnh chỉ có 1 lon bia.)',
-            },
-            {
-                japanese: '朝はコーヒーしか飲まなかった。',
-                vietnamese: '(Buổi sáng tôi chỉ uống cà phê thôi.)',
-            },
-            {
-                japanese: 'このクラスはベトナム人学生だけです。',
-                vietnamese: '(Lớp học này chỉ toàn học sinh Việt Nam.)',
-            },
-            {
-                japanese: '野菜だけ食べます。',
-                vietnamese: '(Tôi chỉ ăn rau thôi.)',
-            }]
-        }
+            example: [
+                {
+                    japanese: '冷蔵庫にはビールが一本しかないです。',
+                    vietnamese: '(Trong tủ lạnh chỉ có 1 lon bia.)',
+                },
+                {
+                    japanese: '朝はコーヒーしか飲まなかった。',
+                    vietnamese: '(Buổi sáng tôi chỉ uống cà phê thôi.)',
+                },
+                {
+                    japanese: 'このクラスはベトナム人学生だけです。',
+                    vietnamese: '(Lớp học này chỉ toàn học sinh Việt Nam.)',
+                },
+                {
+                    japanese: '野菜だけ食べます。',
+                    vietnamese: '(Tôi chỉ ăn rau thôi.)',
+                },
+            ],
+        },
     ];
 
     return (
@@ -52,9 +56,8 @@ export default function JapaneseGrammar() {
                 <h2>Japanese Grammar</h2>
             </div>
             <div className='japanese-content'>
-                <h3 className=''>Listing</h3>
                 <div className='japanese-row'>
-                    {Listing.map((grammar) => (
+                    {Grammar.map((grammar) => (
                         <div key={grammar.title}
                             className='japanese-col'>
                             <div className='grid-card'>

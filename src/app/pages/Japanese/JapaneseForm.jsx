@@ -5,45 +5,42 @@ export default function JapaneseForm() {
 
     const Listing = [
         {
-            //toka
-            title: 'とか',
-            formula: [
-                '[N1] + とか + [N2] + とか...',
-                '[Vる] + とか + [Vる] + とか...',
+            title: 'COMMAND FORM',
+            groups: [
+                {
+                    group: 'I',
+                    formula: [
+                        '_「い」ます => _「え」',
+                    ],
+                    example: [
+                        'いきます => いけ',
+                        'のみます => のめ',
+                        'かいます => かえ',
+                    ],
+                },
+                {
+                    group: 'II',
+                    formula: [
+                        '_ます => _ろ',
+                    ],
+                    example: [
+                        'たべます => たべろ',
+                        'おきます => おきろ',
+                    ],
+                },
+                {
+                    group: 'III',
+                    formula: [
+                        'します => しろ',
+                        'きます => こい',
+                    ],
+                    example: [
+                        'します => しろ',
+                        'もってきます => もってこい',
+                    ],
+                },
             ],
-            example: [{
-                japanese: 'やさいとかくだものとかをたくさんたべます。',
-                vietnamese: '(Tôi ăn nhiều thứ như rau, trái cây...)',
-            },
-            {
-                japanese: '旅行で、スキーをするとか、美味しいものを食べるとかしたいです。',
-                vietnamese: '(Trong chuyến du lịch, tôi muốn làm những việc như trượt tuyết, ăn đồ ngon...)',
-            }]
         },
-        {
-            //shika, dake
-            title: 'しか、だけ',
-            formula: [
-                '[N] + しか + (Vません)',
-                '[N] + だけ',
-            ],
-            example: [{
-                japanese: '冷蔵庫にはビールが一本しかないです。',
-                vietnamese: '(Trong tủ lạnh chỉ có 1 lon bia.)',
-            },
-            {
-                japanese: '朝はコーヒーしか飲まなかった。',
-                vietnamese: '(Buổi sáng tôi chỉ uống cà phê thôi.)',
-            },
-            {
-                japanese: 'このクラスはベトナム人学生だけです。',
-                vietnamese: '(Lớp học này chỉ toàn học sinh Việt Nam.)',
-            },
-            {
-                japanese: '野菜だけ食べます。',
-                vietnamese: '(Tôi chỉ ăn rau thôi.)',
-            }]
-        }
     ];
 
     return (
@@ -52,7 +49,6 @@ export default function JapaneseForm() {
                 <h2>Japanese Form</h2>
             </div>
             <div className='japanese-content'>
-                <h3 className=''>Listing</h3>
                 <div className='japanese-row'>
                     {Listing.map((form) => (
                         <div key={form.title}
@@ -60,19 +56,27 @@ export default function JapaneseForm() {
                             <div className='grid-card'>
 
                                 <h4 className='japanese-font'>{form.title}</h4>
-
-                                {form.formula.map((formula, index) => (
-                                    <div key={index} className='formula'>
-                                        {formula}
-                                    </div>
-                                ))}
-
-                                {form.example.map((example, index) => (
-                                    <div key={index} className='example'>
-                                        <div>{example.japanese}</div>
-                                        <div>{example.vietnamese}</div>
-                                    </div>
-                                ))}
+                                <table>
+                                    <tbody>
+                                        {form.groups.map((group, index) => (
+                                            <tr key={index}>
+                                                <td>
+                                                    <div className='group'>{group.group}</div>
+                                                </td>
+                                                <td>
+                                                    {group.formula.map((formula, index) => (
+                                                        <div key={index} className='formula'>{formula}</div>
+                                                    ))}
+                                                </td>
+                                                <td>
+                                                    {group.example.map((example, index) => (
+                                                        <div key={index} className='example'>{example}</div>
+                                                    ))}
+                                                </td>
+                                            </tr>
+                                        ))}
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     ))}
