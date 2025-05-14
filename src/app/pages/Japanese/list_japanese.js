@@ -411,7 +411,8 @@ export const KanjiExample = [
     { Word: '土', Hiragana: 'つち', Meaning: 'Đất' },
     { Word: '土曜日', Hiragana: 'どようび', Meaning: 'Thứ 7' },
 
-    { Word: '日', Hiragana: 'ひ', Meaning: 'Mặt Trời, ngày' },
+    { Word: '日', Hiragana: 'ひ', Meaning: 'Mặt Trời' },
+    { Word: '日', Hiragana: 'にち', Meaning: 'Ngày' },
     { Word: '日曜日', Hiragana: 'にちようび', Meaning: 'Chủ Nhật' },
     { Word: '土日', Hiragana: 'どにち', Meaning: 'Cuối tuần' },
 
@@ -429,21 +430,24 @@ export const KanjiExample = [
     { Word: '小猫', Hiragana: 'こねこ', Meaning: 'Con mèo con' },
     { Word: '小川', Hiragana: 'おがわ', Meaning: 'Sông nhỏ' },
     { Word: '小学生', Hiragana: 'しょうがくせい', Meaning: 'Học sinh tiểu học' },
+    { Word: '小学校', Hiragana: 'しょうがっこう', Meaning: 'Trường tiểu học' },
 
     { Word: '新しい', Hiragana: 'あたらしい', Meaning: 'Mới' },
     { Word: '新たな', Hiragana: 'あらたな', Meaning: 'Mới' },
+    { Word: '新年', Hiragana: 'しんねん', Meaning: 'Năm mới' },
     { Word: '新潟県', Hiragana: 'にいがたけん', Meaning: 'Tỉnh Niigata' },
     { Word: '新幹線', Hiragana: 'しんかんせん', Meaning: 'Tàu siêu tốc' },
 
     { Word: '古い', Hiragana: 'ふるい', Meaning: 'Cũ' },
-    { Word: '中古', Hiragana: 'ちゅうこ', Meaning: 'Trung cổ' },
+    { Word: '中古', Hiragana: 'ちゅうこ', Meaning: 'Đồ cũ' },
     { Word: '古代', Hiragana: 'こだい', Meaning: 'Cổ đại' },
     { Word: '考古学', Hiragana: 'こうこがく', Meaning: 'Khảo cổ học' },
 
     { Word: '時', Hiragana: 'とき', Meaning: 'Khi, lúc' },
     { Word: '時々', Hiragana: 'ときどき', Meaning: 'Thỉnh thoảng' },
+    { Word: '何時', Hiragana: 'なんじ', Meaning: 'Mấy giờ' },
     { Word: '一時', Hiragana: 'いちじ', Meaning: '1 giờ' },
-    { Word: '時間', Hiragana: 'じかん', Meaning: 'Thời gian' },
+    { Word: '時間', Hiragana: 'じかん', Meaning: 'Thời gian, tiếng' },
     { Word: '時計', Hiragana: 'とけい', Meaning: 'Đồng hồ' },
 
     { Word: '分かります', Hiragana: 'わかります', Meaning: 'Hiểu, biết' },
@@ -475,6 +479,7 @@ export const KanjiExample = [
     { Word: '読み物', Hiragana: 'よみもの', Meaning: 'Tài liệu đọc' },
     { Word: '読書', Hiragana: 'どくしょ', Meaning: 'Đọc sách' },
     { Word: '読者', Hiragana: 'どくしゃ', Meaning: 'Người đọc' },
+    { Word: '読解', Hiragana: 'どっかい', Meaning: 'Đọc hiểu' },
     { Word: '句読点', Hiragana: 'くとうてん', Meaning: 'Dấu chấm câu' },
 
     { Word: '見る', Hiragana: 'みる', Meaning: 'Xem, nhìn, trông' },
@@ -482,15 +487,15 @@ export const KanjiExample = [
     { Word: '意見', Hiragana: 'いけん', Meaning: 'Ý kiến' },
     { Word: '見学', Hiragana: 'けんがく', Meaning: 'Kiến học' },
 
-    { Word: '聞く', Hiragana: 'きく', Meaning: 'Nghe' },
+    { Word: '聞く', Hiragana: 'きく', Meaning: 'Nghe, hỏi' },
     { Word: '新聞', Hiragana: 'しんぶん', Meaning: 'Báo' },
     { Word: '聞き取る', Hiragana: 'ききとる', Meaning: 'Nắm bắt, nghe hiểu' },
     { Word: '聞こえる', Hiragana: 'きこえる', Meaning: 'Có thể nghe thấy' },
 
-    { Word: '書く', Hiragana: 'かく', Meaning: 'Viết' },
+    { Word: '書く', Hiragana: 'かく', Meaning: 'Viết, vẽ' },
     { Word: '辞書', Hiragana: 'じしょ', Meaning: 'Từ điển' },
-    { Word: '教科書', Hiragana: 'きょうかしょ', Meaning: 'Sách giáo khoa' },
     { Word: '図書館', Hiragana: 'としょかん', Meaning: 'Thư viện' },
+    { Word: '教科書', Hiragana: 'きょうかしょ', Meaning: 'Sách giáo khoa' },
 
 
 
@@ -569,6 +574,7 @@ export const KanjiExample = [
     { Word: '東南アジア', Hiragana: 'とうなんアジア', Meaning: 'Đông Nam Á' },
     { Word: '南西', Hiragana: 'なんせい', Meaning: 'Tây Nam' },
     { Word: '南極', Hiragana: 'なんきょく', Meaning: 'Nam Cực' },
+    { Word: '越南', Hiragana: 'えつなん', Meaning: 'Việt Nam (Theo tiếng Nhật)' },
 
     { Word: '北', Hiragana: 'きた', Meaning: 'Phía Bắc' },
     { Word: '北口', Hiragana: 'きたぐち', Meaning: 'Cửa Bắc' },
@@ -620,12 +626,14 @@ export const KanjiExample = [
     { Word: '来ます', Hiragana: 'きます', Meaning: 'Đến (Lịch sự)' },
     { Word: '来ない', Hiragana: 'こない', Meaning: 'Không đến' },
     { Word: '来年', Hiragana: 'らいねん', Meaning: 'Năm sau' },
-    { Word: '来日', Hiragana: 'らいにち', Meaning: 'Đến Nhật Bản' },
+    { Word: '来日', Hiragana: 'らいにち', Meaning: '(Sự) Đến Nhật Bản (Văn cảnh trang trọng)' },
     { Word: '来る', Hiragana: 'きたる', Meaning: 'Học kì tới' },
 
     { Word: '会う', Hiragana: 'あう', Meaning: 'Gặp' },
+    { Word: '会社', Hiragana: 'かいしゃ', Meaning: 'Công ty' },
     { Word: '会議', Hiragana: 'かいぎ', Meaning: 'Hội nghị' },
     { Word: '会釈', Hiragana: 'えしゃく', Meaning: 'Gật đầu' },
+    { Word: '飲み会', Hiragana: 'のみかい', Meaning: 'Bữa nhậu' },
 
     { Word: '休む', Hiragana: 'やすむ', Meaning: 'Nghỉ ngơi' },
     { Word: '休み', Hiragana: 'やすみ', Meaning: 'Ngày nghỉ' },
@@ -651,6 +659,7 @@ export const KanjiExample = [
     { Word: 'お父さん', Hiragana: 'おとうさん', Meaning: 'Bố người khác' },
 
     { Word: '母', Hiragana: 'はは', Meaning: 'Mẹ' },
+    { Word: '祖母', Hiragana: 'そぼ', Meaning: 'Bà' },
     { Word: '母国語', Hiragana: 'ぼこくご', Meaning: 'Tiếng mẹ đẻ' },
     { Word: 'お母さん', Hiragana: 'おかあさん', Meaning: 'Mẹ người khác' },
 
@@ -721,6 +730,7 @@ export const KanjiExample = [
     { Word: '天候', Hiragana: 'てんこう', Meaning: 'Khí hậu' },
 
     { Word: '気になります', Hiragana: 'きになります', Meaning: 'Tò mò' },
+    { Word: '気候', Hiragana: 'きこう', Meaning: 'Khí hậu' },
     { Word: '気分', Hiragana: 'きぶん', Meaning: 'Tâm trạng' },
 
     { Word: '晴れ', Hiragana: 'はれ', Meaning: 'Trời quang đãng' },
@@ -1287,6 +1297,18 @@ export const Verb = [
     // しゅうかくします
     // まめまきます
 
+    // nobemasu trình bày, bày tỏ
+    // kazoeta đếm số
+    // sagashite tìm kiếm
+    // orose rút tiền
+    // naoru chữa trị
+    // sanseishimasu tán thành
+    // otoshimasu 
+    // hiroimasu nhặt
+    // shirabemasu tra cứu
+    // nakushimasu đánh mất
+    // fuemasu tăng lên
+    // niaimasu hợp
 
     //「い」ます
     { Hiragana: 'いきます', Kanji: '行きます', Group: 'I', Meaning: 'Đi', Special: 'true' },
