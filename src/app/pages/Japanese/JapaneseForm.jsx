@@ -3,7 +3,7 @@ import './JapaneseForm.css';
 
 export default function JapaneseForm() {
 
-    const Listing = [
+    const Form = [
         {
             title: 'COMMAND FORM',
             groups: [
@@ -24,6 +24,7 @@ export default function JapaneseForm() {
                         '_ます => _ろ',
                     ],
                     example: [
+                        'みます => みろ',
                         'たべます => たべろ',
                         'おきます => おきろ',
                     ],
@@ -31,12 +32,50 @@ export default function JapaneseForm() {
                 {
                     group: 'III',
                     formula: [
-                        'します => しろ',
+                        '_します => _しろ',
                         'きます => こい',
                     ],
                     example: [
                         'します => しろ',
                         'もってきます => もってこい',
+                    ],
+                },
+            ],
+        },
+        {
+            title: 'PASSIVE FORM',
+            groups: [
+                {
+                    group: 'I',
+                    formula: [
+                        '_「い」ます => _「あ」れます',
+                    ],
+                    example: [
+                        'いきます => いかれます',
+                        'のみます => のまれます',
+                        'かいます => かわれます',
+                    ],
+                },
+                {
+                    group: 'II',
+                    formula: [
+                        '_ます => _られます',
+                    ],
+                    example: [
+                        'みます => みられます',
+                        'たべます => たべられます',
+                        'おきます => おきられます',
+                    ],
+                },
+                {
+                    group: 'III',
+                    formula: [
+                        '_します => _されます',
+                        'きます => こられます',
+                    ],
+                    example: [
+                        'します => されます',
+                        'もってきます => もってこられます',
                     ],
                 },
             ],
@@ -50,7 +89,7 @@ export default function JapaneseForm() {
             </div>
             <div className='japanese-content'>
                 <div className='japanese-row'>
-                    {Listing.map((form) => (
+                    {Form.map((form) => (
                         <div key={form.title}
                             className='japanese-col'>
                             <div className='grid-card'>
