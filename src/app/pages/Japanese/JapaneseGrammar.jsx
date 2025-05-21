@@ -48,6 +48,9 @@ export default function JapaneseGrammar() {
                 },
             ],
         },
+        // Tôn kính ngữ dùng với bị động
+        // Tôn kính ngữ お V bỏ masu になり　ます。
+        // Tôn kính ngữ お V bỏ masu ください。
     ];
 
     return (

@@ -14,6 +14,7 @@ export default function ListJapanese() {
         { name: 'Grammar', src: null, link: '/japanese/grammar' },
         { name: 'Form', src: null, link: '/japanese/form' },
         { name: 'Rotate Card', src: null, link: '/japanese/rotatecard' },
+        { name: 'Connect Card', src: null, link: '/japanese/connectcard' },
     ];
 
     return (

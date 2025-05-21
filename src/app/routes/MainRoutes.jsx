@@ -36,6 +36,7 @@ import JapaneseRadical from '../pages/Japanese/JapaneseRadical.jsx'
 import JapaneseGrammar from '../pages/Japanese/JapaneseGrammar.jsx'
 import JapaneseForm from '../pages/Japanese/JapaneseForm.jsx'
 import RotateCard from '../pages/Japanese/RotateCard.jsx'
+import ConnectCard from '../pages/Japanese/ConnectCard.jsx'
 import { Kanji, Radical } from '../pages/Japanese/list_japanese'
 import ListJapanese from '../pages/Japanese/ListJapanese.jsx'
 
@@ -81,6 +82,7 @@ export default function MainRoutes() {
                     <Route path='grammar' element={<JapaneseGrammar />} />
                     <Route path='form' element={<JapaneseForm />} />
                     <Route path='rotatecard' element={<PaginationComponent items={Kanji} pageSize={24} Component={RotateCard} />} />
+                    <Route path='connectcard' element={<ConnectCard/>} />
                 </Route>
 
                 <Route path='signinsignup' element={<SignInSignUp />} />
