@@ -22,16 +22,6 @@
     }
 }
 
-@keyframes moon {
-    from {
-        transform: rotateY(0deg) translateZ(200px);
-    }
-
-    to {
-        transform: rotateY(1440deg) translateZ(200px);
-    }
-}
-
 .object-space-container {
     position: relative;
     transform-style: preserve-3d;

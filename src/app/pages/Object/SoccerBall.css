@@ -1,0 +1,74 @@
+.scene-ball {
+    width: 300px;
+    height: 300px;
+    perspective: 800px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-self: center;
+    /* transform: scale(5); */
+    margin: 200px 0 0;
+
+    .ball {
+        position: relative;
+        width: 100px;
+        height: 100px;
+        transform-style: preserve-3d;
+        transition: all 1s ease;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* animation: rotate_1x_2y 100s linear infinite; */
+
+        .face {
+            position: absolute;
+            width: 100px;
+            height: 95.106px;
+            background: #ff000080;
+            opacity: 0.9;
+            transition: all 1s ease;
+
+            clip-path: polygon(50% 0%, 100% 38.197%, 80.902% 100%, 19.098% 100%, 0% 38.197%);
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            transform-style: preserve-3d;
+
+            .tri {
+                position: absolute;
+                width: 61.803px;
+                height: 95.106px;
+                background: #00ff0080;
+                opacity: 0.9;
+                transition: all 1s ease;
+
+                clip-path: polygon(50% 50%, 100% 94.6%, 0% 94.6%);
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                transform: translateZ(40px);
+                /* <- thêm dòng này để lồi ra */
+            }
+        }
+
+        .face-white {
+            width: 123.607px;
+            height: 123.607px;
+
+            clip-path: polygon(25% 6.699%, 75% 6.699%, 100% 50%, 75% 93.301%, 25% 93.301%, 0% 50%);
+        }
+    }
+}
+
+.ball-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 100px;
+}

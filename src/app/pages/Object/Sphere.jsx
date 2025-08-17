@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import './Sphere.css';
 
 export default function Sphere() {
@@ -34,7 +34,6 @@ export default function Sphere() {
                             </div>
                         ))
                     ))}
-                    {/* <div style={{width: '100%', backgroundColor: '#dc3545', textAlign: 'center'}}>A</div> */}
                 </div>
             </div>
             <div className='button-box'>

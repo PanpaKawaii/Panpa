@@ -1,0 +1,31 @@
+.scene-shuttlecock {
+    width: 300px;
+    height: 300px;
+    /* perspective: 600px; */
+    transform-style: preserve-3d;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-self: center;
+    gap: 120px;
+    /* transform: scale(5); */
+
+    .shuttlecock {
+        width: 100px;
+        height: 100px;
+        position: relative;
+        transform-style: preserve-3d;
+        transition: all 0.5s ease;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        /* animation: shuttlecock_rotate 10s infinite linear; */
+
+        svg {
+            position: absolute;
+            transition: all 1s ease;
+        }
+    }
+}

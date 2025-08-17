@@ -16,7 +16,7 @@
         transform-style: preserve-3d;
         transition: all 1s ease;
         transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
-        animation: spinY 20s linear infinite;
+        animation: rotate_y 20s linear infinite;
 
         .face {
             position: absolute;

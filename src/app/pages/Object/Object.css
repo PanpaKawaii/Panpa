@@ -1,4 +1,4 @@
-@keyframes spin {
+@keyframes rotate_1x_2y {
     from {
         transform: rotateX(0deg) rotateY(0deg);
     }
@@ -8,7 +8,7 @@
     }
 }
 
-@keyframes spinY {
+@keyframes rotate_y {
     from {
         transform: rotateY(0deg);
     }
@@ -18,7 +18,7 @@
     }
 }
 
-@keyframes earth_rotate {
+@keyframes rotate_earth {
     from {
         transform: rotateY(0deg) rotateX(-66.56deg);
     }
@@ -89,6 +89,70 @@
             background-color: #007bff;
             border: 2px solid #007bff;
             font-weight: bold;
+        }
+    }
+}
+
+.line {
+    position: absolute;
+    width: 500px;
+    height: 4px;
+
+    &.line-x {
+        color: #ff0000;
+        background-color: #ff0000;
+        transform: rotateX(0) rotateY(0) rotateZ(0);
+
+        &.x-2 {
+            transform: rotateX(90deg) rotateY(0) rotateZ(0);
+            background-color: #fff;
+            text-align: end;
+        }
+    }
+
+    &.line-y {
+        color: #28a745;
+        background-color: #28a745;
+        transform: rotateX(0) rotateY(0) rotateZ(90deg);
+
+        &.y-2 {
+            transform: rotateX(0) rotateY(90deg) rotateZ(90deg);
+            background-color: #fff;
+            text-align: end;
+        }
+    }
+
+    &.line-z {
+        color: #007bff;
+        background-color: #007bff;
+        transform: rotateX(0) rotateY(90deg) rotateZ(0);
+
+        &.z-2 {
+            transform: rotateY(90deg) rotateX(90deg) rotateZ(0);
+            background-color: #fff;
+            text-align: end;
+        }
+    }
+}
+
+.rotation-form {
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #808080;
+
+    .slider-group {
+        width: 400px;
+        display: flex;
+        align-items: center;
+
+        label {
+            width: 100px;
+        }
+
+        input {
+            width: 100%;
         }
     }
 }

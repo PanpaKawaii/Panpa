@@ -1,0 +1,29 @@
+.scene-sphere-svg {
+    width: 600px;
+    height: 600px;
+    perspective: 800px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-self: center;
+    /* transform: scale(1); */
+
+    .sphere-svg {
+        position: relative;
+        transform-style: preserve-3d;
+        transition: all 1s ease;
+        animation: rotate_earth 10s linear infinite;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .face {
+            position: absolute;
+            /* background: #ff000020; */
+            opacity: 0.5;
+            transition: all 1s ease;
+        }
+    }
+}
