@@ -1,4 +1,3 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 import './ListGame.css';
 
@@ -21,6 +20,7 @@ export default function ListGame() {
         { name: 'Caro', src: CaroSRC, link: '/game/caro' },
         { name: 'Chess', src: null, link: '/game/chess' },
         { name: 'Lucky Dice', src: LuckyDiceSRC, link: '/game/luckydice' },
+        { name: 'Go', src: null, link: '/game/go' },
         { name: 'Tetris', src: TetrisSRC, link: '/game/tetris' },
         { name: 'Solve The Maze', src: SolveTheMazeSRC, link: '/game/solvethemaze' },
         { name: 'Generate Maze', src: GenerateMazeSRC, link: '/game/generatemaze' },

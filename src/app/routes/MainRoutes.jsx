@@ -1,4 +1,3 @@
-import React from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
 import ScrollToTop from '../hooks/ScrollToTop/useScrollToTop.jsx'
@@ -13,12 +12,13 @@ import ListGame from '../pages/Game/ListGame.jsx'
 import Caro from '../pages/Game/Caro.jsx'
 import Chess from '../pages/Game/Chess.jsx'
 import Dice from '../pages/Game/Dice.jsx'
+import Go from '../pages/Game/Go.jsx'
 import Minesweeper from '../pages/Game/Minesweeper.jsx'
 import Tetris from '../pages/Game/Tetris.jsx'
-import RandomCard from '../pages/Study/RandomCard.jsx'
-
 import WhatIsThePassword from '../pages/Game/WhatIsThePassword.jsx'
+
 import GenerateMaze from '../pages/Study/GenerateMaze.jsx'
+import RandomCard from '../pages/Study/RandomCard.jsx'
 import SolveTheMaze from '../pages/Study/SolveTheMaze.jsx'
 import ToDoList from '../pages/Study/ToDoList.jsx'
 import TypePi from '../pages/Study/TypePi.jsx'
@@ -30,15 +30,15 @@ import Space from '../pages/Space/Space.jsx'
 
 import PaginationComponent from '../components/Pagination/PaginationComponent.jsx'
 
-import JapaneseKanji from '../pages/Japanese/JapaneseKanji.jsx'
-import JapaneseVerb from '../pages/Japanese/JapaneseVerb.jsx'
-import JapaneseRadical from '../pages/Japanese/JapaneseRadical.jsx'
-import JapaneseGrammar from '../pages/Japanese/JapaneseGrammar.jsx'
-import JapaneseForm from '../pages/Japanese/JapaneseForm.jsx'
-import RotateCard from '../pages/Japanese/RotateCard.jsx'
 import ConnectCard from '../pages/Japanese/ConnectCard.jsx'
+import JapaneseForm from '../pages/Japanese/JapaneseForm.jsx'
+import JapaneseGrammar from '../pages/Japanese/JapaneseGrammar.jsx'
+import JapaneseKanji from '../pages/Japanese/JapaneseKanji.jsx'
+import JapaneseRadical from '../pages/Japanese/JapaneseRadical.jsx'
+import JapaneseVerb from '../pages/Japanese/JapaneseVerb.jsx'
 import { Kanji, Radical } from '../pages/Japanese/list_japanese'
 import ListJapanese from '../pages/Japanese/ListJapanese.jsx'
+import RotateCard from '../pages/Japanese/RotateCard.jsx'
 
 
 import SignInSignUp from '../pages/SignInSignUp/SignInSignUp.jsx'
@@ -63,6 +63,7 @@ export default function MainRoutes() {
                 <Route path='game/caro' element={<Caro />} />
                 <Route path='game/chess' element={<Chess />} />
                 <Route path='game/luckydice' element={<Dice />} />
+                <Route path='game/go' element={<Go />} />
                 <Route path='game/tetris' element={<Tetris />} />
                 <Route path='game/solvethemaze' element={<SolveTheMaze />} />
                 <Route path='game/generatemaze' element={<GenerateMaze />} />
@@ -82,7 +83,7 @@ export default function MainRoutes() {
                     <Route path='grammar' element={<JapaneseGrammar />} />
                     <Route path='form' element={<JapaneseForm />} />
                     <Route path='rotatecard' element={<PaginationComponent items={Kanji} pageSize={24} Component={RotateCard} />} />
-                    <Route path='connectcard' element={<ConnectCard/>} />
+                    <Route path='connectcard' element={<ConnectCard />} />
                 </Route>
 
                 <Route path='signinsignup' element={<SignInSignUp />} />
