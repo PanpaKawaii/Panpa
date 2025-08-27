@@ -16,12 +16,16 @@ import TestObject from './TestObject.jsx';
 import SphereSVG from './SVG/Sphere.jsx';
 import SoccerBall from './SoccerBall.jsx';
 
+import Rubik from './Rubik.jsx';
+
 import './Object.css';
 
 export default function Object() {
 
     const [Count, setCount] = useState(0);
     const List = [
+        <Rubik />,
+
         <Shuttlecock />,
         <SphereSVG />,
 
