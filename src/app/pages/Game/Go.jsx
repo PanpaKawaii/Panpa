@@ -1,19 +1,16 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Button } from 'react-bootstrap';
 import './Go.css';
 
 export default function Go() {
 
-    const [GameMode, setGameMode] = useState({
+    const GameMode = {
         RowCount: 19,
-        ColCount: 19,
-        ConstantToWin: 5
-    });
-    const [SelectedGameMode, setSelectedGameMode] = useState('LargeMap');
+        ColCount: 19
+    };
 
     const [Player, setPlayer] = useState(1);
     const [HasWon, setHasWon] = useState(0);
-    const [ConstantCell, setConstantCell] = useState([]);
     const [Refresh, setRefresh] = useState(0);
     const [Path, setPath] = useState([]);
     const [LastStep, setLastStep] = useState({
@@ -25,23 +22,31 @@ export default function Go() {
         Array(GameMode.ColCount).fill(0).map(() => ({ value: 0 }))
     ));
 
+    const Map = [
+        [{ value: 0 }, { value: 0 }, { value: 2 }, { value: 2 }, { value: 2 }],
+        [{ value: 0 }, { value: 0 }, { value: 2 }, { value: 2 }, { value: 2 }],
+        [{ value: 0 }, { value: 2 }, { value: 1 }, { value: 2 }, { value: 2 }],
+        [{ value: 0 }, { value: 0 }, { value: 2 }, { value: 0 }, { value: 2 }],
+        [{ value: 0 }, { value: 0 }, { value: 0 }, { value: 2 }, { value: 2 }],
+    ];
+
     useEffect(() => {
         const NewPlayTable = Array(GameMode.RowCount).fill(0).map(() =>
             Array(GameMode.ColCount).fill(0).map(() => ({ value: 0 }))
         );
         setPlayTable(NewPlayTable);
+        // setPlayTable(Map);
 
         setPlayer(1);
         setPath([]);
         setLastStep({ row: null, col: null });
         setHasWon(0);
-        setConstantCell([]);
-    }, [GameMode, Refresh]);
+    }, [Refresh]);
 
     const MarkCell = (row, col) => {
+        console.log('Mark: ', row, col);
         if (PlayTable[row][col].value !== 0 || HasWon !== 0) return;
 
-        setPlayer(Player === 1 ? 2 : 1);
         const NewPlayTable = [...PlayTable];
         NewPlayTable[row][col].value = Player;
         setPlayTable(NewPlayTable);
@@ -51,15 +56,203 @@ export default function Go() {
         setLastStep({ row, col });
         console.log('Path:', NewPath);
 
-        checkRow(row, col);
-        checkCol(row, col);
-        checkDiagonalDown(row, col);
-        checkDiagonalUp(row, col);
-        console.log('ConstantCell', ConstantCell);
-        console.log('End Check!');
+        const OppositePlayer = Player === 1 ? 2 : 1;
+
+        const { TopArea, RightArea, BottomArea, LeftArea } = getAreas(PlayTable, row, col, Player, OppositePlayer);
+        console.log("TopArea:", TopArea);
+        console.log("RightArea:", RightArea);
+        console.log("BottomArea:", BottomArea);
+        console.log("LeftArea:", LeftArea);
+        const TopAreaAround = getAreaAround(PlayTable, TopArea);
+        const RightAreaAround = getAreaAround(PlayTable, RightArea);
+        const BottomAreaAround = getAreaAround(PlayTable, BottomArea);
+        const LeftAreaAround = getAreaAround(PlayTable, LeftArea);
+
+        console.log("TopAreaAround:", TopAreaAround);
+        console.log("RightAreaAround:", RightAreaAround);
+        console.log("BottomAreaAround:", BottomAreaAround);
+        console.log("LeftAreaAround:", LeftAreaAround);
+
+        // Kiểm tra và xoá TopArea nếu bị bao vây
+        clearAreaIfSurrounded(PlayTable, TopArea);
+        clearAreaIfSurrounded(PlayTable, RightArea);
+        clearAreaIfSurrounded(PlayTable, BottomArea);
+        clearAreaIfSurrounded(PlayTable, LeftArea);
+
+        const CenterArea = getPlayerRegion(PlayTable, row, col, Player);
+        console.log("CenterArea:", CenterArea);
+        const CenterAreaAround = getAreaAround(PlayTable, CenterArea);
+        console.log("CenterAreaAround:", CenterAreaAround);
+        clearAreaIfSurrounded(PlayTable, CenterArea);
+
+        setPlayer(Player === 1 ? 2 : 1);
+        console.log('End Change Player!');
     }
 
     // 
+    // const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
+    // await sleep(100);
+
+    function getAreas(playTable, row, col, player, oppositePlayer) {
+        const numRows = playTable.length;
+        const numCols = playTable[0].length;
+
+        if (playTable[row][col].value !== player) {
+            return {
+                TopArea: [],
+                RightArea: [],
+                BottomArea: [],
+                LeftArea: [],
+            };
+        }
+
+        const visited = Array.from({ length: numRows }, () =>
+            Array(numCols).fill(false)
+        );
+
+        const directions = [
+            [-1, 0], // trên
+            [1, 0],  // dưới
+            [0, -1], // trái
+            [0, 1],  // phải
+        ];
+
+        function dfs(r, c, area) {
+            if (
+                r < 0 || r >= numRows ||
+                c < 0 || c >= numCols ||
+                visited[r][c] ||
+                playTable[r][c].value !== oppositePlayer
+            ) {
+                return;
+            }
+            visited[r][c] = true;
+            area.push([r, c]);
+
+            for (let [dr, dc] of directions) {
+                dfs(r + dr, c + dc, area);
+            }
+        }
+
+        // Kết quả tách riêng từng hướng
+        const TopArea = [];
+        const RightArea = [];
+        const BottomArea = [];
+        const LeftArea = [];
+
+        // 4 hướng chính
+        const neighbors = {
+            TopArea: [row - 1, col],
+            RightArea: [row, col + 1],
+            BottomArea: [row + 1, col],
+            LeftArea: [row, col - 1],
+        };
+
+        for (let key of Object.keys(neighbors)) {
+            const [nr, nc] = neighbors[key];
+            if (
+                nr >= 0 && nr < numRows &&
+                nc >= 0 && nc < numCols &&
+                playTable[nr][nc].value === oppositePlayer &&
+                !visited[nr][nc]
+            ) {
+                dfs(nr, nc, eval(key)); // gọi dfs và đổ vào đúng mảng
+            }
+        }
+
+        return { TopArea, RightArea, BottomArea, LeftArea };
+    }
+
+    function getAreaAround(playTable, area) {
+        const numRows = playTable.length;
+        const numCols = playTable[0].length;
+
+        const directions = [
+            [-1, 0], // trên
+            [1, 0],  // dưới
+            [0, -1], // trái
+            [0, 1],  // phải
+        ];
+
+        const AreaAround = [];
+        const visited = new Set(); // để tránh thêm trùng
+
+        for (let [r, c] of area) {
+            for (let [dr, dc] of directions) {
+                const nr = r + dr;
+                const nc = c + dc;
+
+                if (
+                    nr >= 0 && nr < numRows &&
+                    nc >= 0 && nc < numCols &&
+                    playTable[nr][nc].value === 0
+                ) {
+                    const key = `${nr},${nc}`;
+                    if (!visited.has(key)) {
+                        visited.add(key);
+                        AreaAround.push([nr, nc]);
+                    }
+                }
+            }
+        }
+
+        return AreaAround;
+    }
+
+    function clearAreaIfSurrounded(playTable, area) {
+        const around = getAreaAround(playTable, area);
+
+        if (around.length === 0) {
+            for (let [r, c] of area) {
+                playTable[r][c].value = 0;
+            }
+        }
+    }
+
+    function getPlayerRegion(playTable, row, col, player) {
+        const numRows = playTable.length;
+        const numCols = playTable[0].length;
+
+        if (playTable[row][col].value !== player) {
+            return [];
+        }
+
+        const directions = [
+            [-1, 0], // trên
+            [1, 0],  // dưới
+            [0, -1], // trái
+            [0, 1],  // phải
+        ];
+
+        const visited = Array.from({ length: numRows }, () =>
+            Array(numCols).fill(false)
+        );
+        const region = [];
+
+        function dfs(r, c) {
+            if (
+                r < 0 || r >= numRows ||
+                c < 0 || c >= numCols ||
+                visited[r][c] ||
+                playTable[r][c].value !== player
+            ) {
+                return;
+            }
+
+            visited[r][c] = true;
+            region.push([r, c]);
+
+            for (let [dr, dc] of directions) {
+                dfs(r + dr, c + dc);
+            }
+        }
+
+        dfs(row, col);
+
+        return region;
+    }
+
+
 
     const remarkCell = () => {
         if (Path.length <= 0) {
@@ -68,7 +261,6 @@ export default function Go() {
         }
 
         setHasWon(0);
-        setConstantCell([]);
         setPlayer(Player === 1 ? 2 : 1);
 
         const LastPath = Path.pop();
