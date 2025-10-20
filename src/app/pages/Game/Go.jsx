@@ -89,10 +89,6 @@ export default function Go() {
         console.log('End Change Player!');
     }
 
-    // 
-    // const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
-    // await sleep(100);
-
     function getAreas(playTable, row, col, player, oppositePlayer) {
         const numRows = playTable.length;
         const numCols = playTable[0].length;
@@ -286,7 +282,7 @@ export default function Go() {
             <div className='detail'>
                 <div>
                     <div className='support'>
-                        <Button className='btn' style={{ backgroundColor: Player === 1 ? '#fd4755' : (Player === 2 ? '#01d0fd' : '') }} onClick={() => remarkCell()}><i className='fa-solid fa-reply'></i></Button>
+                        <Button className='btn' style={{ backgroundColor: Player === 1 ? '#dddddd' : (Player === 2 ? '#666666' : ''), color: Player === 1 ? '#666666' : (Player === 2 ? '#dddddd' : '') }} onClick={() => remarkCell()}><i className='fa-solid fa-reply'></i></Button>
                         <Button className='btn' onClick={() => setRefresh(Refresh + 1)}>RESTART</Button>
                     </div>
                 </div>
@@ -295,17 +291,17 @@ export default function Go() {
                     style={{
                         border:
                             HasWon === 1 ?
-                                '2px solid #fd4755'
+                                '2px solid #dddddd'
                                 :
                                 (HasWon === 2 ?
-                                    '2px solid #01d0fd'
+                                    '2px solid #666666'
                                     :
                                     'none'
                                 )
                     }}
                 >
                     {HasWon === 1 && <h2 style={{ color: '#fd4755' }}><b><i className='fa-solid fa-circle'></i> WON!</b></h2>}
-                    {HasWon === 2 && <h2 style={{ color: '#01d0fd' }}><b><i className='fa-solid fa-circle'></i> WON!</b></h2>}
+                    {HasWon === 2 && <h2 style={{ color: '#666666' }}><b><i className='fa-solid fa-circle'></i> WON!</b></h2>}
                 </div>
             </div>
 
