@@ -1,0 +1,43 @@
+.card-border {
+    position: relative;
+    width: 200px;
+    height: 260px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 20px;
+
+    &.card-border::before {
+        content: '';
+        position: absolute;
+        width: 100px;
+        height: 130%;
+        background-image: linear-gradient(180deg, #ff00c8, #00ffff);
+        animation: card-border 3s linear infinite;
+        transition: all 0.3s linear;
+    }
+
+    &.card-border::after {
+        content: '';
+        position: absolute;
+        inset: 4px;
+        background-color: #333;
+        border-radius: 16px;
+    }
+
+    .content {
+        z-index: 1;
+        color: #fff;
+    }
+}
+
+@keyframes card-border {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}

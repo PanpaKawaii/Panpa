@@ -1,0 +1,16 @@
+.typing-text {
+    width: 30ch;
+    text-wrap: nowrap;
+    margin-top: 50px;
+    text-align: center;
+    font-weight: 500;
+    font-size: 15px;
+    animation: typing-text 2s steps(30) infinite alternate-reverse;
+    overflow: hidden;
+}
+
+@keyframes typing-text {
+    from {
+        width: 0ch;
+    }
+}

@@ -49,6 +49,8 @@ import HelpCenter from '../pages/User/HelpCenter/HelpCenter.jsx'
 import Notification from '../pages/User/Notification/Notification.jsx'
 import OrderManagement from '../pages/User/OrderManagement/OrderManagement.jsx'
 
+import InterestingComponent from '../pages/InterestingComponent/InterestingComponent.jsx'
+
 export default function MainRoutes() {
     return (
         <BrowserRouter>
@@ -94,6 +96,8 @@ export default function MainRoutes() {
                     <Route path='help-center' element={<HelpCenter />} />
                     <Route path='notification' element={<Notification />} />
                 </Route>
+
+                <Route path='interesting-component' element={<InterestingComponent />} />
 
             </Routes>
             <Footer />
