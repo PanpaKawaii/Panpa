@@ -39,9 +39,8 @@ export default function GuestHeader() {
                     <Link to='/object' className='menu-item'><i className='fa-solid fa-cube icon'></i> Object</Link>
                     <Link to='/interesting-component' className='menu-item'><i className='fa-solid fa-square icon'></i> Component</Link>
                     <Link to='/space' className='menu-item'><i className='fa-solid fa-earth icon'></i> Space</Link>
-                    <Link to='/mouse-tracker' className='menu-item'><i className='fa-solid fa-mouse icon'></i> Mouse Tracker</Link>
-                    <Link to='/mouse-drag-tracker' className='menu-item'><i className='fa-solid fa-mouse icon'></i> Mouse Drag Tracker</Link>
-                    <Link to='/mouse-drag-rotate' className='menu-item'><i className='fa-solid fa-mouse icon'></i> Mouse Drag Rotate</Link>
+                    <Link to='/mouse' className='menu-item'><i className='fa-solid fa-mouse icon'></i> Mouse</Link>
+                    <Link to='/generate-object' className='menu-item'><i className='fa-solid fa-cube icon'></i> Generate Object</Link>
                     <Link to='/japanese' className='menu-item'><i className='fa-solid fa-torii-gate icon'></i> Japanese</Link>
                     <Link to='/signinsignup' className='menu-item'><i className='fas fa-sign-in-alt icon'></i> Sign In</Link>
 

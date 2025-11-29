@@ -24,6 +24,8 @@ import ToDoList from '../pages/Study/ToDoList.jsx'
 import TypePi from '../pages/Study/TypePi.jsx'
 
 import Object from '../pages/Object/Object.jsx'
+import TestCube from '../pages/Object/TestCube.jsx'
+import Cube3D from '../pages/Object/Cube3D.jsx'
 
 import Space from '../pages/Space/Space.jsx'
 
@@ -51,9 +53,12 @@ import OrderManagement from '../pages/User/OrderManagement/OrderManagement.jsx'
 
 import InterestingComponent from '../pages/InterestingComponent/InterestingComponent.jsx'
 
-import MouseTracker from '../pages/Study/MouseTracker.jsx'
-import MouseDragTracker from '../pages/Study/MouseDragTracker.jsx'
-import MouseDragRotate from '../pages/Study/MouseDragRotate.jsx'
+import ListMouse from '../pages/Mouse/ListMouse.jsx'
+import MouseTracker from '../pages/Mouse/MouseTracker.jsx'
+import MouseDragTracker from '../pages/Mouse/MouseDragTracker.jsx'
+import MouseDragRotate from '../pages/Mouse/MouseDragRotate.jsx'
+
+import GenerateObjectController from '../pages/GenerateObject/GenerateObjectController.jsx'
 
 export default function MainRoutes() {
     return (
@@ -78,12 +83,17 @@ export default function MainRoutes() {
                 <Route path='game/todolist' element={<ToDoList />} />
 
                 <Route path='object' element={<Object />} />
+                <Route path='testcube' element={<TestCube />} />
+                <Route path='cube3d' element={<Cube3D />} />
+
+                <Route path='generate-object' element={<GenerateObjectController />} />
 
                 <Route path='space' element={<Space />} />
 
-                <Route path='mouse-tracker' element={<MouseTracker />} />
-                <Route path='mouse-drag-tracker' element={<MouseDragTracker />} />
-                <Route path='mouse-drag-rotate' element={<MouseDragRotate />} />
+                <Route path='mouse' element={<ListMouse />} />
+                <Route path='mouse/mouse-tracker' element={<MouseTracker />} />
+                <Route path='mouse/mouse-drag-tracker' element={<MouseDragTracker />} />
+                <Route path='mouse/mouse-drag-rotate' element={<MouseDragRotate />} />
 
                 <Route path='japanese' element={<ListJapanese />} >
                     <Route path='kanji' element={<PaginationComponent items={[...Kanji].reverse()} pageSize={24} Component={JapaneseKanji} />} />

@@ -3,6 +3,7 @@ import { useState } from 'react';
 import Card from './Card.jsx';
 import Coin from './Coin.jsx';
 import Crown from './Crown.jsx';
+import TestCube from './TestCube.jsx';
 import Cube from './Cube.jsx';
 import Dodecahedron from './Dodecahedron.jsx';
 import Icosahedron from './Icosahedron.jsx';
@@ -17,6 +18,7 @@ import SphereSVG from './SVG/Sphere.jsx';
 import SoccerBall from './SoccerBall.jsx';
 
 import Rubik from './Rubik.jsx';
+import Cube3D from './Cube3D.jsx';
 
 import './Object.css';
 
@@ -24,6 +26,8 @@ export default function Object() {
 
     const [Count, setCount] = useState(0);
     const List = [
+        <TestCube />,
+        <Cube3D />,
         <Rubik />,
 
         <Shuttlecock />,
