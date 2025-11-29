@@ -1,0 +1,50 @@
+.rotate3d-wrapper {
+    width: 100vw;
+    height: 100vh;
+    background: #111;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+    overflow: hidden;
+    perspective: 1000px;
+
+    .rotatable-3d {
+        width: 150px;
+        height: 150px;
+        background: linear-gradient(135deg, #ff3cac, #784ba0, #2b86c5);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 16px;
+        font-size: 64px;
+        cursor: grab;
+        transform-style: preserve-3d;
+        transform-origin: center;
+        transition: transform 0.05s linear;
+    }
+
+    /* Vector trực quan */
+    .vector {
+        position: absolute;
+        background: #00ffea;
+        border-radius: 2px;
+        pointer-events: none;
+    }
+
+    .delta-x {
+        height: 4px;
+        width: 0px;
+        top: 50%;
+        left: 50%;
+        transform-origin: left center;
+    }
+
+    .delta-y {
+        width: 4px;
+        height: 0px;
+        top: 50%;
+        left: 50%;
+        transform-origin: center top;
+    }
+}

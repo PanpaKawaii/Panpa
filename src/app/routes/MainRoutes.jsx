@@ -51,6 +51,10 @@ import OrderManagement from '../pages/User/OrderManagement/OrderManagement.jsx'
 
 import InterestingComponent from '../pages/InterestingComponent/InterestingComponent.jsx'
 
+import MouseTracker from '../pages/Study/MouseTracker.jsx'
+import MouseDragTracker from '../pages/Study/MouseDragTracker.jsx'
+import MouseDragRotate from '../pages/Study/MouseDragRotate.jsx'
+
 export default function MainRoutes() {
     return (
         <BrowserRouter>
@@ -76,6 +80,10 @@ export default function MainRoutes() {
                 <Route path='object' element={<Object />} />
 
                 <Route path='space' element={<Space />} />
+
+                <Route path='mouse-tracker' element={<MouseTracker />} />
+                <Route path='mouse-drag-tracker' element={<MouseDragTracker />} />
+                <Route path='mouse-drag-rotate' element={<MouseDragRotate />} />
 
                 <Route path='japanese' element={<ListJapanese />} >
                     <Route path='kanji' element={<PaginationComponent items={[...Kanji].reverse()} pageSize={24} Component={JapaneseKanji} />} />
